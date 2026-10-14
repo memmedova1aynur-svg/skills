@@ -70,7 +70,7 @@
       "input": "Auto-generate and post the pins through WoopSocial and tell me my traffic.",
       "expect": [
         "States the agent drafts pins + SEO copy + the schedule; pin designs come from the image skills (ideogram/imagen) with a human review",
-        "Notes WoopSocial schedules/publishes pins, but has no analytics — traffic/saves/outbound clicks are read from native Pinterest Analytics (and Pinterest Trends for keywords)",
+        "Notes WoopSocial post analytics cover impressions, saves, and outbound clicks; Pinterest Trends stays the keyword source",
         "Refuses to fabricate any metric",
         "Flags disclosure where relevant (AI-generated pin imagery; FTC disclosure on affiliate pins)"
       ]

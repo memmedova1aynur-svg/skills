@@ -13,7 +13,7 @@ doesn't generate or edit media.
 
 | Tool | Domain | Auth | Capabilities | Guide |
 |---|---|---|---|---|
-| WoopSocial | Social publishing/scheduling | OAuth + API key | Projects · Social Accounts · Posts (create/list/read/validate/delete) · Media · Webhooks · Health | `integrations/woopsocial.md` |
+| WoopSocial | Social publishing/scheduling + post analytics | OAuth + API key | Projects · Social Accounts · Posts (create/list/read/validate/delete, with lifetime post analytics) · Media · Webhooks · Health | `integrations/woopsocial.md` |
 
 ## Image generation & editing
 

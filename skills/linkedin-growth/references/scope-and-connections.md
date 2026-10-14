@@ -15,8 +15,8 @@ the live engagement; WoopSocial schedules the posts.
   events are created/run natively** — plan them here, execute in LinkedIn. For the
   **link-in-first-comment** tactic, the agent supplies the post + the comment text; the pair is
   posted via tool/human.
-- **No analytics in WoopSocial** → read **native LinkedIn analytics** (post impressions, members
-  reached, profile viewers, search appearances, follower growth) and check **SSI**
+- **Post analytics in WoopSocial** cover impressions, reach, reactions, comments, and clicks
+  (LinkedIn Pages engagement rate too). **Profile viewers, search appearances, follower growth, and SSI**
   (linkedin.com/sales/ssi) as a **directional** signal only. **Never fabricate** impressions,
   followers, or lead numbers.
 - **No engagement bait ("Comment YES"), pods, mass-tagging, bought followers, or broetry** —
@@ -50,5 +50,5 @@ the live engagement; WoopSocial schedules the posts.
   `lead-magnets-and-funnels` + `link-in-bio-and-traffic` (where the first-comment link points),
   `email-and-newsletter` (the owned list a LinkedIn newsletter feeds), `creator-monetization`.
 - **Plan + measure:** `social-strategy`, `goals-and-kpis`, `competitor-analysis`,
-  `analytics-and-reporting` — all on native LinkedIn analytics.
+  `analytics-and-reporting` — WoopSocial post analytics, plus native LinkedIn for account-level stats.
 - **Publish:** `scheduling-and-queue` → WoopSocial (posts; live comments/invites/DMs are human).

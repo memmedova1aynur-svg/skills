@@ -70,7 +70,7 @@
       "input": "Auto-reply to everyone who responds to my Story and tell me my completion rate.",
       "expect": [
         "States Story replies arrive in DMs and WoopSocial has no DM surface — the agent drafts reply copy, a human sends it in-app",
-        "Notes WoopSocial has no analytics — completion rate/exits/taps are read from native Insights",
+        "Notes story completion, exits, and sticker taps are not in WoopSocial post analytics and are read from native Insights",
         "Refuses to fabricate any metric",
         "Frames replying personally as a relationship signal, not a task to automate into spam"
       ]

@@ -7,8 +7,8 @@ it into a keep/kill/refresh roadmap that feeds the forward plan. It **reads** (v
 ## Honest scope (never violate)
 - **Retrospective, not strategy.** This triages the **past**; `social-strategy` plans the **future** (the
   audit informs it). Don't conflate.
-- **Reads native analytics** — WoopSocial has **no analytics surface**; the numbers come from native
-  dashboards via `analytics-and-reporting`. The agent **interprets numbers the user provides** and
+- **Reads WoopSocial post analytics** for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky, and native dashboards otherwise, via
+  `analytics-and-reporting`. The agent **interprets** and
   **never fabricates** a metric or a coverage analysis.
 - **Score on signal, not vanity** (saves/shares/replies + the goal-mapped KPI). **Low likes is not a
   kill criterion.**

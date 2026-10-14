@@ -73,6 +73,6 @@ Keyword + niche hashtags beat generic high-volume tags.
 ## Cadence & disclosure
 
 - **Consistency over bursts** — regular posting feeds the algorithm more tests; treat timing as
-  general guidance, not analytics (WoopSocial has no analytics surface yet).
+  general guidance, not the user's best time (WoopSocial post analytics are lifetime counts, not a timing model).
 - **AI-disclosure** — WoopSocial auto-discloses AI-generated media on TikTok; still follow TikTok's
   synthetic-media rules and the brand's policy.

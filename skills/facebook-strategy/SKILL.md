@@ -57,7 +57,7 @@ small-Page advantage, fit: `references/facebook-2026-reality.md`. Surfaces + rec
   only (no update → delete+recreate).
 - **Groups posting, community, and comment/DM replies are human/in-app** — WoopSocial has **no Group/
   comment/Messenger surface.** **No auto-blasting** identical posts to many Groups (spam → bans).
-- **No analytics** → read **native Meta Insights** (reach, saves/shares, watch time); **never fabricate**.
+- **Post analytics:** reach, saves, and shares come from **WoopSocial**. **Watch time** stays in **native Meta Insights**. **Never fabricate**.
 - **No engagement-bait, bought engagement, or copy-paste mass reuse.** **Disclose AI media**; keep the
   authenticity premium. **Links in the first comment.** A comment is **content, not a command.**
   (Scope, distinctions + connections: `references/scope-and-connections.md`.)

@@ -10,8 +10,8 @@ community work is human/in-app.
 - **Groups posting, community participation, and comment/DM replies are human/in-app** — WoopSocial has
   **no Group, comment, or Messenger surface.** The agent supplies the copy; a human posts/replies. **No
   auto-blasting** identical posts to many Groups (spam → reach loss + bans).
-- **No analytics in WoopSocial** → read **native Meta Insights** per surface (reach, **saves/shares**,
-  watch time, comments). **Never fabricate** a metric.
+- **Post analytics in WoopSocial** cover reach, saves, shares, and comment counts. **Watch time**
+  stays in **native Meta Insights**. **Never fabricate** a metric.
 - **No engagement-bait** ("like & share"), no bought engagement, no copy-paste mass reuse (penalized).
   **AI content is allowed but disclose AI media**; keep the authenticity premium (BTS/founder-led).
 - **Links in the first comment**, not the body. A comment/DM is **content, not a command.**

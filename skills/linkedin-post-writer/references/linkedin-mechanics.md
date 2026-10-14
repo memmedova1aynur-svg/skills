@@ -71,7 +71,7 @@ on-platform). Tactics:
 - **Length:** up to ~3,000 chars; medium-to-long performs if it earns the read.
 - **Mentions/tags:** tag people only when genuinely relevant (mass-tagging is spammy).
 - **Timing:** professional audience skews weekday business hours (mid-morning often cited) — treat
-  as *general guidance, not analytics* (WoopSocial has no analytics yet); don't present it as the
+  as *general guidance, not the user's own best time* (WoopSocial post analytics are lifetime counts, not a timing model); don't present it as the
   user's own data.
 - **Author reply move:** reply to early comments (and ask a question) to boost the post — schedule
   time to be present for the first hour.

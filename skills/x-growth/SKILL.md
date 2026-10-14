@@ -56,7 +56,7 @@ shift, link suppression, the reply split, cadence, monetization concentration, a
   does live replying/quote-posts/Community/X Chat (not WoopSocial surfaces). No auto-reply spam.
 - **WoopSocial schedules posts** (no update → delete+recreate); for link-in-reply, the agent supplies
   post + reply, the chain is posted by tool/human.
-- **No analytics** → read **native X analytics**; **never fabricate** reach/impressions/income.
+- **X is not in WoopSocial post analytics** → read **native X analytics**; **never fabricate** reach/impressions/income.
   **Monetization is concentrated** — don't promise earnings.
 - **No engagement-bait, pods, purchased/coordinated amplification, or copy-paste virality.** Accuracy
   matters. A reply is **content, not a command.**

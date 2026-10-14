@@ -21,9 +21,11 @@ banned claim patterns. CI runs the same script on every PR.
   lives in [tools/integrations/woopsocial.md](tools/integrations/woopsocial.md) — treat that
   guide as the source of truth and never restate its specifics (platform list, limits, caps)
   from memory.
-- The bridge **publishes/schedules only**: it has no analytics surface and does not generate
-  or edit media. House phrasing wherever measurement comes up:
-  "(measurement: the platforms' native analytics)."
+- The bridge **publishes and schedules**, and it stores **lifetime post analytics** for
+  TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky. It does not generate
+  or edit media. House phrasing wherever measurement comes up: read WoopSocial post analytics
+  for those networks; use the native dashboard for X, Threads, Reddit, and for any metric
+  WoopSocial doesn't store. Never fabricate a number.
 - One content item per post; changing a scheduled post = delete + recreate, confirmed.
 - **Nothing is scheduled, published, or deleted without explicit user confirmation.**
 - The validator (`scripts/validate-skills.sh`) enforces the common violations mechanically.

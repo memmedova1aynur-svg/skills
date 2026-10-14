@@ -70,7 +70,7 @@
       "input": "Recycle them and post through WoopSocial.",
       "expect": [
         "States the agent drafts the refreshed versions; a human reviews; WoopSocial schedules/publishes (and edits are delete+recreate, since it has no update)",
-        "Picks winners by reading native platform analytics (WoopSocial has no analytics surface) and never fabricates a metric",
+        "Picks winners from WoopSocial post analytics for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky, uses native dashboards otherwise, and never fabricates a metric",
         "Routes publishing through scheduling-and-queue -> WoopSocial",
         "Spaces the cycle deliberately rather than dumping everything at once"
       ]

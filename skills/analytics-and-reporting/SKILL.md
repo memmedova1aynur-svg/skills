@@ -6,19 +6,19 @@ description: >-
   track," or to turn performance data into next steps. Measures goal-mapped SIGNAL metrics (saves,
   shares, watch time/retention, engagement-rate-by-reach, follower-growth-rate, CTR, conversions) — not
   vanity (followers/impressions/likes) — and closes the loop. Uses the METER framework. Reads
-  brand-profile + social-strategy (goals) first. WoopSocial has NO analytics surface, so this reads
-  NATIVE platform dashboards (+ GA4/UTM) and interprets numbers the human provides; it NEVER fabricates
-  a metric. Feeds content-recycling, experimentation, competitor-analysis, and every growth skill.
+  brand-profile + social-strategy (goals) first. Reads WoopSocial post analytics for TikTok,
+  LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky; native dashboards otherwise.
+  It NEVER fabricates a metric. Feeds content-recycling, experimentation, competitor-analysis, and every growth skill.
   Distinct from goals-and-kpis (sets targets) and experimentation (runs tests).
-version: 1.0.0
+version: 1.1.0
 ---
 
 # analytics-and-reporting
 
 The **measurement keystone** — read native platform data, turn it into goal-mapped insight, and close
 the loop. Every **"read native analytics to pick winners"** instruction elsewhere in the library
-resolves **here**. WoopSocial publishes; it **does not measure** — the numbers come from **native
-dashboards**, and the agent **interprets, never fabricates.**
+resolves **here**. WoopSocial post analytics covers **TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky**. Everything else still comes
+from **native dashboards**, and the agent **interprets, never fabricates.**
 
 ## The POV: measure what maps to goals, then act
 Most reporting drowns in **vanity metrics** (followers, impressions, likes) that are easily inflated and
@@ -35,8 +35,10 @@ that won't change next week's action is a diagnostic, not a KPI.
 (Depth: `references/the-meter-framework.md`.)
 - **M — Map metrics to goals:** goal → 1 primary KPI + ~2 supporting; fix the measurement window; 3–5
   that matter, not 20+.
-- **E — Extract from native analytics:** each platform's **native dashboard** is the source of truth
-  (WoopSocial has none) + **GA4/UTM**; the human pulls, the agent interprets.
+- **E — Extract:** for **TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky**, read **WoopSocial post analytics** on the social-account
+  post (lifetime snapshots — not a live refresh, not a date range). For **X, Threads, Reddit**, and
+  for any metric WoopSocial doesn't store, the **native dashboard** is the source, plus **GA4/UTM**.
+  A missing field is not zero. The agent interprets; it never invents a figure.
 - **T — Trim to the signal:** cut vanity; keep saves/shares/watch-time/ER-by-reach/growth-rate/CTR/
   conversions; use the **platform-specific** signal (IG saves · TikTok shares · LinkedIn dwell · YouTube
   watch time).
@@ -52,8 +54,12 @@ platform-specific signal, relative benchmarks, attribution undercount, and the r
 + worked reads: `references/metrics-by-goal-and-report.md`.
 
 ## Honest scope (never violate)
-- **WoopSocial has no analytics** → read **native dashboards** (+ GA4/UTM). The **human provides** the
-  numbers; the agent **structures + interprets.**
+- **WoopSocial post analytics covers TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky.** Read those on the social-account post. They are
+  stored lifetime snapshots (views, impressions, unique impressions, likes, reactions, comments,
+  shares, saves, clicks; LinkedIn Pages engagement rate). **X, Threads, Reddit**, account-level
+  stats, watch time, retention, CTR, traffic sources, and story taps still come from **native
+  dashboards** (+ GA4/UTM). A missing field is unsupported or not collected yet — **flag the gap**.
+  Zero is a real value. The agent **structures + interprets** and never invents a number.
 - **Never fabricate, estimate-as-fact, inflate, or cherry-pick.** Missing number → **flag the gap**, don't
   invent it. **Cite the native source.**
 - **Read honestly:** causation ≠ correlation; single posts/short windows are noisy; attribution is
@@ -72,12 +78,12 @@ platform-specific signal, relative benchmarks, attribution undercount, and the r
 Reads first: **brand-profile**, **social-strategy**. Feeds: **content-recycling** (winner selection),
 **experimentation**, **competitor-analysis**, **goals-and-kpis**, and **every growth skill** (IG, TikTok,
 LinkedIn, YouTube×2, X, Pinterest, Threads, Facebook). Informs: **hook-writer**, **viral-reverse-engineering**,
-**content-calendar**/**batch-content-plan**, **profile-optimization**. Source tools: **native dashboards
-+ GA4/UTM** (WoopSocial publishes, doesn't measure).
+**content-calendar**/**batch-content-plan**, **profile-optimization**. Source tools: **WoopSocial
+post analytics** for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky; **native dashboards + GA4/UTM** for everything else.
 
 ## Definition of done
 Each metric mapped to a goal (1 primary + 2 supporting; defined window; 3–5 that matter); numbers taken
-only from native dashboards/GA4 the user provided (gaps flagged, sources cited, nothing fabricated);
+from WoopSocial post analytics on the covered platforms, or from native dashboards/GA4 where WoopSocial doesn't store the metric (gaps flagged, sources cited, nothing fabricated);
 signal over vanity with the platform-specific metric; benchmarked relative to own trend/vertical with
 causation + sample-size caveats; an outcomes-first report ending in exactly 3 recommendations that feed
 content-recycling / experimentation / strategy; correctly distinguished from goals-and-kpis,

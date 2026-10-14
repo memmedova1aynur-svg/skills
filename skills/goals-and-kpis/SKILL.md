@@ -51,8 +51,9 @@ KPI-selection criteria, benchmark targets + thresholds, and review cadence:
 target-setting + worked examples: `references/smart-goals-and-recipes.md`.
 
 ## Honest scope (never violate)
-- **Sets, doesn't measure** — measuring progress is **analytics-and-reporting** (native analytics;
-  WoopSocial has none). This skill defines targets/North Stars/thresholds, then hands off.
+- **Sets, doesn't measure** — measuring progress is **analytics-and-reporting** (WoopSocial post
+  analytics for the covered platforms; native dashboards otherwise). This skill defines targets,
+  North Stars, and thresholds, then hands off.
 - **Targets from real benchmarks** — **no fabricated baselines**; no data → a **learning goal** first;
   comparable benchmarks are **provisional/flagged**.
 - **Controllable, non-vanity, outcome-mapped KPIs only.** Pair growth with a **quality guardrail** — a

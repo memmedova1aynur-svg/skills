@@ -1,7 +1,7 @@
 {
   "skill": "content-audit",
   "version": "1.0.0",
-  "description": "The retrospective reality-check for an existing account — triage ~90 days of content into keep/kill/refresh, map pillar coverage, catch voice drift, and fix profile fundamentals, then turn it into a roadmap. Uses the AUDIT framework. Reads brand-profile + content-pillars + social-strategy (the plan) and analytics-and-reporting (the data) first. It reads native analytics (WoopSocial has none), scores on signal not vanity, recommends rather than auto-deletes, and never fabricates. Feeds content-recycling, content-pillars, profile-optimization, voice-builder, and social-strategy.",
+  "description": "The retrospective reality-check for an existing account — triage ~90 days of content into keep/kill/refresh, map pillar coverage, catch voice drift, and fix profile fundamentals, then turn it into a roadmap. Uses the AUDIT framework. Reads brand-profile + content-pillars + social-strategy (the plan) and analytics-and-reporting (the data) first. It reads WoopSocial post analytics for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky and native dashboards otherwise, scores on signal not vanity, recommends rather than auto-deletes, and never fabricates. Feeds content-recycling, content-pillars, profile-optimization, voice-builder, and social-strategy.",
   "evals": [
     {
       "name": "activity_not_progress_triage",
@@ -69,7 +69,7 @@
       "name": "honest_scope_reads_recommends_not_fabricates",
       "input": "Pull my numbers and clean up my account for me.",
       "expect": [
-        "States the audit reads native analytics (WoopSocial has none) and interprets the numbers the user provides — never fabricated",
+        "States the audit reads WoopSocial post analytics for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky and native dashboards otherwise — never fabricated",
         "Produces a keep/kill/refresh roadmap with quick wins vs long-term, but recommends rather than auto-executing",
         "Notes the human executes deletions and that some profile edits happen natively in-app",
         "Ensures the audit becomes an action plan (owners/timeline), not a spreadsheet graveyard"

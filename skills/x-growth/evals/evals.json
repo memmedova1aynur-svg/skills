@@ -70,7 +70,7 @@
       "input": "Auto-post and auto-reply to everyone to grow my X, and tell me my impressions.",
       "expect": [
         "States the agent drafts posts and reply copy, but a human does the live replying, quote-posts, and community engagement (the conversational core is human; replies/X Chat aren't a WoopSocial surface)",
-        "Notes WoopSocial schedules the posts; it has no analytics, so impressions/engagement are read from native X analytics (Premium)",
+        "Notes WoopSocial schedules the posts; X is not in WoopSocial post analytics, so impressions/engagement are read from native X analytics (Premium)",
         "Refuses to fabricate any metric and refuses auto-reply spam",
         "Frames authentic, timely engagement as the growth driver, not automation volume"
       ]

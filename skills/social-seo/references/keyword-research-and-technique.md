@@ -78,6 +78,6 @@ stay searched — alongside, not instead of, timely feed content.
 
 Track **discoverability** signals, not vanity: impressions **from search**, search terms that found
 you, profile visits from non-followers, saves, and follower growth from **evergreen** posts — via
-native platform search analytics (+ Google Search Console / UTMs for off-platform). **WoopSocial has no
-SEO analytics** — it publishes the optimized content (caption, alt text where supported); the search
-read-out comes from the platforms.
+native platform search analytics (+ Google Search Console / UTMs for off-platform). **WoopSocial
+does not break metrics out by search term** — it publishes the optimized content (caption, alt text
+where supported); the search read-out comes from the platforms.

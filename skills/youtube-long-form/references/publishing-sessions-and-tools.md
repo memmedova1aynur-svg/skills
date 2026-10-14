@@ -17,9 +17,9 @@ WoopSocial schedules the upload — it does **not** manage:
 - **End screens, cards, playlists, series** (the session-contribution levers — the dominant 2026
   signal). Set these in YouTube Studio.
 - **A/B thumbnail/title testing.** Run it in Studio.
-- **Analytics.** WoopSocial has **no analytics surface.** Read **CTR, AVD, 30-sec retention,
-  retention curves, traffic sources, and session metrics natively in YouTube Studio.** **Never
-  fabricate a metric.**
+- **Analytics.** WoopSocial stores YouTube **views, impressions, likes, comments, and clicks**.
+  It does not store **CTR, AVD, 30-sec retention, retention curves, traffic sources, or session
+  metrics** — read those in YouTube Studio. **Never fabricate a metric.**
 
 So: this skill decides *what/how*, scheduling-and-queue *publishes*, and **Studio does sessions +
 measurement.**

@@ -35,8 +35,10 @@ House rules the review will hold you to:
 - **Publishing ground truth:** skills hand finished content to a scheduling bridge whose
   capability surface is documented in
   [tools/integrations/woopsocial.md](tools/integrations/woopsocial.md) — don't contradict that
-  guide. Notably: it publishes/schedules only (no analytics, no media generation).
-  Measurement language: "measurement: the platforms' native analytics."
+  guide. Notably: it publishes and schedules, stores lifetime post analytics for TikTok,
+  LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky, and does not generate media.
+  Measurement language: read WoopSocial post analytics for those networks; native dashboards
+  for everything else. Never fabricate a number.
 - **Nothing posts without explicit user confirmation.** Side-effect skills keep the safety
   contract intact.
 

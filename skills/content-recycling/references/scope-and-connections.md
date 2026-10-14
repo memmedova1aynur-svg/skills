@@ -16,7 +16,7 @@ feeds the calendar with proven assets but isn't the calendar itself.
 ## Honest scope (never violate)
 - **The agent drafts the refreshed version; a human reviews** before anything publishes. **WoopSocial
   schedules/publishes** — and since it has **no update**, an edit is **delete + recreate**.
-- **Pick winners from native analytics** — WoopSocial has **no analytics surface**. **Never fabricate
+- **Pick winners from WoopSocial post analytics** for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky; native dashboards otherwise. **Never fabricate
   a metric** or promise a post "will go viral again."
 - **Refresh, not duplicate** — identical reposting risks Meta's 2026 duplicate-content penalties and
   fatigues the audience. No auto-repost spam, no other-platform watermarks, no astroturfing.

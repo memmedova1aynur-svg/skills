@@ -12,7 +12,7 @@ title + description + board + link).
   raster.** The agent doesn't render the pixels.
 - **WoopSocial publishes** the finished pin — **image + title (≤100) + description + board
   (`pinterestBoardId`) + link (≤2048)** — and that is ALL it does here: it does **NOT** design, template,
-  or generate the visual, and it has **no analytics** — saves/outbound clicks/impressions come from
+  or generate the visual. Saves, outbound clicks, and impressions come from **WoopSocial post analytics**, not from
   **native Pinterest Analytics.**
 - **The words are pinterest-seo's:** the keyword research, the keyword-led title/description, and board
   names/descriptions. This skill **renders the keyword visually** (the overlay) — it doesn't pick it.

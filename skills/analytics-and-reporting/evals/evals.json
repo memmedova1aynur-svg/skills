@@ -1,7 +1,7 @@
 {
   "skill": "analytics-and-reporting",
-  "version": "1.0.0",
-  "description": "The measurement keystone — read NATIVE platform analytics, track the goal-mapped signal metrics (not vanity), benchmark relative, and close the loop into the next cycle. Uses the METER framework. Reads brand-profile + social-strategy (goals) first. WoopSocial has NO analytics surface, so this reads native dashboards (+ GA4/UTM) and interprets numbers the human provides; it NEVER fabricates a metric. Feeds content-recycling, experimentation, competitor-analysis, and every growth skill.",
+  "version": "1.1.0",
+  "description": "The measurement keystone — read NATIVE platform analytics, track the goal-mapped signal metrics (not vanity), benchmark relative, and close the loop into the next cycle. Uses the METER framework. Reads brand-profile + social-strategy (goals) first. WoopSocial post analytics covers TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky; X, Threads, Reddit, and any metric WoopSocial doesn't store still come from native dashboards (+ GA4/UTM). It NEVER fabricates a metric. Feeds content-recycling, experimentation, competitor-analysis, and every growth skill.",
   "evals": [
     {
       "name": "signal_not_vanity",
@@ -29,7 +29,7 @@
       "name": "native_analytics_source_of_truth",
       "input": "Pull my analytics and tell me my reach and saves.",
       "expect": [
-        "States WoopSocial has no analytics surface, so the source of truth is each platform's NATIVE dashboard (Instagram Insights, YouTube Studio, native X analytics, Pinterest Analytics, Meta Business Suite, LinkedIn, TikTok)",
+        "Reads WoopSocial post analytics for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky, and native dashboards for X, Threads, and any metric WoopSocial does not store (watch time, retention, CTR, traffic sources)",
         "Adds GA4 + UTM parameters for traffic/conversion tracking",
         "Explains the agent interprets the numbers the user pulls/pastes rather than inventing them",
         "Notes the signal differs by platform (e.g. Instagram saves, TikTok shares, LinkedIn dwell time, YouTube watch time)"
@@ -69,7 +69,7 @@
       "name": "honest_scope_interprets_not_fabricates",
       "input": "Auto-generate my monthly report straight from WoopSocial.",
       "expect": [
-        "Clarifies WoopSocial has no analytics to auto-pull; the agent builds the report STRUCTURE (outcomes -> content performance -> 3 recommendations) and interprets the native numbers the user provides",
+        "Reads stored WoopSocial post analytics for the covered platforms and builds the report STRUCTURE (outcomes -> content performance -> 3 recommendations); flags gaps instead of inventing numbers, and uses native dashboards where WoopSocial does not store the metric",
         "Never invents data and explicitly flags any gaps where numbers weren't provided",
         "Cites the native source for each figure and respects privacy (aggregate, not individual tracking)",
         "Encourages first-party data (email, pixels, UTM) for durable conversion measurement"

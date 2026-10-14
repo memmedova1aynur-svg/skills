@@ -98,25 +98,42 @@ if bad: print("\n".join(bad)); sys.exit(1)
 EOF
 
 echo "8/8 Banned patterns (claims the repo must never make)"
-# WoopSocial has no analytics surface; skills must not AFFIRM it does.
-# Negations ("no/not/without/never ... WoopSocial analytics") are the correct house phrasing.
-# Whitespace is collapsed first so negations split across wrapped lines are still recognized.
+# WoopSocial stores lifetime post analytics for one fixed platform list.
+# Skills may say that. They must not deny the surface, and they must not
+# name a different coverage list.
 python3 - <<'EOF' || FAIL=1
 import os, re, sys
 bad = []
-for root in ("skills", "tools"):
+COVERED = "TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky"
+DENY = (
+    "has no analytics surface",
+    "has NO analytics surface",
+    "WoopSocial has no analytics",
+    "WoopSocial has NO analytics",
+    "WoopSocial has none",
+    "no analytics yet",
+    "has none yet",
+    "does not measure",
+    "doesn't measure",
+)
+roots = ["skills", "tools"]
+paths = ["AGENTS.md", "CONTRIBUTING.md"]
+for root in roots:
     for dirpath, _, files in os.walk(root):
         for f in files:
-            if not f.endswith(".md"): continue
-            p = os.path.join(dirpath, f)
-            text = re.sub(r"\s+", " ", open(p, encoding="utf-8").read())
-            for m in re.finditer(r"WoopSocial analytics", text):
-                ctx = text[max(0, m.start()-60):m.start()].lower()
-                if not re.search(r"\b(no|not|never|without|nor)\b[^.]*$", ctx):
-                    bad.append(f"  ✗ {p}: affirmative 'WoopSocial analytics' claim")
-            if re.search(r"WoopSocial (publishes[^.]{0,80})?\+? ?(and )?reads native analytics", text):
-                if "WoopSocial has none" not in text:
-                    bad.append(f"  ✗ {p}: 'WoopSocial ... reads native analytics' phrasing")
+            if f.endswith((".md", ".json")):
+                paths.append(os.path.join(dirpath, f))
+for p in paths:
+    raw = open(p, encoding="utf-8").read()
+    # "Sets, doesn't measure" is about the goals skill, not WoopSocial.
+    raw = raw.replace("Sets, doesn't measure", "Sets targets")
+    text = re.sub(r"\s+", " ", raw)
+    for phrase in DENY:
+        if phrase in raw or phrase in text:
+            bad.append(f"  ✗ {p}: stale denial {phrase!r}")
+    for m in re.finditer(r"WoopSocial post analytics covers [^.]{0,200}", text):
+        if COVERED not in m.group(0):
+            bad.append(f"  ✗ {p}: coverage list is not the supported platforms")
 if bad:
     print("\n".join(sorted(set(bad)))); sys.exit(1)
 EOF

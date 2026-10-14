@@ -56,7 +56,7 @@
       "expect": [
         "uses community signals: active members, retention/returning members, response time, member-to-member interaction, relationship depth",
         "explicitly not follower count or vanity reach",
-        "notes these are read natively (platform/space tools) since WoopSocial has no analytics — no fabricated numbers"
+        "notes community signals are read natively (platform/space tools) since WoopSocial has no community surface — no fabricated numbers"
       ]
     },
     {

@@ -7,7 +7,7 @@ description: >-
   data) on a deliberate cadence — never an identical repost. Distinct from cross-platform-repurposing
   (same moment, many platforms) and captions-and-clipping (long-form -> short clips). Reads
   brand-profile + voice-builder first. The agent drafts the refresh; a human reviews; WoopSocial
-  schedules/publishes (delete+recreate, no update); winners are picked from native analytics; nothing
+  schedules/publishes (delete+recreate, no update); winners on the covered platforms are picked from WoopSocial post analytics; nothing
   is fabricated.
 version: 1.0.0
 ---
@@ -61,7 +61,7 @@ Full reality + cadence: `references/recycling-2026-reality.md`; the vault + reci
 ## Honest scope (never violate)
 - **The agent drafts the refreshed version; a human reviews** before publishing. **WoopSocial
   schedules/publishes** — and since it has **no update**, an edit is **delete + recreate**.
-- **Pick winners from native analytics** (WoopSocial has none) — **never fabricate a metric** or
+- **Pick winners from WoopSocial post analytics** for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky, and from native dashboards otherwise — **never fabricate a metric** or
   promise a post "will go viral again."
 - **Refresh, not duplicate** — no auto-repost spam, no other-platform watermarks, no astroturfing.
 - **Update before reuse** — never recycle stale/incorrect facts; **disclose** AI-refreshed media.

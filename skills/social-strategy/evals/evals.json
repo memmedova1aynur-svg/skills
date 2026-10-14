@@ -48,7 +48,7 @@
       "input": "Set up the strategy and tell me how we'll track performance.",
       "expect": [
         "sets meaningful metrics and a review cadence",
-        "is honest that WoopSocial has no analytics — measurement is the platforms' native analytics, read manually",
+        "is honest about measurement: WoopSocial post analytics for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky, native dashboards otherwise",
         "does NOT promise dashboards or automated reporting the product can't deliver",
         "routes detailed target-setting (SMART targets, North Stars, thresholds) to goals-and-kpis"
       ]

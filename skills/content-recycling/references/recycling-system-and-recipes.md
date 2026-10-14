@@ -12,7 +12,7 @@ Keep a simple library so recycling is a 30-minute habit, not a scramble. Track p
 | Last recycled | enforce ~90–120-day spacing |
 | Variants tried | which hook/format/CTA, and what won |
 
-Pull winners from **native analytics** (WoopSocial has no analytics surface). Audit by goal.
+Pull winners from **WoopSocial post analytics** for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky, and from native dashboards otherwise. Audit by goal.
 
 ## Cadence (verify-quarterly)
 | Spacing | ~90–120 days per asset before its next cycle |

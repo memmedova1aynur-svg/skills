@@ -70,7 +70,7 @@
       "input": "Now track whether we hit these and pull the numbers for me.",
       "expect": [
         "Clarifies goals-and-kpis SETS the targets and win conditions; measuring against them is analytics-and-reporting's job",
-        "Notes measurement reads native platform analytics (WoopSocial has no analytics surface) and the numbers come from there",
+        "Notes measurement reads WoopSocial post analytics for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky, and native dashboards otherwise",
         "Defines the action thresholds (what each KPI moving up/down should trigger) and hands off to measurement",
         "Does not fabricate progress or current numbers"
       ]

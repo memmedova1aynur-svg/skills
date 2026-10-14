@@ -5,12 +5,12 @@ audience**. The agent designs the strategy and post copy; WoopSocial **publishes
 places links where the API allows; the **hub, landing page, and email tool are external.**
 
 ## Honest scope (never violate)
-- **WoopSocial is not a link-in-bio / landing-page / email / CRM / DM / analytics tool.** Those are
+- **WoopSocial is not a link-in-bio / landing-page / email / CRM / DM tool.** Those are
   **external (3rd-party) + human-set-up.** The agent designs the **traffic strategy, CTAs, UTM scheme,
   and post copy**; WoopSocial **publishes the posts** and places links where supported (**first comment
   / caption**); **bio updates are in-app.**
-- **Conversions come from the link tool + GA4 + native analytics — never fabricate** a click or
-  conversion (WoopSocial has no analytics).
+- **Conversions come from the link tool + GA4 — never fabricate** a click or conversion. Social
+  post clicks on the covered platforms can be read from WoopSocial; off-platform conversion cannot.
 - **Capture before sell**, value-first; **no deceptive redirects / cloaking / fake urgency** (platform +
   **FTC** rules); **affiliate links disclosed**.
 - **No auto-DM spam, no bought traffic, no engagement-bait.** Consented opt-in only; the DM step is

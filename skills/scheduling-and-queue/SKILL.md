@@ -9,7 +9,7 @@ description: >-
   skill has produced posts that are ready to go out. ALWAYS confirms before scheduling or
   publishing. If WoopSocial isn't connected, it produces a ready-to-use schedule and explains
   how to connect — it never pretends to post. It does NOT write content (use the content
-  skills) or report analytics (WoopSocial has no analytics surface yet).
+  skills) or interpret analytics (route measurement to analytics-and-reporting; do not invent best times).
 metadata:
   version: 1.0.0
 license: MIT
@@ -38,9 +38,9 @@ posts via WoopSocial; upload media; fan one post out to multiple platforms.
   the agent drafts, the human posts natively).
 - **Create content.** It schedules finished content. If the content isn't ready or on-brand,
   route back to `caption-writer` / the relevant content skill first.
-- **Report analytics.** WoopSocial has no analytics surface yet, so this skill never claims
-  performance data or "data-driven best times." It can schedule a *suggested* time and say the
-  suggestion isn't personalized yet.
+- **Report analytics.** Measurement belongs to `analytics-and-reporting`. This skill never
+  claims "data-driven best times." WoopSocial post analytics are lifetime counts, not a timing
+  model. It can schedule a *suggested* time and say the suggestion isn't personalized.
 
 ## Step 0 — Check the connection first
 
@@ -111,7 +111,7 @@ with the post IDs WoopSocial returns. On failure:
 - Every post was validated before committing.
 - No duplicates, and partial failures were handled cleanly.
 - It degraded gracefully (schedule table + connect steps) when not connected.
-- No analytics or "data-backed timing" was claimed.
+- No "data-backed best time" was claimed. Measurement was left to analytics-and-reporting.
 - AI-generated media is disclosed (TikTok automatic via WoopSocial; note it elsewhere).
 
 ## Edge cases

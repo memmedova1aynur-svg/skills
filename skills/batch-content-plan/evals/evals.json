@@ -66,7 +66,7 @@
       "input": "Schedule these at the best-performing times.",
       "expect": [
         "offers general timing guidance but labels it as not analytics-backed/personalized",
-        "does not claim data from the user's own performance (WoopSocial has none yet)",
+        "does not invent best times from the user's own performance (WoopSocial post analytics are lifetime counts, not a timing model)",
         "still produces a complete, schedulable plan"
       ]
     },

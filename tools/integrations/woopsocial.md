@@ -69,10 +69,26 @@ The MCP tools and REST API mirror each other, grouped by domain:
   confirmation instead of polling.
 - **Health** — verify connectivity. Good first call to confirm the connection in Step 0.
 
-There is **no analytics/metrics domain**, and WoopSocial does **not generate or edit media** —
-it is a publishing/scheduling bridge only. Skills must not claim performance data or media
-creation from WoopSocial. (Analytics skills stay advisory-only until this changes; measurement
-is the platforms' native analytics.)
+**Post analytics.** Listing or reading a social-account post includes its latest stored
+**lifetime** metrics. There is no separate analytics query and no date-range report. Reading a
+post does not refresh the numbers; collection is asynchronous, and snapshot dates can differ by
+metric.
+
+Platforms with post analytics: **TikTok, LinkedIn (profiles and Pages), Facebook, Instagram,
+Pinterest, YouTube, and Bluesky.** Metrics stored when the platform supports them: views,
+impressions, unique impressions, likes, reactions, comments, shares, saves, and clicks. LinkedIn
+Pages also includes a provider-reported engagement rate. Unsupported metrics are omitted.
+Unsupported platforms and post types come back as an empty object. A missing field is not zero —
+zero is a recorded value.
+
+Not included: **X, Threads, and Reddit**; account-level stats (followers, profile visits);
+watch time, retention, average view duration, CTR, and traffic sources; story exits and sticker
+taps; hashtag or search breakdowns; competitor analytics; best-time recommendations. Those still
+come from the native dashboard or GA4/UTM. WoopSocial still does **not generate or edit media**,
+and it still has no inbox, DM, comment-thread, or moderation surface. The comments field is a
+count, not the comments themselves.
+
+Skills that measure route to `analytics-and-reporting`. Never fabricate a metric.
 
 ## What WoopSocial handles for you
 

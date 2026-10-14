@@ -9,7 +9,7 @@ description: >-
   the content skills (caption-writer, reels-script, hook-writer) execute. As a BRIDGE skill it
   then confirms and hands the batch to scheduling-and-queue. Builds a balanced mix — never
   all-promotion — matched to the user's real capacity. Suggests cadence but does not claim
-  analytics-based timing (WoopSocial has no analytics surface yet). For the ongoing recurring
+  analytics-based timing (not a best-time model). For the ongoing recurring
   system — which pillars/formats post on which days, the living "content calendar" — use
   content-calendar; this skill fills one specific period of that system with actual post briefs.
 metadata:

@@ -81,7 +81,7 @@
       "expect": [
         "Routes publishing through scheduling-and-queue -> WoopSocial (tools/integrations/woopsocial.md, MCP and REST); YouTube supported; validate before publish; no edit after publish (delete + recreate)",
         "Clarifies WoopSocial does not manage end screens, playlists, cards, or A/B thumbnail tests — those are done natively in YouTube Studio",
-        "States WoopSocial has no analytics, so CTR / AVD / retention / traffic sources are read natively in YouTube Studio",
+        "States WoopSocial stores YouTube views, impressions, likes, comments, and clicks; CTR, AVD, retention, and traffic sources are read in YouTube Studio",
         "Refuses to fabricate a CTR or any metric"
       ]
     }

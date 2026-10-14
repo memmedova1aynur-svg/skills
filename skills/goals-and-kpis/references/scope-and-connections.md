@@ -6,7 +6,7 @@ thresholds. It **sets** the win conditions; **analytics-and-reporting measures**
 
 ## Honest scope (never violate)
 - **Sets, doesn't measure.** This skill defines targets/North Stars/thresholds; **measuring progress is
-  `analytics-and-reporting`** (which reads native platform analytics — WoopSocial has no analytics surface).
+  `analytics-and-reporting`** (WoopSocial post analytics for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky; native dashboards otherwise).
 - **Targets come from real benchmarks**, never fantasy. **No fabricated baselines** — if there's no data,
   set a **learning goal** to establish one first; comparable benchmarks are **provisional, flagged**.
 - **KPIs must be controllable, non-vanity, and mapped to a business outcome.** Refuse pure vanity goals

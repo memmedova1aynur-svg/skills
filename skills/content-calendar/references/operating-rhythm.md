@@ -40,9 +40,10 @@ A buffer turns "consistency" from a willpower problem into a system property.
 
 Improve the calendar over time — without overclaiming data:
 
-- **WoopSocial has no analytics surface yet**, so don't build the calendar around "our best
-  times/top performers" as if that data lives here. Review using **native platform insights the user
-  pulls**, or **qualitative judgment** (what resonated, what drained you, what's sustainable).
+- WoopSocial post analytics covers **TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky**, but those are lifetime post counts, not a
+  best-time model. Don't pretend the calendar is optimized to "our best times." Review winners via
+  `analytics-and-reporting`, and use **native insights** for metrics WoopSocial doesn't store, or
+  **qualitative judgment** (what resonated, what drained you, what's sustainable).
 - Each month, ask: which slots/series are working? which drain effort for little return? Is the
   cadence still sustainable? Adjust the skeleton — kill what isn't working, double down on what is.
 - Treat timing/cadence tweaks as **experiments to observe**, not optimizations you can prove.

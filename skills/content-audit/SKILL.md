@@ -6,7 +6,7 @@ description: >-
   triage an existing account before replanning. Produces a keep/kill/refresh triage, maps pillar coverage,
   catches voice drift, and fixes profile fundamentals — then a quick-wins-vs-long-term roadmap. Uses the
   AUDIT framework. Reads brand-profile + content-pillars + social-strategy (the plan) and
-  analytics-and-reporting (the data) first. It reads native analytics (WoopSocial has none), scores on
+  analytics-and-reporting (the data) first. It reads WoopSocial post analytics on covered platforms and native dashboards otherwise, scores on
   signal not vanity, recommends rather than auto-deletes, and never fabricates. Feeds content-recycling,
   content-pillars, profile-optimization, voice-builder, and social-strategy. Distinct from
   analytics-and-reporting (ongoing measurement) and competitor-analysis (rivals).
@@ -29,7 +29,7 @@ Strategy is forward-looking; the audit is the **retrospective reality-check** th
 ## Read these first
 1. **brand-profile** + **voice-builder** — the voice/brand standard to audit against.
 2. **content-pillars** + **social-strategy** — the intended plan (the audit checks execution of it).
-3. **analytics-and-reporting** — the performance data source (native analytics; WoopSocial has none).
+3. **analytics-and-reporting** — the performance data source (WoopSocial post analytics for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky; native dashboards otherwise).
 
 ## The framework: AUDIT
 (Depth: `references/the-audit-framework.md`.)
@@ -52,7 +52,7 @@ major changes: `references/content-audit-2026-reality.md`. Triage rules, scoreca
 
 ## Honest scope (never violate)
 - **Retrospective, not strategy** — triages the past; `social-strategy` plans the future.
-- **Reads native analytics** (WoopSocial has none) via `analytics-and-reporting`; **interprets numbers
+- **Reads WoopSocial post analytics** for the covered platforms, and native dashboards otherwise, via `analytics-and-reporting`; **interprets numbers
   the user provides — never fabricates** a metric or a coverage map.
 - **Signal not vanity** — **low likes is not a kill criterion.**
 - **Recommend, don't auto-act** — **never auto-delete** (a human approves kills; deleting can lose

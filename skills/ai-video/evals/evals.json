@@ -82,7 +82,7 @@
         "States WoopSocial does not generate video (no media generation) and only schedules/publishes",
         "Lays out the chain: ai-video routes/briefs -> the tool generates -> the human assembles/edits -> scheduling-and-queue -> WoopSocial publishes",
         "Requires AI disclosure on the finished video per platform",
-        "Refuses to fabricate any performance metric (WoopSocial has no analytics surface)"
+        "Refuses to fabricate a performance metric; reads WoopSocial post analytics for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky, and the native dashboard when WoopSocial doesn't store that metric"
       ]
     }
   ]

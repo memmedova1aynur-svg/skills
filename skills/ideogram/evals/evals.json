@@ -69,7 +69,7 @@
         "states Ideogram generates the image; a human reviews it (especially text accuracy); WoopSocial only uploads-to-Media, attaches, and publishes (no image generation)",
         "describes the flow: prompt Ideogram -> upload the image to WoopSocial Media -> attach via scheduling-and-queue",
         "requires AI disclosure on the published image",
-        "refuses to fabricate any performance metric (WoopSocial has no analytics surface)"
+        "refuses to fabricate a performance metric; reads WoopSocial post analytics for TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky, and the native dashboard when WoopSocial doesn't store that metric"
       ]
     },
     {

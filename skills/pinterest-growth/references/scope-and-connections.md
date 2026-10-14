@@ -10,8 +10,8 @@ image skills produce the designs; WoopSocial schedules/publishes the pins.
 - **The agent drafts** pins (title/description/keywords/board/link) + the schedule; **pin designs come
   from `image-prompt` → `ideogram`/`nano-banana`** with a **human review**; **WoopSocial schedules/publishes**
   the pins.
-- **No analytics in WoopSocial** → read **native Pinterest Analytics** (impressions, saves, **outbound
-  clicks**, top pins) + **Pinterest Trends** for keywords. **Never fabricate** a metric or traffic number.
+- **Post analytics in WoopSocial** cover impressions, saves, and outbound clicks. **Pinterest Trends**
+  stays the keyword source. **Never fabricate** a metric or traffic number.
 - **No keyword stuffing, no mass-pinning the same URL/board in a burst (≥72h apart), no bought
   followers/engagement loops** — penalized and (for followers) pointless on a non-follower-driven platform.
 - **Disclose AI** pin imagery (Pinterest lets users filter GenAI content); **FTC-disclose affiliate** pins.

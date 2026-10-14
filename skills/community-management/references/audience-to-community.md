@@ -42,6 +42,7 @@ Judge it by **relationship depth**, not reach:
 - **Response time** and depth of conversation.
 - **Advocacy** — members defending, recommending, and creating for you.
 
-**Honesty about measurement:** WoopSocial has **no analytics or community surface**, so these are read
-**natively** (the platform's/space's own tools, your own eyes) — **never fabricate a number** or promise
+**Honesty about measurement:** WoopSocial has **no community surface**, so membership and conversation
+depth are read **natively** (the platform's/space's own tools, your own eyes). Post metrics for the
+covered platforms can come from WoopSocial. **Never fabricate a number** or promise
 a membership figure. And community is a **long game** — judged over months, not in a launch week.

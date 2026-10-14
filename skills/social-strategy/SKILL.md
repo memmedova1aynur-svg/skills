@@ -8,7 +8,7 @@ description: >-
   "should I be on TikTok/LinkedIn," or is starting or resetting their social presence. Reads
   brand-profile, audience-research, and content-pillars first. Makes real choices and
   trade-offs — especially what NOT to do — ties goals to the business not vanity metrics, and
-  is honest that WoopSocial has no analytics (measurement is the platforms' native analytics).
+  measures covered networks with WoopSocial post analytics (TikTok, LinkedIn, Facebook, Instagram, Pinterest, YouTube, and Bluesky) and uses native dashboards otherwise.
   Produces a social-strategy.md. It names the objective; to turn it into SMART targets, KPIs,
   and North Star metrics, use goals-and-kpis. Works for any business.
 metadata:
@@ -97,8 +97,8 @@ with reasons), the wedge, the operating model and phasing. Summarize back and in
 - Are **channels chosen by the fit framework**, with the dropped ones named? (Not "all of them.")
 - Is there a real **wedge** — a differentiated way to win, from the brand's POV?
 - Is the operating model **sustainable** and **phased** (start focused, then expand)?
-- Is measurement **honest** — meaningful metrics, read from the platforms' native analytics, and
-  no analytics promised that WoopSocial doesn't have?
+- Is measurement **honest** — meaningful metrics from WoopSocial post analytics on the covered
+  platforms, native dashboards otherwise, and no metric promised that neither source has?
 - Would following this make the brand *choose* — or just do everything everywhere?
 
 If the "strategy" doesn't say no to anything, it isn't one.

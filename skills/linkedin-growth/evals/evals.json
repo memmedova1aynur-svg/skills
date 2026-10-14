@@ -59,7 +59,7 @@
       "input": "Auto-comment on posts in my niche, auto-send connection requests, and pull my LinkedIn analytics from WoopSocial.",
       "expect": [
         "States the agent drafts posts, comment copy, invite notes, and DM openers, but a human posts the live comments, sends invites, and holds conversations — no auto-commenting or auto-connect tooling",
-        "Notes WoopSocial schedules the posts but has no analytics; metrics are read from native LinkedIn analytics (impressions, members reached, profile viewers, followers), with SSI as a directional check only",
+        "Notes WoopSocial post analytics cover impressions, reach, reactions, and clicks; profile viewers, followers, and SSI stay on native LinkedIn",
         "Refuses to fabricate any metric",
         "Notes native document carousels, polls, newsletters, and audio events are created/run natively, not via WoopSocial"
       ]

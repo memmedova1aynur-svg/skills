@@ -71,7 +71,7 @@
       "expect": [
         "States the agent drafts Page posts/Reels, Group post copy, and reply copy; WoopSocial schedules PAGE posts/Reels only",
         "Notes Groups posting, community participation, and comment replies are human/in-app — WoopSocial has no Group/DM/comment surface",
-        "Reads reach/saves/shares from native Meta Insights (no analytics in WoopSocial) and never fabricates a metric",
+        "Reads reach, saves, and shares from WoopSocial post analytics, watch time from native Meta Insights, and never fabricates a metric",
         "Refuses auto-spam and frames first-hour human engagement as a ranking driver"
       ]
     },

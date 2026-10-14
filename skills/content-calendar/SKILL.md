@@ -95,8 +95,8 @@ filled **sample week** to make it concrete. Then:
 - **Too rigid** ("lock 90 days, no gaps") → reserve reactive slots; a fully-locked calendar can't
   ride trends.
 - **"Just give me 20 post ideas"** → that's `batch-content-plan`; offer the recurring skeleton here.
-- **"Build it around our best times/top performers"** → WoopSocial has no analytics; offer native
-  data the user pulls or qualitative review; don't claim data-driven optimization.
+- **"Build it around our best times/top performers"** → WoopSocial post analytics are lifetime
+  counts, not a best-time model. Route top performers to `analytics-and-reporting`; don't claim data-driven timing.
 - **No pillars/strategy yet** → route to `content-pillars` / `social-strategy` or derive provisional
   pillars; don't float free.
 - **Keeps abandoning schedules** → fix the *rhythm* (sustainable floor + buffer + ritual), not just

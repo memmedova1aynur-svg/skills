@@ -69,7 +69,7 @@
       "name": "no-analytics-claims",
       "input": "Schedule these at the best times for engagement.",
       "expect": [
-        "does NOT claim data-driven or analytics-based optimal times (WoopSocial has none)",
+        "does NOT claim data-driven or analytics-based optimal times (WoopSocial post analytics are lifetime counts, not a timing model)",
         "may offer a general suggested time but labels it as not personalized/analytics-backed",
         "still schedules correctly with confirmed times"
       ]

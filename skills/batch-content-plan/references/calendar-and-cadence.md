@@ -47,9 +47,9 @@ Order matters across the period, not just the count:
 
 Suggest posting times from general principles — post when the audience is active, respect time
 zones, weekday business hours for B2B, evenings/weekends for some consumer audiences. **State
-clearly that these are general suggestions, not data from the user's own analytics** — WoopSocial
-has no analytics surface yet, so the timing isn't personalized. When analytics ships, this can be
-tuned to real performance. Don't present generic timing as if it were the user's data.
+clearly that these are general suggestions, not the user's own best times.** WoopSocial stores
+lifetime post metrics for the covered platforms, but that is not a timing model, so the suggestion
+isn't personalized. Don't present generic timing as if it were the user's data.
 
 ## The batching workflow (why this skill saves time)
 

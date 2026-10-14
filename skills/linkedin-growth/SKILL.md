@@ -65,8 +65,9 @@ types + the commenting playbook + worked examples: `references/comment-and-post-
 - **WoopSocial schedules the posts** (text + media + optional link; native document carousels,
   polls, newsletters, and audio events are posted/run natively). No update → delete + recreate. For
   link-in-first-comment, the agent supplies post + comment; the pair is posted by tool/human.
-- **No analytics in WoopSocial** → read **native LinkedIn analytics** (impressions, members reached,
-  profile viewers, followers) and **SSI** as a directional check. **Never fabricate metrics.**
+- **Post analytics:** impressions, reach, reactions, comments, and clicks come from **WoopSocial**
+  (LinkedIn Pages also reports engagement rate). **Profile viewers, followers, and SSI** stay on
+  **native LinkedIn**. **Never fabricate metrics.**
 - **No engagement bait, pods, mass-tagging, bought followers, or broetry theatre** — down-ranked by
   the algorithm and quietly judged by the exact professionals you're trying to reach.
   (Scope, distinctions + connections: `references/scope-and-connections.md`.)

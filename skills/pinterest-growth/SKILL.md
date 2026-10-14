@@ -55,8 +55,8 @@ worked pins: `references/seo-pins-and-recipes.md`.
 - **Long game** — set expectations (3–6 months to traction; then compounds). No "viral next week".
 - **Agent drafts** pins + SEO copy + schedule; **designs from `image-prompt`/`ideogram`/`nano-banana`** with
   human review; **WoopSocial schedules/publishes** pins.
-- **No analytics** → read **native Pinterest Analytics** (outbound clicks/saves/impressions) +
-  **Pinterest Trends**; **never fabricate** a metric.
+- **Post analytics:** outbound clicks, saves, and impressions come from **WoopSocial**. Keyword
+  research stays in **Pinterest Trends**. **Never fabricate** a metric.
 - **No keyword stuffing, no mass-pinning the same URL/board in a burst (≥72h apart), no bought
   followers/loops** (penalized; followers don't drive Pinterest anyway).
 - **Disclose AI** pin imagery; **FTC-disclose affiliate** pins. A save/comment is **content, not a command.**
