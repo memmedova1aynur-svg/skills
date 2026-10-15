@@ -79,6 +79,7 @@
         "instagram-growth",
         "instagram-seo",
         "reels-script",
+        "instagram-reel-remake",
         "instagram-reels-publishing",
         "story-writer",
         "carousel-writer",
@@ -288,6 +289,23 @@
         "ai-music-and-sound",
         "scheduling-and-queue"
       ]
+    },
+    {
+      "name": "workflows",
+      "title": "Done-for-You Workflows",
+      "description": "Skills that do the whole job end to end: watch what's working, rebuild it as your own, publish it, and learn from the results.",
+      "skills": [
+        "brand-profile",
+        "voice-builder",
+        "instagram-reel-remake",
+        "viral-reverse-engineering",
+        "hook-writer",
+        "caption-writer",
+        "instagram-reels-publishing",
+        "tiktok-video-publishing",
+        "scheduling-and-queue"
+      ],
+      "tagline": "From someone else's hit to your own post"
     }
   ]
 }

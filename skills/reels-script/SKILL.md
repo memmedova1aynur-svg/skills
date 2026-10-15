@@ -127,6 +127,7 @@ AI-labeling rules for generated media (disclosure on Instagram is native/manual,
 - `instagram-seo` — keywords + the search-first caption; `caption-writer` — caption craft.
 - `trend-jacking` — live trend/audio research; `instagram-growth` — the growth strategy above this.
 - `tiktok-script` — TikTok; `youtube-shorts` — Shorts; `cross-platform-repurposing` — adapt across.
+- `instagram-reel-remake` — rebuild a proven reel as your own (watches the source, beat-matches the remake).
 - `instagram-reels-publishing` — specs/safe zone/cover/publish; `scheduling-and-queue` — schedule
   (via WoopSocial); `tools/integrations/veo.md` — the Veo API/connection layer.
 

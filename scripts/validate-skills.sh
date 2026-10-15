@@ -8,7 +8,7 @@ cd "$(dirname "$0")/.."
 FAIL=0
 err() { echo "  ✗ $1"; FAIL=1; }
 
-echo "1/8 Skill structure (SKILL.md + references/ + evals/evals.json per skill)"
+echo "1/9 Skill structure (SKILL.md + references/ + evals/evals.json per skill)"
 for d in skills/*/; do
   n=$(basename "$d")
   [ -f "$d/SKILL.md" ] || err "$n: missing SKILL.md"
@@ -16,7 +16,7 @@ for d in skills/*/; do
   [ -f "$d/evals/evals.json" ] || err "$n: missing evals/evals.json"
 done
 
-echo "2/8 Frontmatter (name matches directory, description present)"
+echo "2/9 Frontmatter (name matches directory, description present)"
 for d in skills/*/; do
   n=$(basename "$d")
   fm=$(awk '/^name:/{print $2; exit}' "$d/SKILL.md" 2>/dev/null)
@@ -24,18 +24,19 @@ for d in skills/*/; do
   grep -q '^description:' "$d/SKILL.md" || err "$n: missing description"
 done
 
-echo "3/8 Evals are valid JSON"
+echo "3/9 Evals are valid JSON"
 for f in skills/*/evals/evals.json; do
   python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$f" 2>/dev/null \
     || err "$f: invalid JSON"
 done
 
-echo "4/8 Cross-references resolve (every \`skill-name\` mention is a real skill)"
+echo "4/9 Cross-references resolve (every \`skill-name\` mention is a real skill)"
 python3 - <<'EOF' || FAIL=1
 import os, re, sys
 # Backticked kebab-case terms that are NOT skill names (API fields, model ids, regions, packages).
 ALLOW = {"platform-inputs", "gemini-3-pro-image", "lumaai-python", "x-goog-api-key",
-         "asia-northeast1", "europe-west4", "us-central1", "us-east4"}
+         "asia-northeast1", "europe-west4", "us-central1", "us-east4",
+         "yt-dlp", "faster-whisper", "whisper-cli", "imageio-ffmpeg"}
 skills = {d for d in os.listdir("skills") if os.path.isdir(f"skills/{d}")}
 pat = re.compile(r"`([a-z0-9]+(?:-[a-z0-9]+)+)`")
 bad = []
@@ -52,7 +53,7 @@ if bad:
     print("\n".join(sorted(set(bad)))); sys.exit(1)
 EOF
 
-echo "5/8 Description length (Agent Skills spec: max 1024 chars — claude.ai uploads enforce this)"
+echo "5/9 Description length (Agent Skills spec: max 1024 chars — claude.ai uploads enforce this)"
 python3 - <<'EOF' || FAIL=1
 import os, re, sys
 bad = []
@@ -72,7 +73,7 @@ if bad:
     print("\n".join(bad)); sys.exit(1)
 EOF
 
-echo "6/8 Plugin manifests (valid JSON, versions in sync)"
+echo "6/9 Plugin manifests (valid JSON, versions in sync)"
 python3 - <<'EOF' || FAIL=1
 import json, sys
 try:
@@ -85,7 +86,7 @@ if p["version"] != m["plugins"][0]["version"]:
           " — plugin users won't see updates until these match"); sys.exit(1)
 EOF
 
-echo "7/8 Pack manifest (every pack skill exists; JSON valid)"
+echo "7/9 Pack manifest (every pack skill exists; JSON valid)"
 python3 - <<'EOF' || FAIL=1
 import json, os, sys
 m = json.load(open("scripts/packs.json"))
@@ -97,7 +98,7 @@ for p in m["packs"]:
 if bad: print("\n".join(bad)); sys.exit(1)
 EOF
 
-echo "8/8 Banned patterns (claims the repo must never make)"
+echo "8/9 Banned patterns (claims the repo must never make)"
 # WoopSocial stores lifetime post analytics for one fixed platform list.
 # Skills may say that. They must not deny the surface, and they must not
 # name a different coverage list.
@@ -140,6 +141,9 @@ EOF
 # No stale "(forthcoming)" markers for skills that ship in this repo.
 hits=$(grep -rn "(forthcoming)" skills/ tools/ --include='*.md' 2>/dev/null | grep -v suno || true)
 [ -z "$hits" ] || { echo "$hits"; err "found a stale (forthcoming) marker"; }
+
+echo "9/9 Standalone workflow skills (no other skills needed; WoopSocial guide bundled and current)"
+python3 scripts/sync-standalone.py --check || FAIL=1
 
 echo ""
 if [ "$FAIL" -eq 0 ]; then
