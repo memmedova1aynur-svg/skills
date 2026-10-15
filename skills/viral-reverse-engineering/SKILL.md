@@ -113,7 +113,6 @@ to you" — **never a copy**. Build a swipe file of recurring patterns over time
 - `brand-profile`, `audience-research` — relevance + the "apply to your niche" step.
 - `hook-writer` — the most common load-bearing driver; `trend-jacking` — overlapping "why it spread."
 - `tiktok-script`, `reels-script`, `caption-writer`, `carousel-writer` — execute the extracted principle.
-- `instagram-reel-remake` — when the user wants their own version made and published, not just the teardown (it can watch a saved video file with its bundled script).
 - `competitor-analysis`, `analytics-and-reporting` (advisory) — broader performance analysis.
 
 ## References

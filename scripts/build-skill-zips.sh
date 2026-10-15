@@ -22,8 +22,7 @@ for dir in skills/*/; do
   cp -R "skills/$name" "$stage/$name"
 
   # Find referenced integration guides and embed them so the skill is self-contained.
-  # (standalone skills already carry references/woopsocial.md, so that copy is skipped)
-  guides=$(grep -rhoE --exclude=woopsocial.md 'integrations/[a-z0-9-]+\.md' "skills/$name" 2>/dev/null | sed 's#integrations/##' | sort -u || true)
+  guides=$(grep -rhoE 'integrations/[a-z0-9-]+\.md' "skills/$name" 2>/dev/null | sed 's#integrations/##' | sort -u || true)
   if [ -n "$guides" ]; then
     mkdir -p "$stage/$name/references/tools"
     for g in $guides; do

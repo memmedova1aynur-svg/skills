@@ -39,17 +39,6 @@ banned claim patterns. CI runs the same script on every PR.
 - Reference-file pattern: `scope-and-connections.md`, a `<topic>-2026-reality.md`, a named
   framework file, a recipes/templates file.
 
-## Standalone workflow skills
-
-Skills listed under "Workflows" in `scripts/site-taxonomy.json` ship one at a time and must
-produce their full result with no other skill installed:
-
-- Everything they need lives in their own folder (scripts included). No steps that route to,
-  or tell the user to install, another skill; no backticked skill names in their files.
-- Each carries `references/woopsocial.md`, generated from `tools/integrations/woopsocial.md` by
-  `python3 scripts/sync-standalone.py`. Edit the master, then re-run the script.
-- The validator (step 9) fails if a copy is stale or a sibling skill is named.
-
 ## Build tooling
 
 - `scripts/build-skill-zips.sh` — one self-contained ZIP per skill into `dist/` (embeds each
