@@ -58,7 +58,7 @@ Write `carousel.json`. Each slide is one of nine types:
 
 | type | use it for | fields |
 |---|---|---|
-| `cover` | the hook | `title`, `kicker`?, `subtitle`? |
+| `cover` | the hook | `title`, `kicker`?, `subtitle`?, `image`? (full-bleed photo) |
 | `text` | one idea | `title`, `body`? |
 | `list` | steps, items | `title`?, `items`, `numbered`? |
 | `stat` | one number | `value`, `label`, `source`, `kicker`? |
@@ -66,10 +66,15 @@ Write `carousel.json`. Each slide is one of nine types:
 | `compare` | before/after, myth/fact | `title`?, `left{label,items}`, `right{label,items}` |
 | `image` | a photo or screenshot | `src`, `title`?, `caption`?, `alt`? |
 | `recap` | the screenshot slide | `title`, `items`, `kicker`? |
-| `cta` | the one ask | `title`, `body`?, `action`? |
+| `cta` | the one ask | `title`, `body`?, `action`?, `icon`? (save, share, comment, follow, link) |
 
 `**word**` highlights in the accent colour. `"accent": true` flips any slide to the accent
-background for a mid-carousel beat. Full spec and recipes: `references/themes-and-recipes.md`.
+background for a mid-carousel beat.
+
+The finishing that makes it read as designed is built in, not per-post work: an author badge
+and page counter on every slide, a line that runs continuously across slide edges (the
+carousel swipes as one piece), faint oversized slide numbers, paper grain, card shadows, a
+swipe button, crisp SVG icons, and a profile card on the CTA. Themes tune or switch these off. Full spec and recipes: `references/themes-and-recipes.md`.
 
 ## Step 3 — I: Identify the theme
 

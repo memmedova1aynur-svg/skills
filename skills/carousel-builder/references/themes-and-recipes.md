@@ -22,11 +22,18 @@
 - `size`: `portrait` (1080x1350), `square` (1080x1080), `linkedin`, or `WxH`.
 - `autoNumber`: numbers `text` and `list` slides 01, 02, … (on by default in `steps`).
 - Any slide: `"accent": true` for an accent-background beat; `"number": "03"` to set a number.
+- Cover: `"image": "photo.jpg"` for a full-bleed photo under a dark gradient (text turns white).
+  Use a real photo of the person, product or place; it outperforms stock.
+- CTA: `"icon"`: `save` (default), `share`, `comment`, `follow` or `link`, matching the one ask.
 - Text: `**word**` for accent highlight, `\n` for a line break.
 
 A full eight-slide Azerbaijani example is in `assets/examples/example-carousel.json`.
 
 ## The six themes
+
+Built into every theme (each tunes or hides them): author badge + page counter, a continuous
+line across slide edges, oversized faint slide numbers, grain, card shadows, swipe button, SVG
+icons, CTA profile card.
 
 | theme | looks like | best for | avoid for |
 |---|---|---|---|

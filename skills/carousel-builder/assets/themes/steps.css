@@ -1,13 +1,13 @@
-/* steps: progress rail + giant step numbers */
-.rail{display:flex;gap:10px;flex:none;margin-bottom:24px}
-.rail i{flex:1;height:8px;border-radius:4px;background:var(--text);opacity:.12}
-.rail i.done{background:var(--accent);opacity:.45}
-.rail i.on{background:var(--accent);opacity:1}
-.num{font-size:200px;line-height:.9;font-weight:900;letter-spacing:.02em;color:transparent;-webkit-text-stroke:3px var(--accent);margin-bottom:24px}
+/* steps: progress rail + giant outlined step numbers */
+.rail{display:flex;gap:10px;flex:none;margin-bottom:28px}
+.rail i{flex:1;height:8px;border-radius:4px;background:var(--line)}
+.rail i.done{background:color-mix(in srgb,var(--accent) 45%,var(--bg))}
+.rail i.on{background:var(--accent)}
+.pano,.ghost{display:none}
+.count{display:none}
+.num{font-size:210px;line-height:.88;font-weight:900;letter-spacing:.02em;color:transparent;-webkit-text-stroke:3px var(--accent);margin-bottom:28px}
 .bar{display:none}
-.title{font-weight:900;font-size:110px}
-.h2{font-weight:800}
+.title{font-weight:900;font-size:120px}
 .t-cover .content{justify-content:flex-end}
-.list li{background:var(--surface);border-radius:22px;padding:24px 30px;align-items:center}
-.list{gap:18px}
+.list{gap:16px}
 .li-text{font-size:42px}

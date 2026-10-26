@@ -33,6 +33,12 @@ Look at accounts that grow on carousels in any niche and the pattern is the same
 - **Native beats glossy.** The text-post look (`tweet` theme) and plain editorial layouts often
   outperform stock-photo-heavy designs because they read as a person talking.
 - **Restraint with colour.** Neutral background, one accent, used for emphasis only.
+- **Seamless edges.** A line or shape that crosses from one slide into the next tells the eye
+  there is more and makes the carousel feel like one designed object.
+- **A face or a name up top.** An author badge turns a graphic into a person talking, and keeps
+  credit on screenshots.
+- **Texture and depth, lightly.** Subtle grain and soft card shadows read as print and polish;
+  heavy drop shadows and glows read as template.
 
 ## What makes carousels look amateur
 

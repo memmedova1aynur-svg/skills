@@ -25,6 +25,18 @@ const STRINGS = {
   ru: { swipe: 'Листай', save: 'Сохрани', source: 'Источник' },
   tr: { swipe: 'Kaydır', save: 'Kaydet', source: 'Kaynak' },
 };
+// Line icons (24px grid, stroke = currentColor) so arrows and checks are crisp in every font.
+const ICON_PATHS = {
+  arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  x: '<path d="M6 6l12 12M18 6L6 18"/>',
+  save: '<path d="M6 3.5h12v17l-6-4.5-6 4.5z"/>',
+  share: '<path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/>',
+  comment: '<path d="M20 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/>',
+  follow: '<path d="M15 19a6 6 0 0 0-12 0M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM19 8v6M16 11h6"/>',
+  link: '<path d="M10 14a4.5 4.5 0 0 0 6.4 0l3.2-3.2a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3.2 3.2a4.5 4.5 0 0 0 6.4 6.4l1-1"/>',
+};
+const icon = (name, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON_PATHS[name]}</svg>`;
 const SLIDE_TYPES = ['cover', 'text', 'list', 'stat', 'quote', 'compare', 'image', 'recap', 'cta'];
 const DEFAULT_BRAND = {
   name: 'Brand',
@@ -128,11 +140,13 @@ function validateSlides(spec, specDir) {
     const need = { cover: ['title'], text: ['title'], list: ['items'], stat: ['value', 'label'], quote: ['quote'],
       compare: ['left', 'right'], image: ['src'], recap: ['items'], cta: ['title'] }[s.type];
     for (const k of need) if (s[k] == null || s[k] === '') die(`${where} (${s.type}) is missing "${k}"`);
-    if (s.type === 'image') {
-      const p = path.resolve(specDir, s.src);
+    const img = s.type === 'image' ? s.src : s.type === 'cover' ? s.image : null;
+    if (img) {
+      const p = path.resolve(specDir, img);
       if (!fs.existsSync(p)) die(`${where}: image not found: ${p}`);
       s._src = 'file://' + p;
     }
+    if (s.icon && !ICON_PATHS[s.icon]) die(`${where}: unknown icon "${s.icon}". Use one of: save, share, comment, follow, link`);
   });
 }
 
@@ -181,7 +195,7 @@ function slideInner(s, ctx) {
   const num = s.number != null ? `<div class="num tx">${esc(s.number)}</div>` : '';
   switch (s.type) {
     case 'cover':
-      return `${T('kicker', s.kicker, false)}${T('title', s.title, true, 'h1')}${T('sub', s.subtitle)}`;
+      return `${s.kicker ? `<div class="kicker-wrap">${T('kicker', s.kicker, false)}</div>` : ''}${T('title', s.title, true, 'h1')}${T('sub', s.subtitle)}`;
     case 'text':
       return `${num}<div class="bar"></div>${T('h2', s.title, true, 'h2')}${T('body', s.body, true, 'p')}`;
     case 'list': {
@@ -196,7 +210,8 @@ function slideInner(s, ctx) {
       return `<div class="qmark">“</div>${T('quote', s.quote, true, 'blockquote')}` +
         (s.author ? `<div class="author tx">— ${esc(s.author)}</div>` : '');
     case 'compare': {
-      const col = (c, kind) => `<div class="col col-${kind}"><div class="col-label tx">${esc(c.label || (kind === 'bad' ? '✕' : '✓'))}</div>` +
+      const col = (c, kind) => `<div class="col col-${kind}"><div class="col-head">${icon(kind === 'bad' ? 'x' : 'check', 'col-ic')}` +
+        `${c.label ? `<span class="col-label tx">${esc(c.label)}</span>` : ''}</div>` +
         `<ul>${(c.items || []).map(it => `<li class="tx" data-fit>${rich(it)}</li>`).join('')}</ul></div>`;
       return `${T('h2', s.title, true, 'h2')}<div class="compare">${col(s.left, 'bad')}${col(s.right, 'good')}</div>`;
     }
@@ -204,14 +219,29 @@ function slideInner(s, ctx) {
       return `<div class="img-wrap"><img src="${esc(s._src)}" alt="${esc(s.alt || s.title || '')}"></div>` +
         `<div class="img-text">${T('h2', s.title, true, 'h2')}${T('body', s.caption, true, 'p')}</div>`;
     case 'recap': {
-      const items = s.items.map(it => `<li><span class="check">✓</span><span class="li-text tx" data-fit>${rich(it)}</span></li>`).join('');
+      const items = s.items.map(it => `<li><span class="check">${icon('check')}</span><span class="li-text tx" data-fit>${rich(it)}</span></li>`).join('');
       return `${T('kicker', s.kicker, false)}${T('h2', s.title, true, 'h2')}<ul class="checks">${items}</ul>`;
     }
     case 'cta':
-      return `${T('h2', s.title, true, 'h2')}${T('body', s.body, true, 'p')}` +
-        `<div class="action tx">${esc(s.action || L.save)}</div>` +
-        `<div class="cta-handle tx">${esc(ctx.brand.handle)}</div>`;
+      return `<div class="cta-card"><div class="avatar avatar-lg">${ctx.avatar}</div>` +
+        `<div><div class="cta-name tx">${esc(ctx.brand.name)}</div><div class="cta-handle tx">${esc(ctx.brand.handle)}</div></div></div>` +
+        `${T('h2', s.title, true, 'h2')}${T('body', s.body, true, 'p')}` +
+        `<div class="action">${icon(s.icon || 'save')}<span class="tx">${esc(s.action || L.save)}</span></div>`;
   }
+}
+
+// One continuous line drawn across all slides; each slide shows its own window of it, so the
+// carousel reads as one piece when swiped. Deterministic: same slide count, same line.
+function panorama(W, H, n) {
+  const total = n * W, y0 = H - 108, amp = 34;
+  let d = `M ${-40} ${y0}`;
+  const dots = [];
+  for (let k = 0; k < n * 2; k++) {
+    const x1 = k * W / 2, x2 = x1 + W / 2, dir = k % 2 ? 1 : -1;
+    d += ` C ${x1 + W / 6} ${y0 + dir * amp}, ${x2 - W / 6} ${y0 + dir * amp}, ${x2} ${y0}`;
+    if (k % 2) dots.push(`<circle class="pano-dot" cx="${x2}" cy="${y0}" r="9"/>`);
+  }
+  return `<path class="pano-line" d="${d} L ${total + 40} ${y0}" fill="none"/>${dots.join('')}`;
 }
 
 function buildHtml({ spec, brand, theme, themeCss, baseCss, fontCss, W, H }) {
@@ -229,18 +259,23 @@ function buildHtml({ spec, brand, theme, themeCss, baseCss, fontCss, W, H }) {
   const logo = brand.logoUrl ? `<img class="logo" src="${esc(brand.logoUrl)}" alt="">` : '';
   const avatar = brand.logoUrl ? `<img src="${esc(brand.logoUrl)}" alt="">` : `<span>${esc(initials(brand.name))}</span>`;
 
+  const pano = panorama(W, H, n);
   const slides = spec.slides.map((s, i) => {
     if (autoNumber && (s.type === 'text' || s.type === 'list') && s.number == null) s.number = pad2(++auto);
     const isCover = s.type === 'cover', isLast = i === n - 1;
+    const photo = isCover && s._src;
     const rail = Array.from({ length: n }, (_, k) => `<i class="${k < i ? 'done' : k === i ? 'on' : ''}"></i>`).join('');
-    const pg = isCover ? `${esc(L.swipe)} <span class="arr">→</span>` : `${i + 1}/${n}${isLast ? '' : ' <span class="arr">→</span>'}`;
-    return `<section class="slide t-${s.type}${s.accent ? ' is-accent' : ''}" data-index="${i + 1}" data-type="${s.type}">
-  <div class="deco"></div>
-  <div class="frame">
+    const swipe = isLast ? '' : `<div class="swipe">${isCover ? `<span class="swipe-label tx">${esc(L.swipe)}</span>` : ''}<span class="swipe-btn">${icon('arrow')}</span></div>`;
+    const count = isCover ? '' : `<div class="count tx">${i + 1} / ${n}</div>`;
+    return `<section class="slide t-${s.type}${s.accent ? ' is-accent' : ''}${photo ? ' has-photo' : ''}" data-index="${i + 1}" data-type="${s.type}">
+  ${photo ? `<div class="cover-photo"><img src="${esc(s._src)}" alt=""></div><div class="shade"></div>` : ''}
+  <div class="deco"><svg class="pano" viewBox="0 0 ${n * W} ${H}" width="${n * W}" height="${H}" style="left:${-i * W}px" aria-hidden="true">${pano}</svg>
+    ${isCover || isLast ? '' : `<div class="ghost">${pad2(i + 1)}</div>`}<div class="grain"></div></div>
+  <div class="frame"${photo ? ' data-qa-bg="#0B0C0E"' : ''}>
     <div class="rail">${rail}</div>
-    <div class="post-head"><div class="avatar">${avatar}</div><div><div class="pname tx">${esc(brand.name)}</div><div class="phandle tx">${esc(brand.handle)}</div></div></div>
-    <div class="content">${slideInner(s, { L, brand })}</div>
-    <footer class="foot"><div class="brandmark">${logo}<span class="handle tx">${esc(brand.handle)}</span></div><div class="pg tx">${pg}</div></footer>
+    <div class="top"><div class="badge"><div class="avatar">${avatar}</div><div class="badge-text"><div class="pname tx">${esc(brand.name)}</div><div class="phandle tx">${esc(brand.handle)}</div></div></div>${count}</div>
+    <div class="content">${slideInner(s, { L, brand, avatar })}</div>
+    <footer class="foot"><div class="brandmark">${logo}<span class="handle tx">${esc(brand.handle)}</span></div>${swipe}</footer>
   </div>
 </section>`;
   }).join('\n');
@@ -294,14 +329,22 @@ async function googleFontCss(browser, families) {
 function pageQa(opts) {
   const issues = [];
   const add = (slide, level, code, msg) => issues.push({ slide, level, code, msg });
-  const parse = c => { const m = c.match(/[\d.]+/g); return m ? m.map(Number) : [0, 0, 0, 0]; };
+  // rgb()/rgba() report 0-255; color(srgb ...) (what color-mix() computes to) reports 0-1.
+  const parse = c => {
+    const m = c.match(/[\d.]+/g);
+    if (!m) return [0, 0, 0, 0];
+    const v = m.map(Number);
+    if (c.startsWith('color(')) return [v[0] * 255, v[1] * 255, v[2] * 255, v.length > 3 ? v[3] : 1];
+    return v;
+  };
   const lum = ([r, g, b]) => [r, g, b].map(v => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; })
     .reduce((a, v, i) => a + v * [0.2126, 0.7152, 0.0722][i], 0);
   const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
   const bgOf = el => {
     for (let e = el; e; e = e.parentElement) {
+      if (e.dataset && e.dataset.qaBg) { const h = e.dataset.qaBg.slice(1); return [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16)); }
       const cs = getComputedStyle(e), c = parse(cs.backgroundColor);
-      if (c.length === 4 ? c[3] > 0.5 : cs.backgroundColor !== 'rgba(0, 0, 0, 0)') return c.slice(0, 3);
+      if (c.length === 4 ? c[3] > 0.5 : !/^rgba\(0, 0, 0, 0\)$|^transparent$/.test(cs.backgroundColor)) return c.slice(0, 3);
     }
     return [255, 255, 255];
   };
@@ -338,7 +381,7 @@ function pageQa(opts) {
       const need = large ? 3 : 4.5;
       const cr = ratio(parse(cs.color).slice(0, 3), bgOf(el));
       if (cr < need) add(idx, 'error', 'contrast', `"${snippet}" contrast ${cr.toFixed(2)}:1 (needs ${need}:1).`);
-      const isMeta = el.closest('.foot, .post-head, .source, .kicker, .rail');
+      const isMeta = el.closest('.foot, .top, .source, .kicker, .rail, .cta-card');
       if (!isMeta && size < opts.minFont) add(idx, 'warn', 'small-type', `"${snippet}" is ${Math.round(size)}px; under ${opts.minFont}px is hard to read on a phone.`);
 
       // glyph coverage: a char the font lacks falls back, so widths differ between two fallbacks

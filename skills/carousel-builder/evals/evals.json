@@ -78,6 +78,16 @@
         "routes the post text to linkedin-post-writer",
         "does not claim to publish it"
       ]
+    },
+    {
+      "name": "photo-cover-and-polish",
+      "input": "Make it look more premium. I have a photo of my café for the cover.",
+      "expect": [
+        "uses the cover image field for a full-bleed photo rather than a generic stock image",
+        "keeps one theme and the built-in finishing (badge, continuous line, grain) instead of adding new colours or fonts",
+        "QA still passes, including contrast of text over the photo",
+        "shows the contact sheet"
+      ]
     }
   ]
 }
