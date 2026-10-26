@@ -83,8 +83,8 @@ overall plan (this is the time-anchored layer).
 ## Where this connects
 Reads first: **brand-profile** + **audience-research.** Feeds: **content-calendar** (moments → the grid),
 **batch-content-plan**. Routes to: **campaign-and-launch-planning** (big commercial + paid), **trend-jacking**
-(the reactive half), **meme-and-culture** (cultural craft), **image-prompt**/**design-and-templates** (the
-visual), **email-and-newsletter** (the moment on owned channels). Publishes via: the **planned content** →
+(the reactive half), **meme-and-culture** (cultural craft), **occasion-posts** (one day's post: tone, imagery,
+render), **image-prompt**/**design-and-templates** (the visual), **email-and-newsletter** (the moment on owned channels). Publishes via: the **planned content** →
 **scheduling-and-queue → WoopSocial** (scheduled **ahead**). Measure with: native + **analytics-and-reporting**
 against the moment's goal (never fabricated). Moment selection, authenticity judgment + paid stay human/native.
 

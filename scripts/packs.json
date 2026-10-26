@@ -29,6 +29,7 @@
         "batch-content-plan",
         "idea-generation-and-ideation",
         "seasonal-and-moment-marketing",
+        "occasion-posts",
         "campaign-and-launch-planning",
         "scheduling-and-queue"
       ],
@@ -46,6 +47,7 @@
         "caption-writer",
         "text-post-and-microblog",
         "thread-writer",
+        "carousel-strategy",
         "carousel-writer",
         "storytelling-and-narrative",
         "scheduling-and-queue"
@@ -81,7 +83,9 @@
         "reels-script",
         "instagram-reels-publishing",
         "story-writer",
+        "carousel-strategy",
         "carousel-writer",
+        "carousel-builder",
         "hashtag-strategy",
         "scheduling-and-queue"
       ],
@@ -265,6 +269,8 @@
       "skills": [
         "brand-profile",
         "design-and-templates",
+        "carousel-builder",
+        "occasion-posts",
         "image-prompt",
         "nano-banana",
         "ideogram",

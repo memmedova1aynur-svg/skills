@@ -1,0 +1,1510 @@
+{
+ "palettes": {
+  "novruz": {
+   "bg": "#F6F3EA",
+   "surface": "#FFFFFF",
+   "text": "#1D2B1F",
+   "muted": "#56614F",
+   "accent": "#2F8A3E"
+  },
+  "national": {
+   "bg": "#F5F7FA",
+   "surface": "#FFFFFF",
+   "text": "#13202B",
+   "muted": "#566270",
+   "accent": "#00A0C8"
+  },
+  "yeni-il": {
+   "bg": "#0F2A22",
+   "surface": "#163A2F",
+   "text": "#F4EFE3",
+   "muted": "#BFC8BC",
+   "accent": "#E3B04B"
+  },
+  "children": {
+   "bg": "#FFF8EC",
+   "surface": "#FFFFFF",
+   "text": "#1F2240",
+   "muted": "#5A5E7A",
+   "accent": "#F25C54"
+  },
+  "autism": {
+   "bg": "#F3F6FB",
+   "surface": "#FFFFFF",
+   "text": "#1B2340",
+   "muted": "#57607A",
+   "accent": "#7A4FD1"
+  },
+  "spring": {
+   "bg": "#FFF4F6",
+   "surface": "#FFFFFF",
+   "text": "#2A1820",
+   "muted": "#6E5560",
+   "accent": "#D6336C"
+  },
+  "religious": {
+   "bg": "#F4F1E8",
+   "surface": "#FFFFFF",
+   "text": "#1C2A24",
+   "muted": "#5A6560",
+   "accent": "#1F6F54"
+  },
+  "knowledge": {
+   "bg": "#F3F6FF",
+   "surface": "#FFFFFF",
+   "text": "#141C33",
+   "muted": "#56607A",
+   "accent": "#2F6BFF"
+  }
+ },
+ "occasions": [
+  {
+   "id": "yeni-il",
+   "name": {
+    "az": "Yeni il",
+    "en": "New Year's Day"
+   },
+   "date": "01-01",
+   "tone": "celebration",
+   "groups": [
+    "az-national",
+    "international"
+   ],
+   "motifs": [
+    "yolka",
+    "qar",
+    "konfetti"
+   ],
+   "angles": [
+    "ilin xülasəsi: 5 ən yaxşı an",
+    "gələn il üçün 3 məqsəd",
+    "müştərilərə təşəkkür"
+   ],
+   "palette": "yeni-il",
+   "ai_prompt": "festive New Year still life, decorated fir branch, warm string lights, gold and deep green, soft bokeh, no text"
+  },
+  {
+   "id": "qadinlar-gunu",
+   "name": {
+    "az": "Beynəlxalq Qadınlar Günü",
+    "en": "International Women's Day"
+   },
+   "date": "03-08",
+   "tone": "celebration",
+   "groups": [
+    "az-national",
+    "international"
+   ],
+   "motifs": [
+    "lale",
+    "qerenfil"
+   ],
+   "angles": [
+    "komandadakı və ya müştərilərdəki qadınların hekayəsi",
+    "qadın sahibkarlara təşəkkür"
+   ],
+   "avoid": [
+    "\"qadın = mətbəx/gözəllik\" stereotipləri",
+    "yalnız endirim postu"
+   ],
+   "palette": "spring",
+   "ai_prompt": "bouquet of red tulips on a soft pink background, natural light, minimal, no text"
+  },
+  {
+   "id": "novruz",
+   "name": {
+    "az": "Novruz bayramı",
+    "en": "Novruz"
+   },
+   "date": null,
+   "tone": "celebration",
+   "groups": [
+    "az-national",
+    "international"
+   ],
+   "motifs": [
+    "semeni",
+    "sekerbura",
+    "tonqal",
+    "nar"
+   ],
+   "angles": [
+    "xonçanın mənası: səməni, şəkərbura, paxlava, qoğal",
+    "uşaqla Novruz: səməni əkmək",
+    "bayram təbriki"
+   ],
+   "avoid": [
+    "İran \"heft-sin\" süfrəsi (7 \"s\" əşyası) Azərbaycan xonçası kimi",
+    "Qərb Pasxa estetikası (dovşan, pastel yumurta səbəti)"
+   ],
+   "approx_month": "03",
+   "rule": "Yaz bərabərliyi, adətən 20-21 mart; rəsmi bayram günləri hər il Nazirlər Kabineti tərəfindən elan olunur.",
+   "palette": "novruz",
+   "ai_prompt": "Azerbaijani Novruz khoncha: copper tray with green semeni tied with a red ribbon, shekerbura, pakhlava, gogal, dyed eggs, candles, warm daylight, top-down, no text. NOT Persian haft-sin, no goldfish bowl",
+   "verify": true
+  },
+  {
+   "id": "su-cersenbe",
+   "name": {
+    "az": "Su çərşənbəsi",
+    "en": "Water Tuesday"
+   },
+   "date": null,
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "semeni"
+   ],
+   "angles": [
+    "çərşənbələrin ardıcıllığı: Su, Od, Yel, Torpaq",
+    "suyun təmizlik simvolu"
+   ],
+   "approx_month": "02-03",
+   "rule": "Novruzdan əvvəlki dörd çərşənbə axşamının birincisi.",
+   "palette": "novruz",
+   "verify": true
+  },
+  {
+   "id": "od-cersenbe",
+   "name": {
+    "az": "Od çərşənbəsi",
+    "en": "Fire Tuesday"
+   },
+   "date": null,
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "tonqal"
+   ],
+   "angles": [
+    "tonqal üstündən tullanma ənənəsi və təhlükəsizlik"
+   ],
+   "approx_month": "03",
+   "rule": "Novruzdan əvvəlki ikinci çərşənbə axşamı.",
+   "palette": "novruz",
+   "verify": true
+  },
+  {
+   "id": "yel-cersenbe",
+   "name": {
+    "az": "Yel çərşənbəsi",
+    "en": "Wind Tuesday"
+   },
+   "date": null,
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "semeni"
+   ],
+   "angles": [
+    "təbiətin oyanışı"
+   ],
+   "approx_month": "03",
+   "rule": "Novruzdan əvvəlki üçüncü çərşənbə axşamı.",
+   "palette": "novruz",
+   "verify": true
+  },
+  {
+   "id": "torpaq-cersenbe",
+   "name": {
+    "az": "Torpaq çərşənbəsi",
+    "en": "Earth Tuesday"
+   },
+   "date": null,
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "semeni",
+    "nar"
+   ],
+   "angles": [
+    "torpağın oyanması, bayrama son hazırlıq"
+   ],
+   "approx_month": "03",
+   "rule": "Novruzdan əvvəlki son çərşənbə axşamı.",
+   "palette": "novruz",
+   "verify": true
+  },
+  {
+   "id": "ramazan-bayrami",
+   "name": {
+    "az": "Ramazan bayramı",
+    "en": "Eid al-Fitr"
+   },
+   "date": null,
+   "tone": "religious",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "hilal"
+   ],
+   "angles": [
+    "sakit, səmimi təbrik",
+    "ailə və paylaşma"
+   ],
+   "avoid": [
+    "satış kampaniyası təbriki əvəz etməsin",
+    "yumor",
+    "dini simvolların dekorativ istifadəsi"
+   ],
+   "approx_month": "hicri təqvim",
+   "rule": "Hicri təqvimlə hər il ~11 gün tez gəlir; tarixi Qafqaz Müsəlmanları İdarəsi elan edir.",
+   "palette": "religious",
+   "verify": true
+  },
+  {
+   "id": "qurban-bayrami",
+   "name": {
+    "az": "Qurban bayramı",
+    "en": "Eid al-Adha"
+   },
+   "date": null,
+   "tone": "religious",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "hilal"
+   ],
+   "angles": [
+    "sakit, səmimi təbrik",
+    "paylaşma və mərhəmət"
+   ],
+   "avoid": [
+    "heyvan kəsimi şəkilləri",
+    "satış",
+    "yumor"
+   ],
+   "approx_month": "hicri təqvim",
+   "rule": "Hicri təqvimlə hər il ~11 gün tez gəlir; tarixi Qafqaz Müsəlmanları İdarəsi elan edir.",
+   "palette": "religious",
+   "verify": true
+  },
+  {
+   "id": "qelebe-gunu",
+   "name": {
+    "az": "Faşizm üzərində qələbə günü",
+    "en": "Victory over Fascism Day"
+   },
+   "date": "05-09",
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "qerenfil",
+    "ulduz"
+   ],
+   "angles": [
+    "ehtiram, nəsillərin yaddaşı"
+   ],
+   "avoid": [
+    "satış"
+   ]
+  },
+  {
+   "id": "musteqillik-gunu",
+   "name": {
+    "az": "Müstəqillik günü",
+    "en": "Independence Day"
+   },
+   "date": "05-28",
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "bayraq",
+    "ulduz"
+   ],
+   "angles": [
+    "1918 Xalq Cümhuriyyəti",
+    "təbrik"
+   ],
+   "palette": "national"
+  },
+  {
+   "id": "qurtulus-gunu",
+   "name": {
+    "az": "Milli Qurtuluş günü",
+    "en": "National Salvation Day"
+   },
+   "date": "06-15",
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "bayraq"
+   ],
+   "angles": [
+    "təbrik"
+   ],
+   "palette": "national"
+  },
+  {
+   "id": "silahli-quvveler-gunu",
+   "name": {
+    "az": "Silahlı Qüvvələr günü",
+    "en": "Armed Forces Day"
+   },
+   "date": "06-26",
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "bayraq",
+    "ulduz"
+   ],
+   "angles": [
+    "əsgərlərə təşəkkür"
+   ],
+   "palette": "national"
+  },
+  {
+   "id": "musteqilliyin-berpasi",
+   "name": {
+    "az": "Müstəqilliyin Bərpası günü",
+    "en": "Independence Restoration Day"
+   },
+   "date": "10-18",
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "bayraq"
+   ],
+   "angles": [
+    "təbrik"
+   ],
+   "palette": "national"
+  },
+  {
+   "id": "zefer-gunu",
+   "name": {
+    "az": "Zəfər günü",
+    "en": "Victory Day"
+   },
+   "date": "11-08",
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "bayraq",
+    "ulduz"
+   ],
+   "angles": [
+    "qürur və təşəkkür",
+    "şəhidləri anmaq"
+   ],
+   "avoid": [
+    "endirim kodu \"ZEFER\"",
+    "yumor"
+   ],
+   "palette": "national"
+  },
+  {
+   "id": "bayraq-gunu",
+   "name": {
+    "az": "Dövlət Bayrağı günü",
+    "en": "National Flag Day"
+   },
+   "date": "11-09",
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "bayraq"
+   ],
+   "angles": [
+    "bayrağın rənglərinin mənası: mavi, qırmızı, yaşıl"
+   ],
+   "avoid": [
+    "bayrağın təhrif olunmuş, yanlış nisbətli və ya üstündə loqo olan təsviri"
+   ],
+   "palette": "national"
+  },
+  {
+   "id": "konstitusiya-gunu",
+   "name": {
+    "az": "Konstitusiya günü",
+    "en": "Constitution Day"
+   },
+   "date": "11-12",
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "bayraq",
+    "kitab"
+   ],
+   "angles": [
+    "təbrik"
+   ],
+   "palette": "national"
+  },
+  {
+   "id": "dircelis-gunu",
+   "name": {
+    "az": "Milli Dirçəliş günü",
+    "en": "National Revival Day"
+   },
+   "date": "11-17",
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "bayraq"
+   ],
+   "angles": [
+    "təbrik"
+   ],
+   "palette": "national"
+  },
+  {
+   "id": "hemreylik-gunu",
+   "name": {
+    "az": "Dünya azərbaycanlılarının həmrəyliyi günü",
+    "en": "World Azerbaijanis Solidarity Day"
+   },
+   "date": "12-31",
+   "tone": "celebration",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "bayraq",
+    "konfetti"
+   ],
+   "angles": [
+    "dünyadakı azərbaycanlılara təbrik",
+    "Yeni il ilə birgə təbrik"
+   ],
+   "palette": "national"
+  },
+  {
+   "id": "bilik-gunu",
+   "name": {
+    "az": "Bilik günü",
+    "en": "Knowledge Day (first school day)"
+   },
+   "date": "09-15",
+   "tone": "celebration",
+   "groups": [
+    "az-national",
+    "child-development"
+   ],
+   "motifs": [
+    "kitab",
+    "kublar"
+   ],
+   "angles": [
+    "məktəbə hazırlıq siyahısı",
+    "birinci sinfə adaptasiya",
+    "valideyn üçün 5 məsləhət"
+   ],
+   "niches": [
+    "education",
+    "child-development"
+   ],
+   "palette": "knowledge",
+   "ai_prompt": "school backpack, notebooks and colored pencils on a light desk, morning light, no text, no faces"
+  },
+  {
+   "id": "20-yanvar",
+   "name": {
+    "az": "Ümumxalq Hüzn Günü (20 Yanvar)",
+    "en": "National Day of Mourning (Black January)"
+   },
+   "date": "01-20",
+   "tone": "remembrance",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "qerenfil",
+    "sam"
+   ],
+   "angles": [
+    "şəhidlərin xatirəsinə ehtiram",
+    "yalnız anma mətni"
+   ],
+   "avoid": [
+    "endirim, satış, reklam",
+    "yumor, meme, emoji",
+    "parlaq rənglər, konfetti",
+    "\"yadda saxla\" CTA-sı",
+    "faciənin realist AI şəkli, qurbanların təsviri"
+   ],
+   "note": "Gün ərzində planlaşdırılmış reklam və əyləncəli postları dayandır."
+  },
+  {
+   "id": "xocali",
+   "name": {
+    "az": "Xocalı soyqırımı günü",
+    "en": "Khojaly genocide remembrance"
+   },
+   "date": "02-26",
+   "tone": "remembrance",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "qerenfil",
+    "sam"
+   ],
+   "angles": [
+    "qurbanların xatirəsi",
+    "yalnız anma mətni"
+   ],
+   "avoid": [
+    "endirim, satış, reklam",
+    "yumor, meme, emoji",
+    "parlaq rənglər, konfetti",
+    "\"yadda saxla\" CTA-sı",
+    "faciənin realist AI şəkli, qurbanların təsviri"
+   ],
+   "note": "Rəqəm və tarixi faktları yalnız rəsmi mənbədən götür."
+  },
+  {
+   "id": "31-mart",
+   "name": {
+    "az": "Azərbaycanlıların soyqırımı günü",
+    "en": "Day of the Genocide of Azerbaijanis"
+   },
+   "date": "03-31",
+   "tone": "remembrance",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "qerenfil",
+    "sam"
+   ],
+   "angles": [
+    "anma mətni"
+   ],
+   "avoid": [
+    "endirim, satış, reklam",
+    "yumor, meme, emoji",
+    "parlaq rənglər, konfetti",
+    "\"yadda saxla\" CTA-sı",
+    "faciənin realist AI şəkli, qurbanların təsviri"
+   ]
+  },
+  {
+   "id": "anim-gunu",
+   "name": {
+    "az": "Anım günü",
+    "en": "Remembrance Day"
+   },
+   "date": "09-27",
+   "tone": "remembrance",
+   "groups": [
+    "az-national"
+   ],
+   "motifs": [
+    "qerenfil",
+    "sam",
+    "bayraq"
+   ],
+   "angles": [
+    "şəhidlərin xatirəsi",
+    "yalnız anma mətni"
+   ],
+   "avoid": [
+    "endirim, satış, reklam",
+    "yumor, meme, emoji",
+    "parlaq rənglər, konfetti",
+    "\"yadda saxla\" CTA-sı",
+    "faciənin realist AI şəkli, qurbanların təsviri"
+   ],
+   "note": "27 sentyabr həm də Ümumdünya Turizm Günüdür; Azərbaycanda turizm postlarını bu günə qoyma."
+  },
+  {
+   "id": "braille-gunu",
+   "name": {
+    "az": "Ümumdünya Brayl günü",
+    "en": "World Braille Day"
+   },
+   "date": "01-04",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "kitab"
+   ],
+   "angles": [
+    "görmə məhdudiyyətli uşaqlar üçün oxu"
+   ],
+   "niches": [
+    "education",
+    "inclusion"
+   ]
+  },
+  {
+   "id": "usaq-xercengi",
+   "name": {
+    "az": "Beynəlxalq Uşaq Xərçəngi Günü",
+    "en": "International Childhood Cancer Day"
+   },
+   "date": "02-15",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "ailələrə dəstək yolları"
+   ],
+   "avoid": [
+    "xəstə uşaqların icazəsiz fotosu",
+    "qorxu mesajı"
+   ]
+  },
+  {
+   "id": "ana-dili-gunu",
+   "name": {
+    "az": "Beynəlxalq Ana Dili Günü",
+    "en": "International Mother Language Day"
+   },
+   "date": "02-21",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "kitab",
+    "kublar"
+   ],
+   "angles": [
+    "uşaqla ana dilində oxumaq",
+    "ikidilli uşaqlar: mif vs fakt"
+   ],
+   "niches": [
+    "education",
+    "child-development",
+    "speech"
+   ]
+  },
+  {
+   "id": "esitme-gunu",
+   "name": {
+    "az": "Ümumdünya Eşitmə Günü",
+    "en": "World Hearing Day"
+   },
+   "date": "03-03",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "uşaqda eşitmə problemini necə tanımaq"
+   ],
+   "niches": [
+    "child-development",
+    "speech",
+    "health"
+   ]
+  },
+  {
+   "id": "logopediya-gunu",
+   "name": {
+    "az": "Avropa Loqopediya Günü",
+    "en": "European Day of Speech and Language Therapy"
+   },
+   "date": "03-06",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "kublar",
+    "kitab"
+   ],
+   "angles": [
+    "loqoped nə edir",
+    "nitq gecikməsi: nə vaxt narahat olmaq"
+   ],
+   "niches": [
+    "speech",
+    "child-development"
+   ],
+   "verify": true,
+   "note": "CPLOL tərəfindən qeyd olunur; mövzunu hər il yoxla."
+  },
+  {
+   "id": "daun-sindromu-gunu",
+   "name": {
+    "az": "Ümumdünya Daun Sindromu Günü",
+    "en": "World Down Syndrome Day"
+   },
+   "date": "03-21",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "urek",
+    "kublar"
+   ],
+   "angles": [
+    "fərqli corablar (#LotsOfSocks) kampaniyası",
+    "inklüziv bağça və məktəb"
+   ],
+   "avoid": [
+    "\"xəstəlik\" dili",
+    "yazıq/qəhrəman çərçivəsi"
+   ],
+   "niches": [
+    "child-development",
+    "inclusion"
+   ],
+   "note": "Novruzla eyni günə düşə bilər; ikisini ayrı postlarda ver."
+  },
+  {
+   "id": "autizm-gunu",
+   "name": {
+    "az": "Ümumdünya Autizm Məlumatlandırma Günü",
+    "en": "World Autism Awareness Day"
+   },
+   "date": "04-02",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "sonsuzluq",
+    "urek"
+   ],
+   "angles": [
+    "autizm haqqında 5 mif",
+    "sensor həssaslıq: evdə nə etmək",
+    "qəbul, \"müalicə\" yox"
+   ],
+   "avoid": [
+    "pazl (puzzle) simvolu: autist icmanın çoxu onu qəbul etmir",
+    "\"autizmdən əziyyət çəkir\" dili",
+    "\"sağalmaq\", \"müalicə\" vədi",
+    "yalnız mavi rəng (\"Light It Up Blue\" mübahisəlidir)"
+   ],
+   "niches": [
+    "child-development",
+    "inclusion",
+    "speech",
+    "psychology"
+   ],
+   "palette": "autism",
+   "ai_prompt": "child and parent hands building with colorful wooden blocks on a calm light table, soft natural light, gentle rainbow accents, no puzzle pieces, no text, faces not shown",
+   "note": "Aprel həm də Autizm Qəbulu Ayıdır: ay boyu seriya etmək olar."
+  },
+  {
+   "id": "usaq-kitab-gunu",
+   "name": {
+    "az": "Beynəlxalq Uşaq Kitabı Günü",
+    "en": "International Children's Book Day"
+   },
+   "date": "04-02",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "kitab"
+   ],
+   "angles": [
+    "yaşa görə 5 kitab",
+    "uşağa necə oxumaq"
+   ],
+   "niches": [
+    "education",
+    "child-development"
+   ]
+  },
+  {
+   "id": "saglamliq-gunu",
+   "name": {
+    "az": "Ümumdünya Sağlamlıq Günü",
+    "en": "World Health Day"
+   },
+   "date": "04-07",
+   "tone": "awareness",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "ilin ÜST mövzusu"
+   ],
+   "niches": [
+    "health",
+    "fitness",
+    "dental"
+   ],
+   "verify": true,
+   "note": "Mövzu hər il ÜST tərəfindən elan olunur."
+  },
+  {
+   "id": "kitab-gunu",
+   "name": {
+    "az": "Ümumdünya Kitab və Müəllif Hüquqları Günü",
+    "en": "World Book Day"
+   },
+   "date": "04-23",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "kitab"
+   ],
+   "angles": [
+    "oxu vərdişi",
+    "tövsiyə siyahısı"
+   ],
+   "niches": [
+    "education"
+   ]
+  },
+  {
+   "id": "aile-gunu",
+   "name": {
+    "az": "Beynəlxalq Ailə Günü",
+    "en": "International Day of Families"
+   },
+   "date": "05-15",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "urek",
+    "gunes"
+   ],
+   "angles": [
+    "ailə ilə 10 dəqiqəlik oyunlar",
+    "ekran vaxtı vs ailə vaxtı"
+   ],
+   "niches": [
+    "child-development",
+    "psychology"
+   ]
+  },
+  {
+   "id": "usaqlar-gunu",
+   "name": {
+    "az": "Uşaqların Beynəlxalq Müdafiəsi Günü",
+    "en": "International Children's Day"
+   },
+   "date": "06-01",
+   "tone": "celebration",
+   "groups": [
+    "az-national",
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "sarlar",
+    "kublar",
+    "gunes",
+    "konfetti"
+   ],
+   "angles": [
+    "uşaq hüquqları sadə dillə",
+    "evdə inkişaf oyunları",
+    "uşaqlara təbrik"
+   ],
+   "avoid": [
+    "uşaq fotolarını valideyn icazəsi olmadan istifadə"
+   ],
+   "niches": [
+    "child-development",
+    "education"
+   ],
+   "palette": "children",
+   "ai_prompt": "joyful flat illustration of colorful balloons, kites and building blocks in a sunny park, bright and soft, no text, no faces"
+  },
+  {
+   "id": "ana-suddu-hefte",
+   "name": {
+    "az": "Ümumdünya Ana Südü Həftəsi",
+    "en": "World Breastfeeding Week"
+   },
+   "date": "08-01",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "mütəxəssis məsləhəti",
+    "mif vs fakt"
+   ],
+   "avoid": [
+    "süni qidalandıran anaları utandırmaq"
+   ],
+   "niches": [
+    "health",
+    "child-development"
+   ],
+   "note": "1-7 avqust."
+  },
+  {
+   "id": "isare-dili-gunu",
+   "name": {
+    "az": "Beynəlxalq İşarə Dilləri Günü",
+    "en": "International Day of Sign Languages"
+   },
+   "date": "09-23",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "5 sadə jest uşaqla ünsiyyət üçün"
+   ],
+   "niches": [
+    "inclusion",
+    "speech"
+   ]
+  },
+  {
+   "id": "sdi-gunu",
+   "name": {
+    "az": "Ümumdünya Serebral İflic Günü",
+    "en": "World Cerebral Palsy Day"
+   },
+   "date": "10-06",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "inklüzivlik",
+    "ailələrə dəstək"
+   ],
+   "niches": [
+    "child-development",
+    "inclusion",
+    "health"
+   ]
+  },
+  {
+   "id": "psixi-saglamliq-gunu",
+   "name": {
+    "az": "Ümumdünya Psixi Sağlamlıq Günü",
+    "en": "World Mental Health Day"
+   },
+   "date": "10-10",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "valideyn tükənməsi",
+    "uşaqda narahatlıq əlamətləri"
+   ],
+   "niches": [
+    "psychology",
+    "health",
+    "child-development"
+   ]
+  },
+  {
+   "id": "kekeleme-gunu",
+   "name": {
+    "az": "Beynəlxalq Kəkələmə Məlumatlandırma Günü",
+    "en": "International Stuttering Awareness Day"
+   },
+   "date": "10-22",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "kublar"
+   ],
+   "angles": [
+    "kəkələyən uşaqla necə danışmaq"
+   ],
+   "avoid": [
+    "kəkələməni lağa qoyan meme"
+   ],
+   "niches": [
+    "speech",
+    "child-development"
+   ]
+  },
+  {
+   "id": "xeyirxahliq-gunu",
+   "name": {
+    "az": "Ümumdünya Xeyirxahlıq Günü",
+    "en": "World Kindness Day"
+   },
+   "date": "11-13",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "uşaqlara empatiyanı öyrətmək"
+   ],
+   "niches": [
+    "child-development",
+    "education"
+   ]
+  },
+  {
+   "id": "vaxtindan-evvel-gunu",
+   "name": {
+    "az": "Ümumdünya Vaxtından Əvvəl Doğulmuş Körpələr Günü",
+    "en": "World Prematurity Day"
+   },
+   "date": "11-17",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "erkən doğulmuş körpənin inkişaf qrafiki"
+   ],
+   "niches": [
+    "health",
+    "child-development"
+   ],
+   "palette": "autism"
+  },
+  {
+   "id": "dunya-usaq-gunu",
+   "name": {
+    "az": "Ümumdünya Uşaq Günü",
+    "en": "World Children's Day"
+   },
+   "date": "11-20",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "kublar",
+    "gunes"
+   ],
+   "angles": [
+    "BMT Uşaq Hüquqları Konvensiyası"
+   ],
+   "niches": [
+    "child-development",
+    "education"
+   ]
+  },
+  {
+   "id": "elillik-gunu",
+   "name": {
+    "az": "Beynəlxalq Əlilliyi olan Şəxslər Günü",
+    "en": "International Day of Persons with Disabilities"
+   },
+   "date": "12-03",
+   "tone": "awareness",
+   "groups": [
+    "child-development",
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "əlçatanlıq",
+    "inklüziv dil"
+   ],
+   "avoid": [
+    "\"şikəst\", \"xəstə\" dili",
+    "yazıq çərçivəsi"
+   ],
+   "niches": [
+    "inclusion"
+   ]
+  },
+  {
+   "id": "sevgililer-gunu",
+   "name": {
+    "az": "Sevgililər günü",
+    "en": "Valentine's Day"
+   },
+   "date": "02-14",
+   "tone": "celebration",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "özünə qayğı",
+    "cütlüklər üçün təklif"
+   ],
+   "palette": "spring"
+  },
+  {
+   "id": "xosbextlik-gunu",
+   "name": {
+    "az": "Beynəlxalq Xoşbəxtlik Günü",
+    "en": "International Day of Happiness"
+   },
+   "date": "03-20",
+   "tone": "awareness",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "gunes"
+   ],
+   "angles": [
+    "kiçik xoşbəxtliklər siyahısı"
+   ]
+  },
+  {
+   "id": "yer-kuresi-gunu",
+   "name": {
+    "az": "Yer Kürəsi Günü",
+    "en": "Earth Day"
+   },
+   "date": "04-22",
+   "tone": "awareness",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "gunes",
+    "semeni"
+   ],
+   "angles": [
+    "uşaqla ekoloji vərdişlər"
+   ],
+   "avoid": [
+    "real addım olmadan \"yaşıl\" iddia (greenwashing)"
+   ]
+  },
+  {
+   "id": "emek-gunu",
+   "name": {
+    "az": "Beynəlxalq Əmək Günü",
+    "en": "International Workers' Day"
+   },
+   "date": "05-01",
+   "tone": "celebration",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "ulduz"
+   ],
+   "angles": [
+    "komandaya təşəkkür"
+   ]
+  },
+  {
+   "id": "analar-gunu",
+   "name": {
+    "az": "Analar günü",
+    "en": "Mother's Day"
+   },
+   "date": null,
+   "tone": "celebration",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "lale",
+    "urek"
+   ],
+   "angles": [
+    "analara təşəkkür"
+   ],
+   "avoid": [
+    "övladını itirmiş və ya ana olmaq istəyən auditoriyanı unutmaq"
+   ],
+   "approx_month": "05",
+   "rule": "Bir çox ölkədə mayın ikinci bazarı. Azərbaycanda ənənəvi olaraq 8 Mart daha güclüdür.",
+   "palette": "spring",
+   "verify": true
+  },
+  {
+   "id": "atalar-gunu",
+   "name": {
+    "az": "Atalar günü",
+    "en": "Father's Day"
+   },
+   "date": null,
+   "tone": "celebration",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "ata-uşaq oyunları"
+   ],
+   "approx_month": "06",
+   "rule": "Bir çox ölkədə iyunun üçüncü bazarı.",
+   "verify": true
+  },
+  {
+   "id": "muellimler-gunu",
+   "name": {
+    "az": "Müəllimlər günü",
+    "en": "Teachers' Day"
+   },
+   "date": "10-05",
+   "tone": "celebration",
+   "groups": [
+    "international",
+    "child-development"
+   ],
+   "motifs": [
+    "kitab",
+    "lale"
+   ],
+   "angles": [
+    "sevimli müəllim hekayəsi",
+    "müəllimlərə təşəkkür"
+   ],
+   "niches": [
+    "education"
+   ],
+   "verify": true,
+   "note": "5 oktyabr Ümumdünya Müəllimlər Günüdür; yerli qeyd tarixini yoxla."
+  },
+  {
+   "id": "qara-cume",
+   "name": {
+    "az": "Qara Cümə",
+    "en": "Black Friday"
+   },
+   "date": null,
+   "tone": "celebration",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "konfetti"
+   ],
+   "angles": [
+    "aydın endirim posteri"
+   ],
+   "approx_month": "11",
+   "rule": "Noyabrın dördüncü cüməsi.",
+   "verify": true
+  },
+  {
+   "id": "stomatoloq-gunu",
+   "name": {
+    "az": "Beynəlxalq Stomatoloq Günü",
+    "en": "International Dentist's Day"
+   },
+   "date": "03-06",
+   "tone": "celebration",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "həkimlərə təşəkkür"
+   ],
+   "niches": [
+    "dental"
+   ],
+   "verify": true
+  },
+  {
+   "id": "agiz-saglamligi-gunu",
+   "name": {
+    "az": "Ümumdünya Ağız Sağlamlığı Günü",
+    "en": "World Oral Health Day"
+   },
+   "date": "03-20",
+   "tone": "awareness",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "gunes"
+   ],
+   "angles": [
+    "uşaqlarda diş təmizliyi"
+   ],
+   "niches": [
+    "dental"
+   ]
+  },
+  {
+   "id": "sokolad-gunu",
+   "name": {
+    "az": "Ümumdünya Şokolad Günü",
+    "en": "World Chocolate Day"
+   },
+   "date": "07-07",
+   "tone": "celebration",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "menyu təklifi"
+   ],
+   "niches": [
+    "cafe"
+   ]
+  },
+  {
+   "id": "qehve-gunu",
+   "name": {
+    "az": "Beynəlxalq Qəhvə Günü",
+    "en": "International Coffee Day"
+   },
+   "date": "10-01",
+   "tone": "celebration",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "urek"
+   ],
+   "angles": [
+    "günün qəhvəsi",
+    "qonağa pulsuz qəhvə"
+   ],
+   "niches": [
+    "cafe"
+   ]
+  },
+  {
+   "id": "qida-gunu",
+   "name": {
+    "az": "Ümumdünya Qida Günü",
+    "en": "World Food Day"
+   },
+   "date": "10-16",
+   "tone": "awareness",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "nar"
+   ],
+   "angles": [
+    "israfı azaltmaq"
+   ],
+   "niches": [
+    "cafe",
+    "health"
+   ]
+  },
+  {
+   "id": "turizm-gunu",
+   "name": {
+    "az": "Ümumdünya Turizm Günü",
+    "en": "World Tourism Day"
+   },
+   "date": "09-27",
+   "tone": "celebration",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "gunes"
+   ],
+   "angles": [
+    "səyahət təklifi"
+   ],
+   "niches": [
+    "travel"
+   ],
+   "note": "Azərbaycanda Anım günü ilə üst-üstə düşür: bu gün turizm postu paylaşma, bir gün sonraya keçir."
+  },
+  {
+   "id": "idman-gunu",
+   "name": {
+    "az": "Beynəlxalq İdman Günü",
+    "en": "International Day of Sport for Development and Peace"
+   },
+   "date": "04-06",
+   "tone": "awareness",
+   "groups": [
+    "international"
+   ],
+   "motifs": [
+    "gunes"
+   ],
+   "angles": [
+    "uşaq üçün hərəkət oyunları"
+   ],
+   "niches": [
+    "fitness",
+    "child-development"
+   ]
+  }
+ ]
+}

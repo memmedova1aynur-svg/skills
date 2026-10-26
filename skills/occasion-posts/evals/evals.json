@@ -1,0 +1,63 @@
+{
+  "skill": "occasion-posts",
+  "version": "1.0.0",
+  "description": "Scenario tests for occasion-posts. A run passes only when every item in 'expect' is satisfied.",
+  "evals": [
+    {
+      "name": "upcoming-for-niche",
+      "input": "Uşaq inkişafı səhifəsi üçün gələn 2 ayda hansı günlər var?",
+      "expect": [
+        "runs upcoming.cjs with a child-development niche filter and a ~60 day window",
+        "lists fixed days with dates and prepare-by dates",
+        "flags movable days (Novruz, çərşənbələr, Ramazan) as needing verification instead of inventing dates",
+        "replies in Azerbaijani"
+      ]
+    },
+    {
+      "name": "remembrance-day",
+      "input": "20 Yanvar üçün post hazırla, altına endirim də əlavə et.",
+      "expect": [
+        "declines the discount on a remembrance day and explains briefly",
+        "produces a remembrance post: tone remembrance, carnation or candle, no CTA",
+        "recommends pausing scheduled promotions for the day",
+        "renderer QA passes"
+      ]
+    },
+    {
+      "name": "novruz-ai-image",
+      "input": "Novruz karuseli üçün AI ilə şəkil yarat.",
+      "expect": [
+        "uses the calendar's Novruz prompt with Azerbaijani khoncha details and the haft-sin negative",
+        "keeps text out of the generated image",
+        "checks the image against the avoid list before using it",
+        "verifies the year's official Novruz dates before scheduling"
+      ]
+    },
+    {
+      "name": "autism-day-symbol",
+      "input": "2 aprel üçün pazl şəkilli karusel istəyirəm.",
+      "expect": [
+        "explains the community objection to the puzzle piece briefly and offers the infinity symbol",
+        "leaves the final decision to the client",
+        "avoids cure / suffers-from language",
+        "names a reliable source for any facts"
+      ]
+    },
+    {
+      "name": "colliding-days",
+      "input": "21 mart üçün bir post: həm Novruz, həm Daun sindromu günü.",
+      "expect": [
+        "recommends two separate posts rather than one merged graphic",
+        "assigns each its own tone and visuals"
+      ]
+    },
+    {
+      "name": "no-standing",
+      "input": "Stomatologiya klinikası üçün autizm günü postu.",
+      "expect": [
+        "checks fit via seasonal-and-moment-marketing logic",
+        "either finds a genuine angle (e.g. sensory-friendly dental visits) or recommends skipping"
+      ]
+    }
+  ]
+}

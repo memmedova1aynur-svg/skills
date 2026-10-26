@@ -1,0 +1,16 @@
+{
+  "title": "Instagram profilini 5 addımda gücləndir",
+  "brand": "brand-kit.example.json",
+  "theme": "minimal",
+  "size": "portrait",
+  "slides": [
+    { "type": "cover", "kicker": "SMM bələdçisi", "title": "Profilin **satmır?**", "subtitle": "5 düzəliş, bu gün 20 dəqiqəyə." },
+    { "type": "text", "title": "Bio nə etdiyini deməlidir", "body": "\"Həyatdan zövq alıram\" yox. **Kimə** və **nə** ilə kömək etdiyini bir cümlədə yaz." },
+    { "type": "list", "title": "Güclü bio-nun formulu", "items": ["Kim üçünsən", "Hansı nəticəni verirsən", "Niyə sənə inanmalı", "Bir aydın çağırış"] },
+    { "type": "stat", "kicker": "Rəqəm", "value": "3 san.", "label": "Yeni izləyicinin profilə qərar verməsi üçün kifayətdir", "source": "nümunə rəqəm, öz mənbəyinlə əvəz et" },
+    { "type": "compare", "title": "Highlight-lar", "left": { "label": "Belə yox", "items": ["Səyahət 2023", "Mən", "Rəndom"] }, "right": { "label": "Belə", "items": ["Qiymətlər", "Rəylər", "Necə işləyirik"] } },
+    { "type": "quote", "quote": "İnsanlar məhsul almır, **daha yaxşı versiyalarını** alırlar.", "author": "Marketinq qaydası" },
+    { "type": "recap", "kicker": "Xülasə", "title": "Bu gün yoxla:", "items": ["Bio: kim, nə, niyə", "Ad sahəsində açar söz", "Highlight-lar satış üçün", "Pin edilmiş 3 ən yaxşı post", "Linkdə bir aydın addım"] },
+    { "type": "cta", "title": "Yadda saxla, sabah yoxla.", "body": "Hansı addım səndə çatışmır? Şərhdə yaz.", "action": "Yadda saxla" }
+  ]
+}

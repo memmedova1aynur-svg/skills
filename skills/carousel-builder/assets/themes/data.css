@@ -1,0 +1,24 @@
+/* data: dark grid, big numbers, mono labels. Inverts the brand: text colour becomes the background. */
+.slide{background-color:var(--text);color:var(--bg);
+  --line:color-mix(in srgb,var(--bg) 16%,transparent);--tint:color-mix(in srgb,var(--accent) 18%,var(--text));
+  --accent-deep:var(--accent)}
+.deco{background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:90px 90px}
+.grain{mix-blend-mode:screen;opacity:.06}
+.pano-line{stroke-dasharray:2 14;stroke-width:4;opacity:.7}
+.ghost{color:var(--bg);opacity:.05;font-family:var(--font-mono);font-weight:700;letter-spacing:-.08em}
+.kicker,.num,.source,.count,.col-label,.marker,.phandle,.swipe-label{font-family:var(--font-mono);letter-spacing:.04em}
+.kicker{color:var(--accent);text-transform:uppercase}
+.kicker-wrap .kicker::before{content:"// "}
+.title{font-size:108px}
+.sub,.body,.author,.source,.col-bad li,.phandle,.count,.foot,.col-label,.cta-handle{color:color-mix(in srgb,var(--bg) 74%,var(--text))}
+.stat-value{font-size:290px;color:var(--accent)}
+.stat-label{color:var(--bg)}
+.list li{background:color-mix(in srgb,var(--bg) 7%,var(--text));box-shadow:inset 0 0 0 1px var(--line)}
+.col{background:color-mix(in srgb,var(--bg) 7%,var(--text));box-shadow:inset 0 0 0 1px var(--line)}
+.col-good{background:var(--accent);color:var(--accent-ink)}
+.col-ic{background:var(--line);color:var(--bg)}
+.bar{width:100%;height:2px;background:var(--accent)}
+.t-cover .deco::after{content:"";position:absolute;right:96px;top:150px;width:200px;height:200px;border:2px solid var(--accent);border-radius:50%;
+  box-shadow:0 0 0 30px color-mix(in srgb,var(--accent) 8%,transparent)}
+.avatar-lg{box-shadow:0 0 0 8px var(--line)}
+.count{background:var(--text)}

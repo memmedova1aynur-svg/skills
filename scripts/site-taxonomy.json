@@ -30,6 +30,7 @@
     "thread-writer",
     "threads-post",
     "text-post-and-microblog",
+    "carousel-strategy",
     "carousel-writer",
     "story-writer",
     "reply-and-comment-writer"
@@ -56,6 +57,7 @@
   ],
   "Visual & design": [
     "design-and-templates",
+    "carousel-builder",
     "quote-cards-and-text-graphics",
     "infographic-and-data-viz",
     "thumbnail-design",
@@ -97,6 +99,7 @@
     "batch-content-plan",
     "campaign-and-launch-planning",
     "seasonal-and-moment-marketing",
+    "occasion-posts",
     "scheduling-and-queue",
     "platform-specs-and-validation",
     "instagram-reels-publishing",

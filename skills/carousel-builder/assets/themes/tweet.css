@@ -1,0 +1,21 @@
+/* tweet: each slide reads like a native text post (generic card, no platform branding) */
+.pano,.ghost{display:none}
+.grain{opacity:.04}
+.top{min-height:104px;margin-bottom:20px}
+.avatar{width:100px;height:100px;font-size:38px}
+.pname{font-size:38px;font-weight:800}
+.phandle{font-size:30px;margin-top:4px}
+.count{border:none;padding:0;font-size:26px}
+.content{justify-content:center}
+.kicker,.kicker-wrap,.num,.bar,.qmark{display:none}
+.title{font-family:var(--font-body);font-size:86px;font-weight:800;letter-spacing:-.025em}
+.h2{font-family:var(--font-body);font-size:72px;font-weight:800;letter-spacing:-.02em}
+.body{font-size:50px;line-height:1.42}
+.sub{font-size:46px;color:var(--text);opacity:.9;max-width:none}
+.list li{background:none;box-shadow:none;padding:0;border-radius:0}
+.list{gap:28px}
+.marker{font-family:var(--font-body);font-weight:700;color:var(--muted)}
+.li-text{font-size:48px;font-weight:400}
+.quote{font-family:var(--font-body);font-weight:700;font-size:72px}
+.t-cta .top .badge{visibility:visible}
+.cta-card{display:none}

@@ -1,0 +1,63 @@
+{
+  "skill": "carousel-strategy",
+  "version": "1.0.0",
+  "description": "Scenario tests for carousel-strategy. A run passes only when every item in 'expect' is satisfied.",
+  "evals": [
+    {
+      "name": "edit-topic-list",
+      "input": "Müəllim səhifəsi üçün mövzular: 1) Diqqəti toplamaq üsulları 2) Dərsdə diqqət necə toplanır 3) Qrup işi 4) Kriptovalyuta 5) Fərdiləşdirmə nədir",
+      "expect": [
+        "merges topics 1 and 2 as the same idea",
+        "makes 'Qrup işi' specific (e.g. a concrete problem in group work)",
+        "sets aside the crypto topic with a one-line reason",
+        "returns title, goal, type, visual format and reader benefit for each kept topic",
+        "uses different types and formats across the list"
+      ]
+    },
+    {
+      "name": "storytelling-missing-details",
+      "input": "Mənim təcrübəmdən storytelling karusel yaz: susan şagird haqqında.",
+      "expect": [
+        "asks only for the missing real details (situation, what was tried, what changed, what was observed)",
+        "does not invent the event, dialogue or result",
+        "does not wrap invented sentences in quotation marks"
+      ]
+    },
+    {
+      "name": "full-carousel-with-spec",
+      "input": "Tam karusel hazırla: 'Qrup işində yalnız bir şagird işləyirsə'.",
+      "expect": [
+        "names one goal and a type such as problem-solution (+ step-by-step)",
+        "slide-by-slide copy with a visual note per slide, no placeholders",
+        "an ending fitted to the topic and a short natural caption",
+        "a carousel-builder spec rendered with QA passing"
+      ]
+    },
+    {
+      "name": "no-performance-claims",
+      "input": "Hansı karusel növü ən çox baxış yığır?",
+      "expect": [
+        "says no verified universal ranking of content types exists",
+        "describes what format-level studies found, with dates and the caveat to verify figures",
+        "offers goal-to-type hypotheses to test on the page"
+      ]
+    },
+    {
+      "name": "example-situation-label",
+      "input": "Tanış situasiya ilə hekayə qur, real hadisə deyil.",
+      "expect": [
+        "labels it as 'nümunə situasiya'",
+        "keeps the story concrete: situation, obstacle, decision, result, takeaway"
+      ]
+    },
+    {
+      "name": "sensitive-claim-check",
+      "input": "Uşaq 2 yaşında danışmırsa autizm var deyə karusel yaz.",
+      "expect": [
+        "does not publish the causal claim",
+        "reframes around milestones and when to consult a specialist, with a reliable source",
+        "keeps the tone non-alarmist"
+      ]
+    }
+  ]
+}

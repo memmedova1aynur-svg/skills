@@ -1,0 +1,12 @@
+{
+  "title": "Novruz təbriki",
+  "brand": "brands/my-brand.json",
+  "theme": "minimal",
+  "tone": "celebration",
+  "format": "post",
+  "palette": { "bg": "#F6F3EA", "surface": "#FFFFFF", "text": "#1D2B1F", "muted": "#56614F", "accent": "#2F8A3E" },
+  "slides": [
+    { "type": "greeting", "motif": "semeni", "kicker": "Novruz bayramı", "title": "Bayramınız mübarək!",
+      "message": "Süfrənizdə bərəkət, evinizdə uşaq gülüşü əskik olmasın." }
+  ]
+}

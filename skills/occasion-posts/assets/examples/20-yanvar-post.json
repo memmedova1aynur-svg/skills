@@ -1,0 +1,17 @@
+{
+  "title": "20 Yanvar",
+  "brand": "brands/my-brand.json",
+  "tone": "remembrance",
+  "format": "post",
+  "slides": [
+    {
+      "type": "greeting",
+      "motif": "qerenfil",
+      "kicker": "20 Yanvar 1990",
+      "title": "Ümumxalq Hüzn Günü",
+      "message": "Azərbaycanın azadlığı və müstəqilliyi uğrunda canını qurban verən şəhidlərimizi ehtiramla anırıq.",
+      "signature": "Allah rəhmət eləsin"
+    }
+  ],
+  "theme": "minimal"
+}

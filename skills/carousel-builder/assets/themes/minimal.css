@@ -1,0 +1,5 @@
+/* minimal: calm, premium, lots of air. Continuous accent line + faint ghost numbers. */
+.t-cover .content{justify-content:flex-end;padding-bottom:24px}
+.t-cover .title{font-size:124px}
+.t-cover .deco::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:var(--accent)}
+.t-cta .deco::before{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:var(--accent)}
