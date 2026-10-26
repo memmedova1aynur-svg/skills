@@ -1,0 +1,17 @@
+{
+  "name": "Aynur Məmmədova",
+  "handle": "@aynur.smm",
+  "language": "az",
+  "logo": null,
+  "colors": {
+    "bg": "#F7F5F0",
+    "surface": "#FFFFFF",
+    "text": "#16181D",
+    "muted": "#5B616B",
+    "accent": "#E8462E"
+  },
+  "fonts": {
+    "heading": "Montserrat",
+    "body": "Inter"
+  }
+}

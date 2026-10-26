@@ -1,0 +1,23 @@
+/* editorial: magazine layout, serif display, rules */
+.frame{padding:96px 96px 72px}
+.slide .deco{inset:56px;border-top:3px solid var(--text);border-bottom:1px solid var(--text);opacity:.85}
+.title,.h2{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em}
+.title{font-size:112px;line-height:1.02}
+.h2{font-size:84px;line-height:1.08}
+.title .hl,.h2 .hl{font-style:italic;color:var(--accent)}
+.kicker{font-family:var(--font-body);letter-spacing:.22em;font-size:24px;color:var(--text)}
+.kicker::after{content:"";display:block;width:56px;height:2px;background:var(--accent);margin-top:22px}
+.sub{font-family:var(--font-display);font-style:italic;color:var(--muted)}
+.body{font-family:var(--font-body);font-size:46px;line-height:1.45;opacity:1;color:var(--text)}
+.bar{display:none}
+.num{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:40px;letter-spacing:0}
+.marker{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:38px}
+.li-text{font-family:var(--font-body);font-weight:400}
+.stat-value{font-family:var(--font-display);font-weight:700}
+.quote{font-weight:500;font-style:italic}
+.foot{font-family:var(--font-body);font-size:22px;letter-spacing:.14em;text-transform:uppercase}
+.col{border-radius:0;border:2px solid var(--text);background:transparent}
+.col-good{background:var(--text);color:var(--bg)}
+.col-good .col-label,.col-good .hl{color:var(--bg)}
+.action{border-radius:0}
+.check{border-radius:0}

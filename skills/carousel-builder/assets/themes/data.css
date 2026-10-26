@@ -1,0 +1,17 @@
+/* data: dark grid, big numbers, mono labels. Inverts the brand: text colour becomes the background. */
+.slide{background-color:var(--text);color:var(--bg)}
+.slide .deco{background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:90px 90px}
+.kicker,.num,.source,.foot,.col-label,.marker{font-family:var(--font-mono);letter-spacing:.06em}
+.kicker{color:var(--accent);text-transform:uppercase}
+.kicker::before{content:"// "}
+.title{font-size:100px;font-weight:800}
+.h2{font-weight:800}
+.sub,.body,.author,.foot,.source,.col-bad li{color:var(--bg);opacity:.72}
+.foot{opacity:.6}
+.stat-value{font-size:280px;font-weight:800;color:var(--accent)}
+.stat-label{color:var(--bg)}
+.col{background:rgba(255,255,255,.06);background-color:var(--text);border:1px solid rgba(255,255,255,.18)}
+.col-bad .col-label{color:var(--bg);opacity:.7}
+.col-good{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.bar{width:100%;height:2px;background:var(--accent);opacity:.9}
+.t-cover .deco::after{content:"";position:absolute;right:96px;top:104px;width:180px;height:180px;border:2px solid var(--accent);border-radius:50%}

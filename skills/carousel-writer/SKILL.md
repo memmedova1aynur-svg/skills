@@ -79,6 +79,8 @@ A carousel is visual. Provide:
   legible in-image text) to produce on-brand slides, with the exact slide text specified. Or a
   clean template spec for Canva/a designer. Flag **AI-disclosure** for generated images. See
   `references/image-prompt-pack.md`. (For deeper visual systems, see `design-and-templates`.)
+- **Finished files** — to turn the slide copy into on-brand, QA-checked PNGs + a PDF in one
+  command, hand it to `carousel-builder`.
 
 ## Step 7 — Hand off
 
@@ -113,6 +115,7 @@ A carousel is visual. Provide:
 - `brand-profile`, `voice-builder` — voice + guardrails.
 - `hook-writer` — the cover hook.
 - `design-and-templates` — deeper visual design system for slides.
+- `carousel-builder` — render the copy into upload-ready slide files (PNG + PDF) with QA.
 - `caption-writer` — the post caption; `cross-platform-repurposing` — source → carousel.
 - `nano-banana`, `ideogram` (creative-tool mini-skills) — generate the slide visuals.
 - `scheduling-and-queue` — schedule the finished carousel.

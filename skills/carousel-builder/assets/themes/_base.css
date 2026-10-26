@@ -1,0 +1,86 @@
+/* Shared layout for every theme. Themes only restyle; they never change the DOM.
+   Sizes are px at 1080 wide. Text marked data-fit auto-shrinks to fit; never go below ~26px. */
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#8a8a8a}
+body{display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px}
+@media print{html,body{background:none}body{padding:0;gap:0}}
+
+.slide{width:var(--W);height:var(--H);position:relative;overflow:hidden;flex:none;
+  background:var(--bg);color:var(--text);font-family:var(--font-body);
+  break-after:page;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.deco{position:absolute;inset:0;pointer-events:none}
+.frame{position:absolute;inset:0;padding:104px 96px 72px;display:flex;flex-direction:column}
+.t-cover .frame{padding-left:128px;padding-right:128px}
+.content{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+
+/* chrome */
+.rail,.post-head{display:none}
+.foot{flex:none;height:44px;margin-top:28px;display:flex;justify-content:space-between;align-items:center;
+  font-size:24px;font-weight:500;color:var(--muted)}
+.brandmark{display:flex;align-items:center;gap:14px}
+.logo{height:40px;width:auto;display:block}
+.pg{font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.t-cover .pg{color:var(--accent);font-weight:700}
+
+/* type */
+.kicker{font-size:26px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:32px}
+.title{font-family:var(--font-head);font-size:108px;font-weight:800;line-height:1.02;letter-spacing:-.025em;text-wrap:balance}
+.sub{margin-top:36px;font-size:44px;line-height:1.3;color:var(--muted);text-wrap:pretty}
+.h2{font-family:var(--font-head);font-size:84px;font-weight:800;line-height:1.06;letter-spacing:-.02em;text-wrap:balance}
+.body{margin-top:36px;font-size:46px;line-height:1.38;color:var(--text);opacity:.86;text-wrap:pretty}
+.hl{color:var(--accent);font-weight:inherit}
+.num{font-family:var(--font-head);font-size:30px;font-weight:800;color:var(--accent);margin-bottom:20px;letter-spacing:.04em}
+.bar{width:72px;height:8px;border-radius:4px;background:var(--accent);margin-bottom:36px}
+h1,h2,p,blockquote,li,div{overflow-wrap:break-word}
+.nw{white-space:nowrap}
+
+/* list + recap */
+.list,.checks{list-style:none;margin-top:44px;display:flex;flex-direction:column;gap:30px}
+.list li,.checks li{display:flex;gap:26px;align-items:baseline}
+.marker{flex:none;font-family:var(--font-head);font-weight:800;font-size:36px;color:var(--accent);min-width:48px}
+.li-text{font-size:46px;line-height:1.3;font-weight:500}
+.check{flex:none;width:46px;height:46px;border-radius:50%;background:var(--accent);color:var(--accent-ink);
+  display:inline-flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;transform:translateY(6px)}
+
+/* stat */
+.stat-value{font-family:var(--font-head);font-size:240px;font-weight:800;line-height:.95;letter-spacing:-.04em;color:var(--accent)}
+.stat-label{margin-top:28px;font-size:58px;font-weight:700;line-height:1.18;text-wrap:balance}
+.source{margin-top:40px;font-size:24px;color:var(--muted)}
+
+/* quote */
+.qmark{font-family:var(--font-display);font-size:220px;line-height:.7;height:110px;color:var(--accent)}
+.quote{font-family:var(--font-display);font-size:74px;line-height:1.18;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+.author{margin-top:40px;font-size:32px;font-weight:600;color:var(--muted)}
+
+/* compare */
+.compare{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.col{border-radius:28px;padding:40px 36px;background:var(--surface)}
+.col-label{font-size:28px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;color:var(--muted)}
+.col-good .col-label{color:var(--accent)}
+.col ul{list-style:none;display:flex;flex-direction:column;gap:20px}
+.col li{font-size:38px;line-height:1.28;font-weight:500}
+.col-bad li{color:var(--muted)}
+.col-good{background:var(--accent);color:var(--accent-ink)}
+.col-good .col-label,.col-good .hl{color:var(--accent-ink)}
+
+/* image */
+.t-image .content{justify-content:flex-start}
+.img-wrap{flex:1;min-height:0;border-radius:28px;overflow:hidden;background:var(--surface)}
+.img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.img-text{flex:none;margin-top:36px}
+.img-text .h2{font-size:60px}
+.img-text .body{margin-top:18px;font-size:34px}
+
+/* cta */
+.t-cta .content{align-items:flex-start}
+.t-cta .h2{font-size:96px}
+.action{margin-top:52px;display:inline-block;padding:26px 48px;border-radius:999px;background:var(--accent);
+  color:var(--accent-ink);font-size:36px;font-weight:800;letter-spacing:.01em}
+.cta-handle{margin-top:40px;font-family:var(--font-head);font-size:40px;font-weight:700}
+.t-cta .handle{visibility:hidden}
+
+/* accent slide: "accent": true on any slide flips it to the accent colour */
+.is-accent{background:var(--accent);color:var(--accent-ink)}
+.is-accent .hl,.is-accent .kicker,.is-accent .num,.is-accent .marker,.is-accent .stat-value,.is-accent .qmark,
+.is-accent .foot,.is-accent .sub,.is-accent .source,.is-accent .author,.is-accent .pg{color:var(--accent-ink)}
+.is-accent .bar,.is-accent .action,.is-accent .check{background:var(--accent-ink);color:var(--accent)}

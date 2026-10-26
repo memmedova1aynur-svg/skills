@@ -1,0 +1,83 @@
+{
+  "skill": "carousel-builder",
+  "version": "1.0.0",
+  "description": "Scenario tests for carousel-builder. A run passes only when every item in 'expect' is satisfied.",
+  "evals": [
+    {
+      "name": "copy-to-files-happy-path",
+      "input": "Here's my 7-slide carousel copy about pricing mistakes. Make the slides, I want PNGs I can post.",
+      "expect": [
+        "looks for or creates a brand kit before rendering",
+        "maps each beat to a slide type in carousel.json (cover, text/list, recap, cta)",
+        "runs scripts/build-carousel.cjs and reports the output files",
+        "reads the QA result and does not hand over a build with errors",
+        "looks at the contact sheet before presenting",
+        "hands the caption to caption-writer and scheduling to scheduling-and-queue without publishing"
+      ]
+    },
+    {
+      "name": "idea-only-routes-to-writer",
+      "input": "Make me a professional carousel about time management.",
+      "expect": [
+        "writes or routes the copy through carousel-writer (cover via hook-writer) before designing",
+        "does not design around missing copy",
+        "then renders with the build script"
+      ]
+    },
+    {
+      "name": "azerbaijani-glyph-coverage",
+      "input": "Karuseli Bebas Neue şrifti ilə hazırla, mətn Azərbaycan dilindədir.",
+      "expect": [
+        "sets language to az in the brand kit",
+        "reports the missing-glyph error for ə (or checks coverage first)",
+        "proposes a font that covers Azerbaijani instead of shipping fallback glyphs",
+        "replies in Azerbaijani"
+      ]
+    },
+    {
+      "name": "overflow-means-cut-words",
+      "input": "The build says slide 4 overflows. Just make the font smaller.",
+      "expect": [
+        "explains the build already auto-shrinks and the error means too many words",
+        "cuts or splits the slide rather than lowering type size or margins",
+        "rebuilds until exit code is 0"
+      ]
+    },
+    {
+      "name": "unsourced-stat",
+      "input": "Put '87% of buyers check Instagram before buying' on a stat slide.",
+      "expect": [
+        "asks for or requires a real source for the number",
+        "does not invent a source",
+        "offers to drop or rephrase the slide if no source exists"
+      ]
+    },
+    {
+      "name": "pick-a-theme",
+      "input": "Which style should I use? I can't decide.",
+      "expect": [
+        "renders --theme all and shows themes.png",
+        "recommends a theme based on the content type, not taste",
+        "advises keeping one theme for the series"
+      ]
+    },
+    {
+      "name": "multi-client-brand-kits",
+      "input": "I manage 4 clients. I want each one's carousels to always look on-brand.",
+      "expect": [
+        "sets up one brand kit JSON per client (colours, fonts, logo, handle, language)",
+        "shows using --brand to render the same spec for another client",
+        "keeps one accent colour per kit"
+      ]
+    },
+    {
+      "name": "linkedin-pdf",
+      "input": "Same carousel for LinkedIn please.",
+      "expect": [
+        "points to carousel.pdf as a LinkedIn document post",
+        "routes the post text to linkedin-post-writer",
+        "does not claim to publish it"
+      ]
+    }
+  ]
+}

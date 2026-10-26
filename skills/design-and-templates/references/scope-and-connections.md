@@ -22,6 +22,8 @@ the graphics; the **finished asset enters the WoopSocial flow.**
 - **thumbnail-design** — **YouTube thumbnails** (one asset type — a template **in** the system).
 - **pinterest-pin-design** — **Pinterest pins** (one asset type — a template **in** the system).
 - **carousel-writer** — the carousel **copy/narrative** (this is the visual **frame** the copy fills).
+- **carousel-builder** — renders carousels from a brand kit + six code themes into PNG/PDF with QA; a
+  concrete carousel template set that can take this system's tokens.
 - **image-prompt + the image tools** — **generation** of images (this is **layout/templates**; it briefs them
   when a template needs a generated image).
 - **profile-optimization** — the **profile assets** (avatar/banner) — design touches these but

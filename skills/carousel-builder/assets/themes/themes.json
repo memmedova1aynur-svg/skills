@@ -1,0 +1,14 @@
+{
+  "minimal":   { "description": "Calm and premium: off-white, one accent bar, lots of air. The safe default for experts and services.",
+                 "fonts": { "heading": "Onest", "body": "Inter" } },
+  "bold":      { "description": "Loud and punchy: huge uppercase headlines, accent cover and CTA, marker highlights. For hot takes and lists.",
+                 "fonts": { "heading": "Montserrat", "body": "Inter" } },
+  "editorial": { "description": "Magazine feel: serif display type, rules and issue-style headers. For essays, stories and opinion.",
+                 "fonts": { "heading": "Playfair Display", "display": "Playfair Display", "body": "Source Serif 4" } },
+  "tweet":     { "description": "Each slide reads like a text post card with avatar and handle. For founders and personal brands.",
+                 "fonts": { "heading": "Inter", "body": "Inter" } },
+  "data":      { "description": "Dark grid, big numbers, mono labels. For stats, research, case-study results.",
+                 "fonts": { "heading": "Inter", "body": "Inter", "mono": "JetBrains Mono" } },
+  "steps":     { "description": "Progress rail and big step numbers. For how-tos, checklists and processes.",
+                 "fonts": { "heading": "Montserrat", "body": "Inter" }, "autoNumber": true }
+}

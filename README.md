@@ -1,6 +1,6 @@
 # Social Media Skills
 
-**Give your AI agent the skills of a top-1% social media team. 106 of them, free.**
+**Give your AI agent the skills of a top-1% social media team. 107 of them, free.**
 
 Install these and your agent stops giving generic social media advice and starts doing the
 actual work: it learns your brand and voice, plans your content calendar, writes LinkedIn
@@ -13,7 +13,7 @@ everything's ready, gets it posted, on your explicit go.
 - **It knows this year's playbook, not 2023's.** Each skill encodes how top practitioners work
   right now — the algorithms, formats, and platform mechanics — fact-checked and kept current.
 - **It covers the whole job.** Strategy, planning, writing, video, design, growth, community,
-  analytics: 106 skills across 14 topics that know about each other and hand work to the right
+  analytics: 107 skills across 14 topics that know about each other and hand work to the right
   specialist, from brand foundation to published post.
 
 > ⭐ **If this is useful, star the repo** — it's how these skills reach more agents.
@@ -21,7 +21,7 @@ everything's ready, gets it posted, on your explicit go.
 ## Quick start
 
 **One command (recommended)** — the [skills CLI](https://github.com/vercel-labs/skills). For
-Claude Code, this installs all 106 skills globally, no prompts:
+Claude Code, this installs all 107 skills globally, no prompts:
 
 ```bash
 npx skills add social-media-skills/skills -g -a claude-code -s '*' -y
@@ -242,6 +242,7 @@ when it's time to post.
 | Skill | Job |
 |---|---|
 | [design-and-templates](skills/design-and-templates/SKILL.md) | The reusable on-brand template system |
+| [carousel-builder](skills/carousel-builder/SKILL.md) | Carousel copy → on-brand, QA-checked slide PNGs + PDF in one command |
 | [thumbnail-design](skills/thumbnail-design/SKILL.md) | YouTube thumbnails |
 | [pinterest-pin-design](skills/pinterest-pin-design/SKILL.md) | Pinterest pin visuals |
 | [quote-cards-and-text-graphics](skills/quote-cards-and-text-graphics/SKILL.md) | Text graphics |
@@ -293,7 +294,7 @@ when it's time to post.
 ## Repo layout
 
 ```
-skills/                  106 skills; each: SKILL.md + references/ + evals/
+skills/                  107 skills; each: SKILL.md + references/ + evals/
 tools/
   REGISTRY.md            index of agent-usable tool integrations
   integrations/          per-tool connection guides (publishing, image, video, audio, editing)

@@ -1,6 +1,6 @@
 # Working on this repo (for agents and humans)
 
-This repo is a library of **106 social media skills** (`skills/`) plus **tool integration
+This repo is a library of **107 social media skills** (`skills/`) plus **tool integration
 guides** (`tools/integrations/` + `tools/REGISTRY.md`). Skills follow the
 [Agent Skills](https://agentskills.io) convention: a directory with `SKILL.md`
 (frontmatter `name` matching the directory + a long routing `description`), `references/`
