@@ -373,6 +373,11 @@ function buildHtml({ spec, brand, theme, themeCss, baseCss, fontCss, W, H }) {
   const logo = brand.logoUrl ? `<img class="logo" src="${esc(brand.logoUrl)}" alt="">` : '';
   const avatar = brand.logoUrl ? `<img src="${esc(brand.logoUrl)}" alt="">` : `<span>${esc(initials(brand.name))}</span>`;
 
+  // "byline": "line" in the brand kit swaps the avatar badge for a signature line: NAME ——— RUBRIC
+  const byline = brand.byline === 'line'
+    ? `<div class="byline"><span class="by-name tx">${esc(brand.name)}</span><span class="by-rule"></span>${spec.rubric ? `<span class="by-rub tx">${esc(spec.rubric)}</span>` : ''}</div>`
+    : '';
+
   const pano = panorama(W, H, n);
   const isPost = spec.format === 'post';
   const orn = spec.ornament ? `<div class="orn orn-a">${motifSvg(spec.ornament)}</div><div class="orn orn-b">${motifSvg(spec.ornament)}</div>` : '';
@@ -389,7 +394,7 @@ function buildHtml({ spec, brand, theme, themeCss, baseCss, fontCss, W, H }) {
     ${isCover || isLast || isPost ? '' : `<div class="ghost">${pad2(i + 1)}</div>`}${orn}<div class="grain"></div></div>
   <div class="frame"${photo ? ' data-qa-bg="#0B0C0E"' : ''}>
     <div class="rail">${rail}</div>
-    <div class="top"><div class="badge"><div class="avatar">${avatar}</div><div class="badge-text"><div class="pname tx">${esc(brand.name)}</div><div class="phandle tx">${esc(brand.handle)}</div></div></div>${count}</div>
+    <div class="top">${byline || `<div class="badge"><div class="avatar">${avatar}</div><div class="badge-text"><div class="pname tx">${esc(brand.name)}</div><div class="phandle tx">${esc(brand.handle)}</div></div></div>`}${count}</div>
     <div class="content">${slideInner(s, { L, brand, avatar })}</div>
     <footer class="foot"><div class="brandmark">${logo}<span class="handle tx">${esc(brand.handle)}</span></div>${swipe}</footer>
   </div>

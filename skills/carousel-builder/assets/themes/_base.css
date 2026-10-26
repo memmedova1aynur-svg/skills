@@ -34,6 +34,10 @@ body{display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px
   display:flex;align-items:center;justify-content:center;font:800 26px/1 var(--font-head);letter-spacing:.02em}
 .avatar img{width:100%;height:100%;object-fit:cover}
 .pname{font-size:26px;font-weight:700;line-height:1.15}
+.byline{flex:1;display:flex;align-items:center;gap:22px;margin-right:24px;min-width:0}
+.by-name,.by-rub{font-size:22px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+.by-rub{color:var(--accent)}
+.by-rule{flex:1;height:2px;background:var(--line)}
 .phandle{font-size:22px;color:var(--muted);line-height:1.2;margin-top:2px}
 .count{font-size:22px;font-weight:600;color:var(--muted);padding:10px 20px;background:var(--bg);border:2px solid var(--line);border-radius:999px;
   font-variant-numeric:tabular-nums;letter-spacing:.04em}
@@ -106,7 +110,7 @@ ul.list li{gap:24px}
 
 /* ---------- cta ---------- */
 .t-cta .content{align-items:flex-start}
-.t-cta .top .badge{visibility:hidden}
+.t-cta .top .badge,.t-cta .top .byline{visibility:hidden}
 .cta-card{display:flex;align-items:center;gap:28px;margin-bottom:64px}
 .avatar-lg{width:124px;height:124px;font-size:46px;box-shadow:0 0 0 8px var(--tint)}
 .cta-name{font-family:var(--font-head);font-size:40px;font-weight:800;line-height:1.1}
@@ -123,7 +127,7 @@ ul.list li{gap:24px}
 .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,12,14,.55) 0%,rgba(11,12,14,.15) 30%,rgba(11,12,14,.6) 58%,rgba(11,12,14,.94) 100%)}
 .has-photo .frame{color:#fff}
 .has-photo .content{justify-content:flex-end}
-.has-photo .sub,.has-photo .phandle{color:rgba(255,255,255,.86)}
+.has-photo .sub,.has-photo .phandle,.has-photo .by-rub{color:rgba(255,255,255,.86)}
 .has-photo .kicker-wrap .kicker{background:#fff;color:#111}
 .has-photo .swipe-label{color:#fff}
 .has-photo .pano,.has-photo .grain{display:none}
@@ -132,7 +136,7 @@ ul.list li{gap:24px}
 .is-accent{background:var(--accent);color:var(--accent-ink)}
 .is-accent .hl,.is-accent .kicker,.is-accent .num,.is-accent .marker,.is-accent .stat-value,.is-accent .qmark,
 .is-accent .foot,.is-accent .sub,.is-accent .source,.is-accent .author,.is-accent .count,.is-accent .phandle,
-.is-accent .swipe-label{color:var(--accent-ink)}
+.is-accent .swipe-label,.is-accent .by-rub{color:var(--accent-ink)}
 .is-accent .bar,.is-accent .action,.is-accent .check,.is-accent .swipe-btn,.is-accent .avatar{background:var(--accent-ink);color:var(--accent)}
 .is-accent .pano-line,.is-accent .pano-dot{stroke:var(--accent-ink);fill:var(--accent-ink)}
 .is-accent .pano-line{fill:none}

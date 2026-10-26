@@ -32,6 +32,7 @@ Five steps from copy to files. Each one has a single owner and a single output.
 | `handle` | footer of every slide and the CTA; `@` is added if missing |
 | `language` | `az`, `en`, `ru`, `tr`: swipe/save labels and correct uppercase (`i` → `İ`) |
 | `logo` | path relative to the kit; PNG or SVG with a transparent background; optional |
+| `byline` | `"line"` replaces the avatar badge at the top with a signature line, `NAME ——— RUBRIC` (uppercase, accent rubric). The rubric comes from the spec's top-level `"rubric"`; omit it for the name and rule alone |
 | `colors.bg` | slide background. Light neutrals read as premium |
 | `colors.surface` | cards and list rows; usually white or a step off `bg` |
 | `colors.text` | near-black, not pure black. The `data` theme uses it as the background |
