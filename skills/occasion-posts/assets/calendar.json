@@ -81,7 +81,16 @@
     "müştərilərə təşəkkür"
    ],
    "palette": "yeni-il",
-   "ai_prompt": "festive New Year still life, decorated fir branch, warm string lights, gold and deep green, soft bokeh, no text"
+   "ai_prompt": "festive New Year still life, decorated fir branch, warm string lights, gold and deep green, soft bokeh, no text",
+   "scope": "Azərbaycan + beynəlxalq",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "qadinlar-gunu",
@@ -108,7 +117,16 @@
     "yalnız endirim postu"
    ],
    "palette": "spring",
-   "ai_prompt": "bouquet of red tulips on a soft pink background, natural light, minimal, no text"
+   "ai_prompt": "bouquet of red tulips on a soft pink background, natural light, minimal, no text",
+   "scope": "Azərbaycan + beynəlxalq",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "novruz",
@@ -141,7 +159,16 @@
    "rule": "Yaz bərabərliyi, adətən 20-21 mart; rəsmi bayram günləri hər il Nazirlər Kabineti tərəfindən elan olunur.",
    "palette": "novruz",
    "ai_prompt": "Azerbaijani Novruz khoncha: copper tray with green semeni tied with a red ribbon, shekerbura, pakhlava, gogal, dyed eggs, candles, warm daylight, top-down, no text. NOT Persian haft-sin, no goldfish bowl",
-   "verify": true
+   "verify": true,
+   "scope": "Azərbaycan + beynəlxalq",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "su-cersenbe",
@@ -164,7 +191,16 @@
    "approx_month": "02-03",
    "rule": "Novruzdan əvvəlki dörd çərşənbə axşamının birincisi.",
    "palette": "novruz",
-   "verify": true
+   "verify": true,
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "od-cersenbe",
@@ -186,7 +222,16 @@
    "approx_month": "03",
    "rule": "Novruzdan əvvəlki ikinci çərşənbə axşamı.",
    "palette": "novruz",
-   "verify": true
+   "verify": true,
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "yel-cersenbe",
@@ -208,7 +253,16 @@
    "approx_month": "03",
    "rule": "Novruzdan əvvəlki üçüncü çərşənbə axşamı.",
    "palette": "novruz",
-   "verify": true
+   "verify": true,
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "torpaq-cersenbe",
@@ -231,7 +285,16 @@
    "approx_month": "03",
    "rule": "Novruzdan əvvəlki son çərşənbə axşamı.",
    "palette": "novruz",
-   "verify": true
+   "verify": true,
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "ramazan-bayrami",
@@ -259,7 +322,15 @@
    "approx_month": "hicri təqvim",
    "rule": "Hicri təqvimlə hər il ~11 gün tez gəlir; tarixi Qafqaz Müsəlmanları İdarəsi elan edir.",
    "palette": "religious",
-   "verify": true
+   "verify": true,
+   "scope": "Azərbaycan",
+   "source": "Qafqaz Müsəlmanları İdarəsi (tarix hər il elan olunur)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "sakit story"
+   ]
   },
   {
    "id": "qurban-bayrami",
@@ -287,7 +358,15 @@
    "approx_month": "hicri təqvim",
    "rule": "Hicri təqvimlə hər il ~11 gün tez gəlir; tarixi Qafqaz Müsəlmanları İdarəsi elan edir.",
    "palette": "religious",
-   "verify": true
+   "verify": true,
+   "scope": "Azərbaycan",
+   "source": "Qafqaz Müsəlmanları İdarəsi (tarix hər il elan olunur)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "sakit story"
+   ]
   },
   {
    "id": "qelebe-gunu",
@@ -309,6 +388,15 @@
    ],
    "avoid": [
     "satış"
+   ],
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
    ]
   },
   {
@@ -330,7 +418,16 @@
     "1918 Xalq Cümhuriyyəti",
     "təbrik"
    ],
-   "palette": "national"
+   "palette": "national",
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "qurtulus-gunu",
@@ -349,7 +446,16 @@
    "angles": [
     "təbrik"
    ],
-   "palette": "national"
+   "palette": "national",
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "silahli-quvveler-gunu",
@@ -369,7 +475,16 @@
    "angles": [
     "əsgərlərə təşəkkür"
    ],
-   "palette": "national"
+   "palette": "national",
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "musteqilliyin-berpasi",
@@ -388,7 +503,16 @@
    "angles": [
     "təbrik"
    ],
-   "palette": "national"
+   "palette": "national",
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "zefer-gunu",
@@ -413,7 +537,16 @@
     "endirim kodu \"ZEFER\"",
     "yumor"
    ],
-   "palette": "national"
+   "palette": "national",
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "bayraq-gunu",
@@ -435,7 +568,16 @@
    "avoid": [
     "bayrağın təhrif olunmuş, yanlış nisbətli və ya üstündə loqo olan təsviri"
    ],
-   "palette": "national"
+   "palette": "national",
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "konstitusiya-gunu",
@@ -455,7 +597,16 @@
    "angles": [
     "təbrik"
    ],
-   "palette": "national"
+   "palette": "national",
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "dircelis-gunu",
@@ -474,7 +625,16 @@
    "angles": [
     "təbrik"
    ],
-   "palette": "national"
+   "palette": "national",
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "hemreylik-gunu",
@@ -495,7 +655,16 @@
     "dünyadakı azərbaycanlılara təbrik",
     "Yeni il ilə birgə təbrik"
    ],
-   "palette": "national"
+   "palette": "national",
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "bilik-gunu",
@@ -523,7 +692,16 @@
     "child-development"
    ],
    "palette": "knowledge",
-   "ai_prompt": "school backpack, notebooks and colored pencils on a light desk, morning light, no text, no faces"
+   "ai_prompt": "school backpack, notebooks and colored pencils on a light desk, morning light, no text, no faces",
+   "scope": "Azərbaycan + beynəlxalq",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "20-yanvar",
@@ -551,7 +729,15 @@
     "\"yadda saxla\" CTA-sı",
     "faciənin realist AI şəkli, qurbanların təsviri"
    ],
-   "note": "Gün ərzində planlaşdırılmış reklam və əyləncəli postları dayandır."
+   "note": "Gün ərzində planlaşdırılmış reklam və əyləncəli postları dayandır.",
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "anma postu",
+    "sakit story (satış yox)"
+   ]
   },
   {
    "id": "xocali",
@@ -579,7 +765,15 @@
     "\"yadda saxla\" CTA-sı",
     "faciənin realist AI şəkli, qurbanların təsviri"
    ],
-   "note": "Rəqəm və tarixi faktları yalnız rəsmi mənbədən götür."
+   "note": "Rəqəm və tarixi faktları yalnız rəsmi mənbədən götür.",
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "anma postu",
+    "sakit story (satış yox)"
+   ]
   },
   {
    "id": "31-mart",
@@ -605,6 +799,14 @@
     "parlaq rənglər, konfetti",
     "\"yadda saxla\" CTA-sı",
     "faciənin realist AI şəkli, qurbanların təsviri"
+   ],
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "anma postu",
+    "sakit story (satış yox)"
    ]
   },
   {
@@ -634,7 +836,15 @@
     "\"yadda saxla\" CTA-sı",
     "faciənin realist AI şəkli, qurbanların təsviri"
    ],
-   "note": "27 sentyabr həm də Ümumdünya Turizm Günüdür; Azərbaycanda turizm postlarını bu günə qoyma."
+   "note": "27 sentyabr həm də Ümumdünya Turizm Günüdür; Azərbaycanda turizm postlarını bu günə qoyma.",
+   "scope": "Azərbaycan",
+   "source": "AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "anma postu",
+    "sakit story (satış yox)"
+   ]
   },
   {
    "id": "braille-gunu",
@@ -657,6 +867,14 @@
    "niches": [
     "education",
     "inclusion"
+   ],
+   "scope": "beynəlxalq",
+   "source": "BMT",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -680,6 +898,14 @@
    "avoid": [
     "xəstə uşaqların icazəsiz fotosu",
     "qorxu mesajı"
+   ],
+   "scope": "beynəlxalq",
+   "source": "Childhood Cancer International",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -706,6 +932,14 @@
     "education",
     "child-development",
     "speech"
+   ],
+   "scope": "beynəlxalq",
+   "source": "UNESCO",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -730,6 +964,14 @@
     "child-development",
     "speech",
     "health"
+   ],
+   "scope": "beynəlxalq",
+   "source": "ÜST",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -757,7 +999,15 @@
     "child-development"
    ],
    "verify": true,
-   "note": "CPLOL tərəfindən qeyd olunur; mövzunu hər il yoxla."
+   "note": "CPLOL tərəfindən qeyd olunur; mövzunu hər il yoxla.",
+   "scope": "beynəlxalq",
+   "source": "CPLOL",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
+   ]
   },
   {
    "id": "daun-sindromu-gunu",
@@ -787,7 +1037,15 @@
     "child-development",
     "inclusion"
    ],
-   "note": "Novruzla eyni günə düşə bilər; ikisini ayrı postlarda ver."
+   "note": "Novruzla eyni günə düşə bilər; ikisini ayrı postlarda ver.",
+   "scope": "beynəlxalq",
+   "source": "BMT (A/RES/66/149)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
+   ]
   },
   {
    "id": "autizm-gunu",
@@ -824,7 +1082,15 @@
    ],
    "palette": "autism",
    "ai_prompt": "child and parent hands building with colorful wooden blocks on a calm light table, soft natural light, gentle rainbow accents, no puzzle pieces, no text, faces not shown",
-   "note": "Aprel həm də Autizm Qəbulu Ayıdır: ay boyu seriya etmək olar."
+   "note": "Aprel həm də Autizm Qəbulu Ayıdır: ay boyu seriya etmək olar.",
+   "scope": "beynəlxalq",
+   "source": "BMT (A/RES/62/139)",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
+   ]
   },
   {
    "id": "usaq-kitab-gunu",
@@ -848,6 +1114,14 @@
    "niches": [
     "education",
     "child-development"
+   ],
+   "scope": "beynəlxalq",
+   "source": "IBBY",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -873,7 +1147,15 @@
     "dental"
    ],
    "verify": true,
-   "note": "Mövzu hər il ÜST tərəfindən elan olunur."
+   "note": "Mövzu hər il ÜST tərəfindən elan olunur.",
+   "scope": "beynəlxalq",
+   "source": "ÜST",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
+   ]
   },
   {
    "id": "kitab-gunu",
@@ -896,6 +1178,14 @@
    ],
    "niches": [
     "education"
+   ],
+   "scope": "beynəlxalq",
+   "source": "UNESCO",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -921,6 +1211,14 @@
    "niches": [
     "child-development",
     "psychology"
+   ],
+   "scope": "beynəlxalq",
+   "source": "BMT",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -955,7 +1253,16 @@
     "education"
    ],
    "palette": "children",
-   "ai_prompt": "joyful flat illustration of colorful balloons, kites and building blocks in a sunny park, bright and soft, no text, no faces"
+   "ai_prompt": "joyful flat illustration of colorful balloons, kites and building blocks in a sunny park, bright and soft, no text, no faces",
+   "scope": "Azərbaycan + beynəlxalq",
+   "source": "Beynəlxalq; Azərbaycanda qeyd olunur",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "ana-suddu-hefte",
@@ -983,7 +1290,15 @@
     "health",
     "child-development"
    ],
-   "note": "1-7 avqust."
+   "note": "1-7 avqust.",
+   "scope": "beynəlxalq",
+   "source": "WABA / ÜST",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
+   ]
   },
   {
    "id": "isare-dili-gunu",
@@ -1006,6 +1321,14 @@
    "niches": [
     "inclusion",
     "speech"
+   ],
+   "scope": "beynəlxalq",
+   "source": "BMT",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -1031,6 +1354,14 @@
     "child-development",
     "inclusion",
     "health"
+   ],
+   "scope": "beynəlxalq",
+   "source": "World CP Day təşəbbüsü",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -1056,6 +1387,14 @@
     "psychology",
     "health",
     "child-development"
+   ],
+   "scope": "beynəlxalq",
+   "source": "ÜPSF / ÜST",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -1082,6 +1421,14 @@
    "niches": [
     "speech",
     "child-development"
+   ],
+   "scope": "beynəlxalq",
+   "source": "Beynəlxalq Kəkələmə Assosiasiyası",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -1105,6 +1452,14 @@
    "niches": [
     "child-development",
     "education"
+   ],
+   "scope": "beynəlxalq",
+   "source": "World Kindness Movement",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -1129,7 +1484,15 @@
     "health",
     "child-development"
    ],
-   "palette": "autism"
+   "palette": "autism",
+   "scope": "beynəlxalq",
+   "source": "EFCNI",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
+   ]
   },
   {
    "id": "dunya-usaq-gunu",
@@ -1153,6 +1516,14 @@
    "niches": [
     "child-development",
     "education"
+   ],
+   "scope": "beynəlxalq",
+   "source": "BMT",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -1180,6 +1551,14 @@
    ],
    "niches": [
     "inclusion"
+   ],
+   "scope": "beynəlxalq",
+   "source": "BMT",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -1200,7 +1579,16 @@
     "özünə qayğı",
     "cütlüklər üçün təklif"
    ],
-   "palette": "spring"
+   "palette": "spring",
+   "scope": "beynəlxalq",
+   "source": "qeyri-rəsmi / kommersiya günü",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "xosbextlik-gunu",
@@ -1218,6 +1606,14 @@
    ],
    "angles": [
     "kiçik xoşbəxtliklər siyahısı"
+   ],
+   "scope": "beynəlxalq",
+   "source": "BMT",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -1240,6 +1636,14 @@
    ],
    "avoid": [
     "real addım olmadan \"yaşıl\" iddia (greenwashing)"
+   ],
+   "scope": "beynəlxalq",
+   "source": "Earth Day Network",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -1258,6 +1662,15 @@
    ],
    "angles": [
     "komandaya təşəkkür"
+   ],
+   "scope": "beynəlxalq",
+   "source": "qeyri-rəsmi / kommersiya günü",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
    ]
   },
   {
@@ -1284,7 +1697,16 @@
    "approx_month": "05",
    "rule": "Bir çox ölkədə mayın ikinci bazarı. Azərbaycanda ənənəvi olaraq 8 Mart daha güclüdür.",
    "palette": "spring",
-   "verify": true
+   "verify": true,
+   "scope": "beynəlxalq",
+   "source": "qeyri-rəsmi / kommersiya günü",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "atalar-gunu",
@@ -1305,7 +1727,16 @@
    ],
    "approx_month": "06",
    "rule": "Bir çox ölkədə iyunun üçüncü bazarı.",
-   "verify": true
+   "verify": true,
+   "scope": "beynəlxalq",
+   "source": "qeyri-rəsmi / kommersiya günü",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "muellimler-gunu",
@@ -1331,7 +1762,16 @@
     "education"
    ],
    "verify": true,
-   "note": "5 oktyabr Ümumdünya Müəllimlər Günüdür; yerli qeyd tarixini yoxla."
+   "note": "5 oktyabr Ümumdünya Müəllimlər Günüdür; yerli qeyd tarixini yoxla.",
+   "scope": "beynəlxalq",
+   "source": "UNESCO",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "qara-cume",
@@ -1352,7 +1792,16 @@
    ],
    "approx_month": "11",
    "rule": "Noyabrın dördüncü cüməsi.",
-   "verify": true
+   "verify": true,
+   "scope": "beynəlxalq",
+   "source": "qeyri-rəsmi / kommersiya günü",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "stomatoloq-gunu",
@@ -1374,7 +1823,16 @@
    "niches": [
     "dental"
    ],
-   "verify": true
+   "verify": true,
+   "scope": "beynəlxalq",
+   "source": "qeyri-rəsmi / kommersiya günü",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "agiz-saglamligi-gunu",
@@ -1395,6 +1853,14 @@
    ],
    "niches": [
     "dental"
+   ],
+   "scope": "beynəlxalq",
+   "source": "FDI Dünya Stomatoloji Federasiyası",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -1416,6 +1882,15 @@
    ],
    "niches": [
     "cafe"
+   ],
+   "scope": "beynəlxalq",
+   "source": "qeyri-rəsmi / kommersiya günü",
+   "status": "unofficial",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
    ]
   },
   {
@@ -1438,6 +1913,15 @@
    ],
    "niches": [
     "cafe"
+   ],
+   "scope": "beynəlxalq",
+   "source": "Beynəlxalq Qəhvə Təşkilatı",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
    ]
   },
   {
@@ -1460,6 +1944,14 @@
    "niches": [
     "cafe",
     "health"
+   ],
+   "scope": "beynəlxalq",
+   "source": "FAO",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   },
   {
@@ -1482,7 +1974,16 @@
    "niches": [
     "travel"
    ],
-   "note": "Azərbaycanda Anım günü ilə üst-üstə düşür: bu gün turizm postu paylaşma, bir gün sonraya keçir."
+   "note": "Azərbaycanda Anım günü ilə üst-üstə düşür: bu gün turizm postu paylaşma, bir gün sonraya keçir.",
+   "scope": "beynəlxalq",
+   "source": "BMT Turizm",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "təbrik postu",
+    "karusel (praktik bucaq)",
+    "story"
+   ]
   },
   {
    "id": "idman-gunu",
@@ -1504,6 +2005,14 @@
    "niches": [
     "fitness",
     "child-development"
+   ],
+   "scope": "beynəlxalq",
+   "source": "BMT",
+   "status": "official",
+   "source_verified": false,
+   "formats": [
+    "karusel (izah / mif–reallıq)",
+    "story (sual, resurs)"
    ]
   }
  ]

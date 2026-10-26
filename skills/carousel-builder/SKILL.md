@@ -78,6 +78,11 @@ Write `carousel.json`. Each slide is one of nine types:
 `**word**` highlights in the accent colour. `"accent": true` flips any slide to the accent
 background for a mid-carousel beat.
 
+Stories: `--size story` (1080x1920) keeps text out of Instagram's top bar and reply bar and
+fails QA on anything placed there. A `text` slide with `"reserve": "poll"` (or `question`,
+`link`) leaves an empty band for a real sticker added by hand in the app; never draw a sticker.
+`--jpeg` writes JPEG files, the only image format Instagram's publishing API accepts.
+
 Spec-level switches: `"format": "post"` for a single-image post (no counter, swipe or
 carousel checks); `"tone"` (`celebration`, `awareness`, `religious`, `remembrance`) where
 remembrance swaps in a sober dark palette and the QA blocks posters, memes, quizzes, stats,

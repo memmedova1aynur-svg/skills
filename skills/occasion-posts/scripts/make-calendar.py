@@ -197,6 +197,43 @@ CAL = [
       ['uşaq üçün hərəkət oyunları'], niches=['fitness', 'child-development']),
 ]
 
+# Who declares each day, and whether it is official. The authority is named; the exact link is
+# checked by a person before first use (source_verified stays false until then).
+AUTH = {
+    'autizm-gunu': ('BMT (A/RES/62/139)', 'official'), 'daun-sindromu-gunu': ('BMT (A/RES/66/149)', 'official'),
+    'dunya-usaq-gunu': ('BMT', 'official'), 'aile-gunu': ('BMT', 'official'), 'elillik-gunu': ('BMT', 'official'),
+    'braille-gunu': ('BMT', 'official'), 'isare-dili-gunu': ('BMT', 'official'), 'xosbextlik-gunu': ('BMT', 'official'),
+    'saglamliq-gunu': ('ÜST', 'official'), 'esitme-gunu': ('ÜST', 'official'), 'psixi-saglamliq-gunu': ('ÜPSF / ÜST', 'official'),
+    'ana-dili-gunu': ('UNESCO', 'official'), 'kitab-gunu': ('UNESCO', 'official'), 'muellimler-gunu': ('UNESCO', 'official'),
+    'qida-gunu': ('FAO', 'official'), 'turizm-gunu': ('BMT Turizm', 'official'), 'qehve-gunu': ('Beynəlxalq Qəhvə Təşkilatı', 'official'),
+    'usaqlar-gunu': ('Beynəlxalq; Azərbaycanda qeyd olunur', 'official'),
+    'ana-suddu-hefte': ('WABA / ÜST', 'official'), 'idman-gunu': ('BMT', 'official'),
+    'agiz-saglamligi-gunu': ('FDI Dünya Stomatoloji Federasiyası', 'official'),
+    'logopediya-gunu': ('CPLOL', 'unofficial'), 'kekeleme-gunu': ('Beynəlxalq Kəkələmə Assosiasiyası', 'unofficial'),
+    'sdi-gunu': ('World CP Day təşəbbüsü', 'unofficial'), 'vaxtindan-evvel-gunu': ('EFCNI', 'unofficial'),
+    'usaq-xercengi': ('Childhood Cancer International', 'unofficial'), 'usaq-kitab-gunu': ('IBBY', 'unofficial'),
+    'xeyirxahliq-gunu': ('World Kindness Movement', 'unofficial'), 'yer-kuresi-gunu': ('Earth Day Network', 'unofficial'),
+}
+FORMATS = {
+    'celebration': ['təbrik postu', 'karusel (praktik bucaq)', 'story'],
+    'awareness': ['karusel (izah / mif–reallıq)', 'story (sual, resurs)'],
+    'religious': ['təbrik postu', 'sakit story'],
+    'remembrance': ['anma postu', 'sakit story (satış yox)'],
+}
+for e in CAL:
+    g = e['groups']
+    e['scope'] = 'Azərbaycan' if g == [AZ] else 'Azərbaycan + beynəlxalq' if AZ in g else 'beynəlxalq'
+    if e['id'] in AUTH:
+        e['source'], e['status'] = AUTH[e['id']]
+    elif AZ in g and e['tone'] != 'religious':
+        e['source'], e['status'] = 'AR qanunvericiliyi (Əmək Məcəlləsi, md. 105 və müvafiq fərmanlar)', 'official'
+    elif e['tone'] == 'religious':
+        e['source'], e['status'] = 'Qafqaz Müsəlmanları İdarəsi (tarix hər il elan olunur)', 'official'
+    else:
+        e['source'], e['status'] = 'qeyri-rəsmi / kommersiya günü', 'unofficial'
+    e['source_verified'] = False
+    e['formats'] = FORMATS[e['tone']]
+
 out = {'palettes': PALETTES, 'occasions': CAL}
 p = os.path.join(os.path.dirname(__file__), '..', 'assets', 'calendar.json')
 json.dump(out, open(p, 'w'), indent=1, ensure_ascii=False)

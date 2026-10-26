@@ -248,3 +248,14 @@ ul.list li{gap:24px}
 .an-notes{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:14px;flex:none}
 .an-notes li{display:flex;gap:20px;align-items:flex-start;font-size:34px;line-height:1.25;font-weight:600}
 .pin-no{flex:none;width:46px;height:46px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font:800 22px/1 var(--font-head)}
+
+/* story (1080x1920): keep content out of Instagram's top bar and reply bar */
+.size-story .frame{padding-top:260px;padding-bottom:350px}
+.size-story .top{display:none}
+.size-story .foot{display:none}
+.size-story .pano,.size-story .ghost{display:none}
+.size-story .content{justify-content:center}
+.reserve{flex:none;height:440px;margin-top:40px}
+.size-story .h2{font-size:96px}
+.size-story .body{font-size:54px}
+.size-story .title{font-size:128px}
