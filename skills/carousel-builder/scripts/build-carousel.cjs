@@ -3,7 +3,7 @@
 // QA report. One command, no design tool. See ../SKILL.md for the workflow and the spec format.
 //
 //   node build-carousel.cjs <spec.json> [--brand kit.json] [--theme name|all] [--size WxH|portrait|square]
-//                                      [--out dir] [--no-pdf]
+//                                      [--out dir] [--no-pdf] [--jpeg]
 //   node build-carousel.cjs --init <dir>     copy an example spec + brand kit to start from
 //   node build-carousel.cjs --themes         list the themes
 //
@@ -20,7 +20,9 @@ const MOTIFS_DIR = path.join(SKILL_DIR, 'assets', 'motifs');
 const MOTIFS = JSON.parse(fs.readFileSync(path.join(MOTIFS_DIR, 'motifs.json'), 'utf8'));
 const THEMES = JSON.parse(fs.readFileSync(path.join(THEMES_DIR, 'themes.json'), 'utf8'));
 
-const SIZES = { portrait: [1080, 1350], square: [1080, 1080], linkedin: [1080, 1350] };
+const SIZES = { portrait: [1080, 1350], square: [1080, 1080], linkedin: [1080, 1350], story: [1080, 1920] };
+// Instagram draws its own UI over the top and bottom of a Story; text must stay out of it.
+const STORY_SAFE = { top: 250, bottom: 340 };
 const STRINGS = {
   az: { swipe: 'Sürüşdür', save: 'Yadda saxla', source: 'Mənbə', answer: 'Düzgün cavab', quizHint: 'Cavab son slaydda' },
   en: { swipe: 'Swipe', save: 'Save this', source: 'Source', answer: 'Answer', quizHint: 'Answer on the last slide' },
@@ -71,6 +73,7 @@ function parseArgs(argv) {
   for (let i = 0; i < argv.length; i++) {
     const t = argv[i];
     if (t === '--no-pdf') a.noPdf = true;
+    else if (t === '--jpeg') a.jpeg = true;
     else if (t === '--themes') a.listThemes = true;
     else if (t.startsWith('--')) a[t.slice(2)] = argv[++i];
     else a._.push(t);
@@ -143,7 +146,7 @@ function resolveSize(v) {
   if (!v) return SIZES.portrait;
   if (SIZES[v]) return SIZES[v];
   const m = /^(\d{3,4})x(\d{3,4})$/.exec(v);
-  if (!m) die(`Size must be portrait, square, linkedin or WxH (e.g. 1080x1350), got "${v}"`);
+  if (!m) die(`Size must be portrait, square, story, linkedin or WxH (e.g. 1080x1350), got "${v}"`);
   return [+m[1], +m[2]];
 }
 
@@ -258,7 +261,10 @@ function slideInner(s, ctx) {
     case 'cover':
       return `${s.motif && !s._src ? `<div class="cover-art">${motifSvg(s.motif)}</div>` : ''}${s.kicker ? `<div class="kicker-wrap">${T('kicker', s.kicker, false)}</div>` : ''}${T('title', s.title, true, 'h1')}${T('sub', s.subtitle)}`;
     case 'text':
-      return `${num}<div class="bar"></div>${T('h2', s.title, true, 'h2')}${T('body', s.body, true, 'p')}`;
+      // "reserve": an empty band where a real Instagram sticker (poll, question, link) is added by hand
+      // in the app. Nothing is drawn there: a picture of a sticker is not a sticker.
+      return `${num}<div class="bar"></div>${T('h2', s.title, true, 'h2')}${T('body', s.body, true, 'p')}` +
+        (s.reserve ? `<div class="reserve" data-sticker="${esc(s.reserve)}"></div>` : '');
     case 'list': {
       const tag = s.numbered === false ? 'ul' : 'ol';
       const items = s.items.map((it, k) => `<li><span class="marker tx">${tag === 'ol' ? pad2(k + 1) : '•'}</span><span class="li-text tx" data-fit>${rich(it)}</span></li>`).join('');
@@ -406,7 +412,7 @@ ${faces}
 </style>
 <style>${baseCss}</style>
 <style>${themeCss}</style>
-</head><body class="theme-${theme} tone-${esc(spec.tone || 'neutral')} format-${isPost ? 'post' : 'carousel'}">
+</head><body class="theme-${theme} ${H / W >= 1.7 ? 'size-story ' : ''}tone-${esc(spec.tone || 'neutral')} format-${isPost ? 'post' : 'carousel'}">
 ${slides}
 </body></html>`;
 }
@@ -484,7 +490,9 @@ function pageQa(opts) {
       const size = parseFloat(cs.fontSize), bold = parseInt(cs.fontWeight, 10) >= 600;
       const snippet = el.textContent.trim().slice(0, 40);
       const m = opts.safe, side = isCover ? opts.coverSide : m;
-      if (r.left - S.left < side - 1 || S.right - r.right < side - 1 || r.top - S.top < m - 1 || S.bottom - r.bottom < m - 1) {
+      if (opts.story && (r.top - S.top < opts.story.top - 1 || S.bottom - r.bottom < opts.story.bottom - 1)) {
+        add(idx, 'error', 'story-ui-zone', `"${snippet}" sits under Instagram's Story UI (top ${opts.story.top}px / bottom ${opts.story.bottom}px).`);
+      } else if (r.left - S.left < side - 1 || S.right - r.right < side - 1 || r.top - S.top < m - 1 || S.bottom - r.bottom < m - 1) {
         add(idx, isCover ? 'warn' : 'error', 'safe-zone', `"${snippet}" sits inside the ${isCover ? side : m}px edge margin${isCover ? ' (profile-grid crop zone)' : ''}.`);
       }
       const large = size >= 24 || (bold && size >= 18.66);
@@ -521,7 +529,7 @@ function pageQa(opts) {
 
 // ---------- render ----------
 
-async function renderOne({ browser, spec, brand, theme, W, H, outDir, noPdf, quiet }) {
+async function renderOne({ browser, spec, brand, theme, W, H, outDir, noPdf, quiet, jpeg }) {
   const baseCss = fs.readFileSync(path.join(THEMES_DIR, '_base.css'), 'utf8');
   const themeCss = fs.readFileSync(path.join(THEMES_DIR, `${theme}.css`), 'utf8');
   const tdef = THEMES[theme];
@@ -553,7 +561,7 @@ async function renderOne({ browser, spec, brand, theme, W, H, outDir, noPdf, qui
   if (spec.tone === 'remembrance') issues.push({ slide: 0, level: 'info', code: 'tone-palette', msg: 'Remembrance palette applied (dark, sober). Brand colours are set aside for this post.' });
   for (const fam of missing) issues.push({ slide: 0, level: 'warn', code: 'font-fetch', msg: `Could not fetch "${fam}" from Google Fonts (offline or not a Google font). Add it under fonts.files in the brand kit.` });
   for (const src of broken) issues.push({ slide: 0, level: 'error', code: 'image-broken', msg: `Image failed to load: ${src}` });
-  issues = issues.concat(await page.evaluate(pageQa, { minScale: 0.62, safe: 64, coverSide: 120, minFont: 26 }));
+  issues = issues.concat(await page.evaluate(pageQa, { minScale: 0.62, safe: 64, coverSide: 120, minFont: 26, story: H / W >= 1.7 ? STORY_SAFE : null }));
 
   // Save the fitted state so carousel.html matches the PNGs when opened by hand.
   fs.writeFileSync(htmlPath, '<!doctype html>\n' + await page.evaluate(() => document.documentElement.outerHTML));
@@ -561,8 +569,9 @@ async function renderOne({ browser, spec, brand, theme, W, H, outDir, noPdf, qui
   const slides = await page.$$('.slide');
   const files = [];
   for (let i = 0; i < slides.length; i++) {
-    const f = path.join(outDir, `slide-${pad2(i + 1)}.png`);
-    await slides[i].screenshot({ path: f });
+    // The Instagram publishing API accepts JPEG only; --jpeg writes upload-ready files.
+    const f = path.join(outDir, `slide-${pad2(i + 1)}.${jpeg ? 'jpg' : 'png'}`);
+    await slides[i].screenshot(jpeg ? { path: f, type: 'jpeg', quality: 92 } : { path: f });
     files.push(f);
   }
   if (!noPdf) {
@@ -603,7 +612,7 @@ function printReport(r, outDir) {
   console.log(`\n${r.errors ? '✗' : '✓'} ${r.slides} slides · ${r.theme} · ${r.size} → ${outDir}`);
   for (const i of r.issues) console.log(`  ${icon[i.level]} ${i.slide > 0 ? `slide ${i.slide}` : 'carousel'}: ${i.msg}`);
   if (!r.issues.length) console.log('  QA clean.');
-  console.log(`  ${r.errors} error(s), ${r.warnings} warning(s). Files: slide-01..${pad2(r.slides)}.png${fs.existsSync(path.join(outDir, 'carousel.pdf')) ? ', carousel.pdf' : ''}, contact-sheet.png, qa.json`);
+  console.log(`  ${r.errors} error(s), ${r.warnings} warning(s). Files: ${r.files[0]}..${r.files[r.files.length - 1]}${fs.existsSync(path.join(outDir, 'carousel.pdf')) ? ', carousel.pdf' : ''}, contact-sheet.png, qa.json`);
 }
 
 // ---------- main ----------
@@ -650,7 +659,7 @@ async function main() {
   const browser = await chromium.launch();
   try {
     if (theme !== 'all') {
-      const r = await renderOne({ browser, spec, brand, theme, W, H, outDir, noPdf: args.noPdf });
+      const r = await renderOne({ browser, spec, brand, theme, W, H, outDir, noPdf: args.noPdf, jpeg: args.jpeg });
       process.exitCode = r.errors ? 1 : 0;
     } else {
       // Same copy in every theme, side by side, so picking a look is one glance.

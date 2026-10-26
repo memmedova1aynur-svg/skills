@@ -27,6 +27,11 @@ Generated from `scripts/make-calendar.py`; edit the Python and re-run, never the
 | `avoid` | what not to do on this day |
 | `ai_prompt` | base prompt for an image tool (no text in image) |
 | `note` | clashes and cautions |
+| `scope` | Azərbaycan, beynəlxalq, or both |
+| `status` | official (declared by a state or UN-system body) or unofficial |
+| `source` | the declaring authority; open its page before first use |
+| `source_verified` | false until a person has checked the source link |
+| `formats` | formats that fit the tone |
 
 Days with no `niches` and group az-national always show in `upcoming.cjs`, whatever the niche
 filter: every Azerbaijani audience notices them.
