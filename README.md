@@ -1,6 +1,6 @@
 # Social Media Skills
 
-**Give your AI agent the skills of a top-1% social media team. 107 of them, free.**
+**Give your AI agent the skills of a top-1% social media team. 109 of them, free.**
 
 Install these and your agent stops giving generic social media advice and starts doing the
 actual work: it learns your brand and voice, plans your content calendar, writes LinkedIn
@@ -13,7 +13,7 @@ everything's ready, gets it posted, on your explicit go.
 - **It knows this year's playbook, not 2023's.** Each skill encodes how top practitioners work
   right now — the algorithms, formats, and platform mechanics — fact-checked and kept current.
 - **It covers the whole job.** Strategy, planning, writing, video, design, growth, community,
-  analytics: 107 skills across 14 topics that know about each other and hand work to the right
+  analytics: 109 skills across 14 topics that know about each other and hand work to the right
   specialist, from brand foundation to published post.
 
 > ⭐ **If this is useful, star the repo** — it's how these skills reach more agents.
@@ -21,7 +21,7 @@ everything's ready, gets it posted, on your explicit go.
 ## Quick start
 
 **One command (recommended)** — the [skills CLI](https://github.com/vercel-labs/skills). For
-Claude Code, this installs all 107 skills globally, no prompts:
+Claude Code, this installs all 109 skills globally, no prompts:
 
 ```bash
 npx skills add social-media-skills/skills -g -a claude-code -s '*' -y
@@ -189,6 +189,7 @@ when it's time to post.
 | [batch-content-plan](skills/batch-content-plan/SKILL.md) | A month of content in one sitting |
 | [campaign-and-launch-planning](skills/campaign-and-launch-planning/SKILL.md) | Launches as multi-week arcs |
 | [seasonal-and-moment-marketing](skills/seasonal-and-moment-marketing/SKILL.md) | Own the calendar moments |
+| [occasion-posts](skills/occasion-posts/SKILL.md) | Holiday, awareness and remembrance posts with the right tone and imagery |
 | [trend-jacking](skills/trend-jacking/SKILL.md) | Ride trends without embarrassment |
 | [data-and-original-research](skills/data-and-original-research/SKILL.md) | Original data as content |
 
@@ -202,6 +203,7 @@ when it's time to post.
 | [threads-post](skills/threads-post/SKILL.md) | Meta Threads posts |
 | [text-post-and-microblog](skills/text-post-and-microblog/SKILL.md) | Short text posts |
 | [carousel-writer](skills/carousel-writer/SKILL.md) | Slide-by-slide carousels |
+| [carousel-strategy](skills/carousel-strategy/SKILL.md) | Goal → content type → visual format before writing; topic-list editing |
 | [story-writer](skills/story-writer/SKILL.md) | Stories (IG/FB) |
 | [short-form-video-script](skills/short-form-video-script/SKILL.md) | The master short-form scripting craft |
 | [reels-script](skills/reels-script/SKILL.md) | Instagram Reels scripts |
@@ -294,7 +296,7 @@ when it's time to post.
 ## Repo layout
 
 ```
-skills/                  107 skills; each: SKILL.md + references/ + evals/
+skills/                  109 skills; each: SKILL.md + references/ + evals/
 tools/
   REGISTRY.md            index of agent-usable tool integrations
   integrations/          per-tool connection guides (publishing, image, video, audio, editing)

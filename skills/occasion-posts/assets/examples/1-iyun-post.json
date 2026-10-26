@@ -1,0 +1,13 @@
+{
+  "title": "1 iyun",
+  "brand": "brands/my-brand.json",
+  "theme": "minimal",
+  "tone": "celebration",
+  "format": "post",
+  "ornament": "konfetti",
+  "palette": { "bg": "#FFF8EC", "surface": "#FFFFFF", "text": "#1F2240", "muted": "#5A5E7A", "accent": "#F25C54" },
+  "slides": [
+    { "type": "greeting", "motif": "sarlar", "kicker": "1 iyun", "title": "Uşaqlar günü mübarək!",
+      "message": "Hər uşaq öz tempində böyüyür. Bu gün onları müqayisə etmədən dinləyək." }
+  ]
+}

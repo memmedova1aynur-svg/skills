@@ -139,3 +139,112 @@ ul.list li{gap:24px}
 .is-accent .ghost{color:var(--accent-ink);opacity:.08}
 .is-accent .kicker-wrap .kicker{background:var(--accent-ink);color:var(--accent)}
 .is-accent .count{background:var(--accent)}
+
+/* ======================= occasion + format extensions ======================= */
+.cover-art{width:300px;height:300px;margin-bottom:40px}
+.cover-art svg,.g-art svg,.p-art svg,.m-art svg,.pn-art svg,.orn svg{width:100%;height:100%;display:block}
+
+/* ornament: spec "ornament": "<motif>" scatters it faintly in two corners of every slide */
+.orn{position:absolute;width:300px;height:300px;opacity:.13}
+.orn-a{right:-70px;top:120px;transform:rotate(14deg)}
+.orn-b{left:-90px;bottom:180px;transform:rotate(-18deg);width:240px;height:240px}
+.t-cover .orn,.t-greeting .orn,.t-poster .orn{opacity:.18}
+
+/* greeting: occasion card, centred */
+.t-greeting .content{align-items:center;text-align:center}
+.g-art{width:360px;height:360px;margin-bottom:24px;flex:none}
+.t-greeting .kicker-wrap{justify-content:center}
+.g-title{font-size:96px}
+.g-msg{max-width:24ch;margin-left:auto;margin-right:auto}
+.g-sign{margin-top:44px;font-family:var(--font-head);font-size:30px;font-weight:700;color:var(--accent-deep);letter-spacing:.02em}
+.g-sign::before{content:"— "}
+
+/* poster: ad / announcement */
+.t-poster .content{justify-content:flex-start}
+.p-art{flex:1;min-height:0;border-radius:32px;overflow:hidden;background:var(--tint);display:flex;align-items:center;justify-content:center;position:relative}
+.p-art img{width:100%;height:100%;object-fit:cover}
+.p-art svg{width:72%;height:72%}
+.p-body{flex:none;margin-top:36px;position:relative}
+.p-badge{position:absolute;right:24px;top:-130px;width:170px;height:170px;border-radius:50%;background:var(--text);color:var(--bg);
+  display:flex;align-items:center;justify-content:center;text-align:center;font:900 40px/1 var(--font-head);transform:rotate(-10deg);
+  box-shadow:0 14px 30px -14px rgba(0,0,0,.4);padding:16px}
+.p-title{font-size:78px}
+.t-poster .body{margin-top:18px;font-size:38px}
+.p-details{list-style:none;margin-top:26px;display:flex;flex-wrap:wrap;gap:12px 14px}
+.p-details li{display:flex;flex-direction:column;padding:14px 22px;border-radius:18px;background:var(--surface);
+  box-shadow:0 1px 0 var(--line);font-size:30px;font-weight:700;line-height:1.2}
+.d-label{font-size:20px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.t-poster .action{margin-top:28px;padding:22px 40px 22px 34px;font-size:32px}
+.p-contact{margin-top:18px;font-size:26px;font-weight:600;color:var(--muted)}
+
+/* meme: caption band above the picture (the modern brand-meme format) */
+.t-meme .content{justify-content:flex-start}
+.m-cap{flex:none;font-size:58px;font-weight:800;line-height:1.16;letter-spacing:-.01em;margin:8px 0 30px;text-wrap:balance}
+.m-art{flex:1;min-height:0;border-radius:28px;overflow:hidden;background:var(--tint);position:relative;display:flex;align-items:center;justify-content:center}
+.m-art.is-photo img{width:100%;height:100%;object-fit:cover}
+.m-art svg{width:62%;height:62%}
+.m-bottom{position:absolute;left:24px;right:24px;bottom:24px;padding:18px 26px;border-radius:18px;background:var(--text);color:var(--bg);
+  font-size:40px;font-weight:800;line-height:1.15;text-align:center}
+.t-meme .source{margin-top:18px}
+
+/* comic: 2-4 panels */
+.c-title{font-size:64px;margin-bottom:30px}
+.comic{flex:1;min-height:0;display:grid;gap:18px}
+.comic.n2{grid-template-columns:1fr;grid-template-rows:1fr 1fr}
+.comic.n3{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.comic.n3 .panel:first-child{grid-column:1/3}
+.comic.n4{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.panel{position:relative;border:4px solid var(--text);border-radius:20px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column;min-height:0}
+.pn-no{position:absolute;left:14px;top:12px;width:44px;height:44px;border-radius:50%;background:var(--text);color:var(--bg);
+  display:flex;align-items:center;justify-content:center;font:800 22px/1 var(--font-head);z-index:1}
+.pn-art{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;background:var(--tint)}
+.pn-art.is-photo img{width:100%;height:100%;object-fit:cover}
+.pn-art svg{width:60%;height:80%}
+.pn-text{flex:none;padding:16px 20px;font-size:32px;font-weight:700;line-height:1.2;border-top:4px solid var(--text)}
+
+/* quiz + answer */
+.q-title{font-size:76px}
+.opts{list-style:none;margin-top:44px;display:flex;flex-direction:column;gap:18px}
+.opts li{display:flex;align-items:center;gap:26px;padding:22px 28px;border-radius:24px;background:var(--surface);
+  box-shadow:0 1px 0 var(--line),0 12px 30px -18px rgba(0,0,0,.18)}
+.opt-l{flex:none;width:64px;height:64px;border-radius:50%;border:3px solid var(--line);display:flex;align-items:center;justify-content:center;
+  font:800 30px/1 var(--font-head);color:var(--text)}
+.opt-t{font-size:42px;font-weight:600;line-height:1.22}
+.opts li.right{background:var(--accent);color:var(--accent-ink)}
+.opts li.right .opt-l{border-color:var(--accent-ink);background:var(--accent-ink);color:var(--accent);font-size:34px}
+.opts li.wrong{opacity:.55;box-shadow:none}
+.q-expl{margin-top:34px;font-size:38px}
+.t-quiz .source{margin-top:34px}
+
+/* table: cheat sheet */
+.t-title{font-size:72px;margin-bottom:36px}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;border-radius:24px;overflow:hidden;background:var(--surface);
+  box-shadow:0 1px 0 var(--line),0 16px 40px -22px rgba(0,0,0,.22)}
+.tbl th{text-align:left;padding:22px 26px;font-size:24px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--text);color:var(--bg)}
+.tbl td{padding:20px 26px;font-size:34px;line-height:1.25;font-weight:500;border-top:2px solid var(--line);vertical-align:top}
+.tbl td.td-key{font-family:var(--font-head);font-weight:800;color:var(--accent-deep);white-space:nowrap;width:1%}
+.t-table .source{margin-top:26px}
+
+/* single post: no carousel chrome */
+.format-post .count,.format-post .swipe,.format-post .pano,.format-post .ghost{display:none}
+
+/* remembrance: sober. No line, no ghost numbers, no shouting. */
+.tone-remembrance .pano,.tone-remembrance .ghost,.tone-remembrance .swipe-btn{display:none}
+.tone-remembrance .grain{opacity:.05;mix-blend-mode:screen}
+.tone-remembrance .hl{color:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:4px;text-underline-offset:10px}
+.tone-remembrance .kicker-wrap .kicker{background:none;border:2px solid var(--line);color:var(--muted)}
+.tone-remembrance .title,.tone-remembrance .h2{font-weight:700;letter-spacing:-.01em}
+.tone-remembrance .g-sign{color:var(--muted)}
+.tone-remembrance .avatar{background:var(--surface);color:var(--text)}
+
+/* annotated: numbered pins on a worksheet / screenshot, legend below */
+.t-annotated .content{justify-content:flex-start}
+.an-title{font-size:64px;margin-bottom:28px}
+.an-art{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+.an-box{position:relative;height:100%;max-width:100%;display:inline-block}
+.an-box img{height:100%;max-width:100%;object-fit:contain;display:block;border-radius:20px;box-shadow:0 18px 44px -24px rgba(0,0,0,.35)}
+.pin{position:absolute;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;background:var(--accent);color:var(--accent-ink);
+  display:flex;align-items:center;justify-content:center;font:800 30px/1 var(--font-head);box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 30%,transparent)}
+.an-notes{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:14px;flex:none}
+.an-notes li{display:flex;gap:20px;align-items:flex-start;font-size:34px;line-height:1.25;font-weight:600}
+.pin-no{flex:none;width:46px;height:46px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font:800 22px/1 var(--font-head)}

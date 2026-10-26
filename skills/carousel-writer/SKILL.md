@@ -112,6 +112,7 @@ A carousel is visual. Provide:
 
 ## Related skills
 
+- `carousel-strategy` — choose the goal, content type and visual format before writing.
 - `brand-profile`, `voice-builder` — voice + guardrails.
 - `hook-writer` — the cover hook.
 - `design-and-templates` — deeper visual design system for slides.

@@ -16,14 +16,16 @@ const path = require('path');
 const SKILL_DIR = path.join(__dirname, '..');
 const THEMES_DIR = path.join(SKILL_DIR, 'assets', 'themes');
 const EXAMPLES_DIR = path.join(SKILL_DIR, 'assets', 'examples');
+const MOTIFS_DIR = path.join(SKILL_DIR, 'assets', 'motifs');
+const MOTIFS = JSON.parse(fs.readFileSync(path.join(MOTIFS_DIR, 'motifs.json'), 'utf8'));
 const THEMES = JSON.parse(fs.readFileSync(path.join(THEMES_DIR, 'themes.json'), 'utf8'));
 
 const SIZES = { portrait: [1080, 1350], square: [1080, 1080], linkedin: [1080, 1350] };
 const STRINGS = {
-  az: { swipe: 'Sürüşdür', save: 'Yadda saxla', source: 'Mənbə' },
-  en: { swipe: 'Swipe', save: 'Save this', source: 'Source' },
-  ru: { swipe: 'Листай', save: 'Сохрани', source: 'Источник' },
-  tr: { swipe: 'Kaydır', save: 'Kaydet', source: 'Kaynak' },
+  az: { swipe: 'Sürüşdür', save: 'Yadda saxla', source: 'Mənbə', answer: 'Düzgün cavab', quizHint: 'Cavab son slaydda' },
+  en: { swipe: 'Swipe', save: 'Save this', source: 'Source', answer: 'Answer', quizHint: 'Answer on the last slide' },
+  ru: { swipe: 'Листай', save: 'Сохрани', source: 'Источник', answer: 'Правильный ответ', quizHint: 'Ответ на последнем слайде' },
+  tr: { swipe: 'Kaydır', save: 'Kaydet', source: 'Kaynak', answer: 'Doğru cevap', quizHint: 'Cevap son slaytta' },
 };
 // Line icons (24px grid, stroke = currentColor) so arrows and checks are crisp in every font.
 const ICON_PATHS = {
@@ -37,7 +39,20 @@ const ICON_PATHS = {
   link: '<path d="M10 14a4.5 4.5 0 0 0 6.4 0l3.2-3.2a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3.2 3.2a4.5 4.5 0 0 0 6.4 6.4l1-1"/>',
 };
 const icon = (name, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON_PATHS[name]}</svg>`;
-const SLIDE_TYPES = ['cover', 'text', 'list', 'stat', 'quote', 'compare', 'image', 'recap', 'cta'];
+const SLIDE_TYPES = ['cover', 'text', 'list', 'stat', 'quote', 'compare', 'image', 'recap', 'cta',
+  'greeting', 'poster', 'meme', 'comic', 'quiz', 'answer', 'table', 'annotated'];
+const REQUIRED = { cover: ['title'], text: ['title'], list: ['items'], stat: ['value', 'label'], quote: ['quote'],
+  compare: ['left', 'right'], image: ['src'], recap: ['items'], cta: ['title'], greeting: ['title'], poster: ['title'],
+  meme: ['caption'], comic: ['panels'], quiz: ['question', 'options'], answer: ['options', 'correct'], table: ['rows'],
+  annotated: ['image', 'notes'] };
+// Tone sets what a post may do. Remembrance days (20 Yanvar, 26 Fevral, 31 Mart, 27 Sentyabr) get a
+// fixed sober palette and no selling, jokes or "save this" asks; the QA enforces it.
+const TONES = ['celebration', 'awareness', 'remembrance', 'religious', 'neutral'];
+const REMEMBRANCE_PALETTE = { bg: '#121315', surface: '#1C1D20', text: '#F2F0EB', muted: '#A9A6A0', accent: '#B3122E', accentInk: '#FFFFFF' };
+const NOT_IN = {
+  remembrance: { types: ['poster', 'meme', 'comic', 'quiz', 'answer', 'stat'], motifs: ['sam', 'qerenfil', 'bayraq'], icons: ['save', 'link', 'follow'] },
+  religious: { types: ['meme', 'comic'], motifs: null, icons: [] },
+};
 const DEFAULT_BRAND = {
   name: 'Brand',
   handle: '@brand',
@@ -137,27 +152,62 @@ function validateSlides(spec, specDir) {
   spec.slides.forEach((s, i) => {
     const where = `slide ${i + 1}`;
     if (!SLIDE_TYPES.includes(s.type)) die(`${where}: unknown type "${s.type}". Use one of: ${SLIDE_TYPES.join(', ')}`);
-    const need = { cover: ['title'], text: ['title'], list: ['items'], stat: ['value', 'label'], quote: ['quote'],
-      compare: ['left', 'right'], image: ['src'], recap: ['items'], cta: ['title'] }[s.type];
-    for (const k of need) if (s[k] == null || s[k] === '') die(`${where} (${s.type}) is missing "${k}"`);
-    const img = s.type === 'image' ? s.src : s.type === 'cover' ? s.image : null;
-    if (img) {
-      const p = path.resolve(specDir, img);
-      if (!fs.existsSync(p)) die(`${where}: image not found: ${p}`);
-      s._src = 'file://' + p;
+    for (const k of REQUIRED[s.type]) if (s[k] == null || s[k] === '') die(`${where} (${s.type}) is missing "${k}"`);
+    const file = (rel, what) => {
+      const p = path.resolve(specDir, rel);
+      if (!fs.existsSync(p)) die(`${where}: ${what} not found: ${p}`);
+      return 'file://' + p;
+    };
+    const img = s.type === 'image' ? s.src : s.image;
+    if (img) s._src = file(img, 'image');
+    const motif = m => { if (m && !MOTIFS[m]) die(`${where}: unknown motif "${m}". Motifs: ${Object.keys(MOTIFS).join(', ')}`); };
+    motif(s.motif);
+    if (s.type === 'comic') {
+      if (!Array.isArray(s.panels) || s.panels.length < 2 || s.panels.length > 4) die(`${where}: comic needs 2-4 panels`);
+      s.panels.forEach(pn => { motif(pn.motif); if (pn.image) pn._src = file(pn.image, 'panel image'); });
+    }
+    if (s.type === 'annotated') {
+      if (!Array.isArray(s.notes) || !s.notes.length || s.notes.length > 5) die(`${where}: annotated needs 1-5 notes`);
+      s.notes.forEach((nt, k) => { if (!(nt.x >= 0 && nt.x <= 100 && nt.y >= 0 && nt.y <= 100 && nt.text)) die(`${where}: note ${k + 1} needs x and y (0-100, % of the image) and text`); });
+    }
+    if ((s.type === 'quiz' || s.type === 'answer') && (!Array.isArray(s.options) || s.options.length < 2 || s.options.length > 4)) die(`${where}: ${s.type} needs 2-4 options`);
+    if (s.type === 'answer') {
+      const c = typeof s.correct === 'string' ? 'ABCD'.indexOf(s.correct.toUpperCase()) : s.correct;
+      if (!(c >= 0 && c < s.options.length)) die(`${where}: "correct" must be a letter (A-D) or index of an option`);
+      s._correct = c;
     }
     if (s.icon && !ICON_PATHS[s.icon]) die(`${where}: unknown icon "${s.icon}". Use one of: save, share, comment, follow, link`);
   });
+  if (spec.ornament && !MOTIFS[spec.ornament]) die(`Unknown ornament motif "${spec.ornament}". Motifs: ${Object.keys(MOTIFS).join(', ')}`);
+  if (spec.tone && !TONES.includes(spec.tone)) die(`Unknown tone "${spec.tone}". Use one of: ${TONES.join(', ')}`);
+  if (spec.format && !['carousel', 'post'].includes(spec.format)) die('format must be "carousel" or "post"');
 }
 
 // ---------- spec-level QA (copy discipline) ----------
 
 const words = t => String(t || '').replace(/\*\*/g, '').split(/\s+/).filter(Boolean).length;
 
-function copyChecks(slides) {
-  const out = [];
+function copyChecks(spec) {
+  const slides = spec.slides, out = [];
   const add = (i, level, code, msg) => out.push({ slide: i + 1, level, code, msg });
   const n = slides.length;
+  const tone = spec.tone || 'neutral';
+  const rule = NOT_IN[tone];
+  if (rule) {
+    slides.forEach((s, i) => {
+      if (rule.types.includes(s.type)) add(i, 'error', 'tone-type', `A "${s.type}" slide does not belong in a ${tone} post. Keep it to remembrance, information and respect.`);
+      const ms = [s.motif, ...(s.panels || []).map(p => p.motif), i === 0 ? spec.ornament : null].filter(Boolean);
+      if (rule.motifs) for (const m of ms) if (!rule.motifs.includes(m)) add(i, 'error', 'tone-motif', `Motif "${m}" is wrong for a ${tone} post. Use: ${rule.motifs.join(', ')}.`);
+      if (s.type === 'cta' && rule.icons.includes(s.icon || 'save')) add(i, 'error', 'tone-cta', `A "${s.icon || 'save'}" ask is wrong on a ${tone} day. Close with a line of remembrance, or no CTA.`);
+      if (s.accent) add(i, 'warn', 'tone-accent', 'Accent-colour slides read as celebration. Drop "accent" on this day.');
+    });
+  }
+  if (spec.format === 'post') {
+    slides.forEach((s, i) => {
+      if (words(s.title) > 10) add(i, 'warn', 'title-wordy', `Headline is ${words(s.title)} words. A single post must land in one glance.`);
+    });
+    return out;
+  }
   if (n > 20) add(-1, 'error', 'too-many-slides', `${n} slides. Instagram's cap is 20 (verify-quarterly), and 6-10 is where strong carousels live.`);
   else if (n > 12) add(-1, 'warn', 'long-carousel', `${n} slides. Most strong carousels are 6-10; cut the weakest.`);
   else if (n < 4) add(-1, 'warn', 'short-carousel', `${n} slides. Under 4 the swipe rarely starts; is this a single image?`);
@@ -166,10 +216,13 @@ function copyChecks(slides) {
   slides.forEach((s, i) => {
     if (s.type === 'cover' && words(s.title) > 8) add(i, 'warn', 'cover-wordy', `Cover title is ${words(s.title)} words. Aim for 6 or fewer; it must read at thumbnail size.`);
     if (s.title && s.type !== 'cover' && words(s.title) > 10) add(i, 'warn', 'title-wordy', `Title is ${words(s.title)} words. Keep slide headlines to 3-7.`);
-    const body = [s.body, s.subtitle, s.caption, ...(s.items || [])].map(words).reduce((a, b) => a + b, 0);
-    const limit = s.type === 'recap' ? 45 : 30;
+    const body = [s.body, s.subtitle, s.caption, s.message, s.explanation, ...(s.notes || []).map(nt => nt.text), ...(s.items || []), ...(s.options || []),
+      ...(s.details || []).map(d => typeof d === 'string' ? d : `${d.label} ${d.value}`)].map(words).reduce((a, b) => a + b, 0);
+    const limit = s.type === 'recap' || s.type === 'answer' ? 45 : s.type === 'table' ? 999 : 30;
     if (body > limit) add(i, 'warn', 'wall-of-text', `${body} words under the headline. Over ${limit} reads as a paragraph; split into two slides.`);
     if (s.type === 'stat' && !s.source) add(i, 'warn', 'unsourced-stat', 'Stat has no "source". Never ship a number you cannot point to.');
+    if (s.type === 'table' && s.rows.length > 7) add(i, 'warn', 'long-table', `${s.rows.length} rows. Over 7 gets too small to read; split the table.`);
+    if (s.type === 'answer' && !slides.slice(0, i).some(x => x.type === 'quiz')) add(i, 'warn', 'answer-without-quiz', 'Answer slide with no quiz slide before it.');
     if ((s.type === 'list' || s.type === 'recap') && s.items.length > 6) add(i, 'warn', 'long-list', `${s.items.length} items on one slide. Keep to 6 or fewer.`);
   });
   return out;
@@ -189,13 +242,21 @@ function initials(name) {
   return String(name).split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase();
 }
 
+const motifCache = new Map();
+function motifSvg(name) {
+  if (!motifCache.has(name)) motifCache.set(name, fs.readFileSync(path.join(MOTIFS_DIR, `${name}.svg`), 'utf8').trim());
+  return motifCache.get(name);
+}
+// A slide's picture: the user's photo wins, then a library motif, else nothing.
+const visual = x => x._src ? `<img src="${esc(x._src)}" alt="${esc(x.alt || '')}">` : x.motif ? motifSvg(x.motif) : '';
+
 function slideInner(s, ctx) {
   const L = ctx.L;
   const T = (cls, txt, fit = true, tag = 'div') => txt ? `<${tag} class="${cls} tx"${fit ? ' data-fit' : ''}>${rich(txt)}</${tag}>` : '';
   const num = s.number != null ? `<div class="num tx">${esc(s.number)}</div>` : '';
   switch (s.type) {
     case 'cover':
-      return `${s.kicker ? `<div class="kicker-wrap">${T('kicker', s.kicker, false)}</div>` : ''}${T('title', s.title, true, 'h1')}${T('sub', s.subtitle)}`;
+      return `${s.motif && !s._src ? `<div class="cover-art">${motifSvg(s.motif)}</div>` : ''}${s.kicker ? `<div class="kicker-wrap">${T('kicker', s.kicker, false)}</div>` : ''}${T('title', s.title, true, 'h1')}${T('sub', s.subtitle)}`;
     case 'text':
       return `${num}<div class="bar"></div>${T('h2', s.title, true, 'h2')}${T('body', s.body, true, 'p')}`;
     case 'list': {
@@ -227,6 +288,53 @@ function slideInner(s, ctx) {
         `<div><div class="cta-name tx">${esc(ctx.brand.name)}</div><div class="cta-handle tx">${esc(ctx.brand.handle)}</div></div></div>` +
         `${T('h2', s.title, true, 'h2')}${T('body', s.body, true, 'p')}` +
         `<div class="action">${icon(s.icon || 'save')}<span class="tx">${esc(s.action || L.save)}</span></div>`;
+    case 'greeting':
+      return `${visual(s) ? `<div class="g-art">${visual(s)}</div>` : ''}` +
+        `${s.kicker ? `<div class="kicker-wrap">${T('kicker', s.kicker, false)}</div>` : ''}` +
+        `${T('h2 g-title', s.title, true, 'h2')}${T('body g-msg', s.message || s.body, true, 'p')}` +
+        `<div class="g-sign tx">${esc(s.signature || ctx.brand.name)}</div>`;
+    case 'poster': {
+      const details = (s.details || []).map(d => typeof d === 'string'
+        ? `<li class="tx" data-fit>${rich(d)}</li>`
+        : `<li><span class="d-label tx">${esc(d.label)}</span><span class="d-value tx" data-fit>${rich(d.value)}</span></li>`).join('');
+      return `${visual(s) ? `<div class="p-art">${visual(s)}</div>` : ''}<div class="p-body">` +
+        `${s.badge ? `<div class="p-badge tx">${esc(s.badge)}</div>` : ''}` +
+        `${s.kicker ? `<div class="kicker-wrap">${T('kicker', s.kicker, false)}</div>` : ''}` +
+        `${T('h2 p-title', s.title, true, 'h2')}${T('body', s.body, true, 'p')}` +
+        `${details ? `<ul class="p-details">${details}</ul>` : ''}` +
+        `${s.action ? `<div class="action">${icon(s.icon || 'arrow')}<span class="tx">${esc(s.action)}</span></div>` : ''}` +
+        `${s.contact ? `<div class="p-contact tx">${esc(s.contact)}</div>` : ''}</div>`;
+    }
+    case 'meme':
+      return `<div class="m-cap tx" data-fit>${rich(s.caption)}</div>` +
+        `<div class="m-art${s._src ? ' is-photo' : ''}">${visual(s)}${s.bottom ? `<div class="m-bottom tx" data-fit>${rich(s.bottom)}</div>` : ''}</div>` +
+        `${s.credit ? `<div class="source tx">${esc(s.credit)}</div>` : ''}`;
+    case 'comic':
+      return `${T('h2 c-title', s.title, true, 'h2')}<div class="comic n${s.panels.length}">` +
+        s.panels.map((pn, k) => `<div class="panel"><div class="pn-no">${k + 1}</div><div class="pn-art${pn._src ? ' is-photo' : ''}">${visual(pn)}</div>` +
+          `${pn.text ? `<div class="pn-text tx" data-fit>${rich(pn.text)}</div>` : ''}</div>`).join('') + '</div>';
+    case 'quiz':
+    case 'answer': {
+      const isA = s.type === 'answer';
+      const opts = s.options.map((o, k) => `<li class="${isA ? (k === s._correct ? 'right' : 'wrong') : ''}">` +
+        `<span class="opt-l">${isA && k === s._correct ? icon('check') : 'ABCD'[k]}</span><span class="opt-t tx" data-fit>${rich(o)}</span></li>`).join('');
+      return `<div class="kicker-wrap">${T('kicker', s.kicker || (isA ? L.answer : 'Test'), false)}</div>` +
+        `${T('h2 q-title', s.question, true, 'h2')}<ol class="opts">${opts}</ol>` +
+        (isA ? T('body q-expl', s.explanation, true, 'p') : `<div class="source tx">${esc(s.hint != null ? s.hint : L.quizHint)}</div>`);
+    }
+    case 'annotated': {
+      // Numbered pins on the picture, the same numbers in a legend below it.
+      const pins = s.notes.map((nt, k) => `<span class="pin" style="left:${nt.x}%;top:${nt.y}%">${k + 1}</span>`).join('');
+      const legend = s.notes.map((nt, k) => `<li><span class="pin-no">${k + 1}</span><span class="tx" data-fit>${rich(nt.text)}</span></li>`).join('');
+      return `${T('h2 an-title', s.title, true, 'h2')}<div class="an-art"><div class="an-box"><img src="${esc(s._src)}" alt="${esc(s.alt || s.title || '')}">${pins}</div></div>` +
+        `<ol class="an-notes">${legend}</ol>`;
+    }
+    case 'table': {
+      const head = (s.columns || []).map(c => `<th class="tx">${esc(c)}</th>`).join('');
+      const rows = s.rows.map(r => `<tr>${r.map((c, k) => `<td class="tx${k === 0 ? ' td-key' : ''}" data-fit>${rich(c)}</td>`).join('')}</tr>`).join('');
+      return `${T('h2 t-title', s.title, true, 'h2')}<table class="tbl">${head ? `<thead><tr>${head}</tr></thead>` : ''}<tbody>${rows}</tbody></table>` +
+        (s.note ? `<div class="source tx">${esc(s.note)}</div>` : '');
+    }
   }
 }
 
@@ -260,17 +368,19 @@ function buildHtml({ spec, brand, theme, themeCss, baseCss, fontCss, W, H }) {
   const avatar = brand.logoUrl ? `<img src="${esc(brand.logoUrl)}" alt="">` : `<span>${esc(initials(brand.name))}</span>`;
 
   const pano = panorama(W, H, n);
+  const isPost = spec.format === 'post';
+  const orn = spec.ornament ? `<div class="orn orn-a">${motifSvg(spec.ornament)}</div><div class="orn orn-b">${motifSvg(spec.ornament)}</div>` : '';
   const slides = spec.slides.map((s, i) => {
     if (autoNumber && (s.type === 'text' || s.type === 'list') && s.number == null) s.number = pad2(++auto);
     const isCover = s.type === 'cover', isLast = i === n - 1;
     const photo = isCover && s._src;
     const rail = Array.from({ length: n }, (_, k) => `<i class="${k < i ? 'done' : k === i ? 'on' : ''}"></i>`).join('');
-    const swipe = isLast ? '' : `<div class="swipe">${isCover ? `<span class="swipe-label tx">${esc(L.swipe)}</span>` : ''}<span class="swipe-btn">${icon('arrow')}</span></div>`;
-    const count = isCover ? '' : `<div class="count tx">${i + 1} / ${n}</div>`;
+    const swipe = isLast || isPost ? '' : `<div class="swipe">${isCover ? `<span class="swipe-label tx">${esc(L.swipe)}</span>` : ''}<span class="swipe-btn">${icon('arrow')}</span></div>`;
+    const count = isCover || isPost ? '' : `<div class="count tx">${i + 1} / ${n}</div>`;
     return `<section class="slide t-${s.type}${s.accent ? ' is-accent' : ''}${photo ? ' has-photo' : ''}" data-index="${i + 1}" data-type="${s.type}">
   ${photo ? `<div class="cover-photo"><img src="${esc(s._src)}" alt=""></div><div class="shade"></div>` : ''}
   <div class="deco"><svg class="pano" viewBox="0 0 ${n * W} ${H}" width="${n * W}" height="${H}" style="left:${-i * W}px" aria-hidden="true">${pano}</svg>
-    ${isCover || isLast ? '' : `<div class="ghost">${pad2(i + 1)}</div>`}<div class="grain"></div></div>
+    ${isCover || isLast || isPost ? '' : `<div class="ghost">${pad2(i + 1)}</div>`}${orn}<div class="grain"></div></div>
   <div class="frame"${photo ? ' data-qa-bg="#0B0C0E"' : ''}>
     <div class="rail">${rail}</div>
     <div class="top"><div class="badge"><div class="avatar">${avatar}</div><div class="badge-text"><div class="pname tx">${esc(brand.name)}</div><div class="phandle tx">${esc(brand.handle)}</div></div></div>${count}</div>
@@ -296,7 +406,7 @@ ${faces}
 </style>
 <style>${baseCss}</style>
 <style>${themeCss}</style>
-</head><body class="theme-${theme}">
+</head><body class="theme-${theme} tone-${esc(spec.tone || 'neutral')} format-${isPost ? 'post' : 'carousel'}">
 ${slides}
 </body></html>`;
 }
@@ -381,7 +491,7 @@ function pageQa(opts) {
       const need = large ? 3 : 4.5;
       const cr = ratio(parse(cs.color).slice(0, 3), bgOf(el));
       if (cr < need) add(idx, 'error', 'contrast', `"${snippet}" contrast ${cr.toFixed(2)}:1 (needs ${need}:1).`);
-      const isMeta = el.closest('.foot, .top, .source, .kicker, .rail, .cta-card');
+      const isMeta = el.closest('.foot, .top, .source, .kicker, .rail, .cta-card, .d-label, th, .g-sign');
       if (!isMeta && size < opts.minFont) add(idx, 'warn', 'small-type', `"${snippet}" is ${Math.round(size)}px; under ${opts.minFont}px is hard to read on a phone.`);
 
       // glyph coverage: a char the font lacks falls back, so widths differ between two fallbacks
@@ -421,6 +531,12 @@ async function renderOne({ browser, spec, brand, theme, W, H, outDir, noPdf, qui
   const { css: fontCss, missing } = await googleFontCss(browser, fams);
 
   fs.mkdirSync(outDir, { recursive: true });
+  if (spec.palette || spec.tone === 'remembrance') {
+    const colors = { ...brand.colors, ...(spec.palette || {}), ...(spec.tone === 'remembrance' ? REMEMBRANCE_PALETTE : {}) };
+    for (const [k, v] of Object.entries(colors)) if (!hexToRgb(v)) die(`Palette colour "${k}" must be hex, got "${v}"`);
+    if (!(spec.palette && spec.palette.accentInk) && spec.tone !== 'remembrance') colors.accentInk = inkFor(colors.accent);
+    brand = { ...brand, colors };
+  }
   const html = buildHtml({ spec: JSON.parse(JSON.stringify(spec)), brand, theme, themeCss, baseCss, fontCss, W, H });
   const htmlPath = path.join(outDir, 'carousel.html');
   fs.writeFileSync(htmlPath, html);
@@ -433,7 +549,8 @@ async function renderOne({ browser, spec, brand, theme, W, H, outDir, noPdf, qui
   });
   const broken = await page.evaluate(() => [...document.images].filter(i => !i.naturalWidth).map(i => i.src));
 
-  let issues = copyChecks(spec.slides);
+  let issues = copyChecks(spec);
+  if (spec.tone === 'remembrance') issues.push({ slide: 0, level: 'info', code: 'tone-palette', msg: 'Remembrance palette applied (dark, sober). Brand colours are set aside for this post.' });
   for (const fam of missing) issues.push({ slide: 0, level: 'warn', code: 'font-fetch', msg: `Could not fetch "${fam}" from Google Fonts (offline or not a Google font). Add it under fonts.files in the brand kit.` });
   for (const src of broken) issues.push({ slide: 0, level: 'error', code: 'image-broken', msg: `Image failed to load: ${src}` });
   issues = issues.concat(await page.evaluate(pageQa, { minScale: 0.62, safe: 64, coverSide: 120, minFont: 26 }));

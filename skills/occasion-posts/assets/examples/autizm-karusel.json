@@ -1,0 +1,16 @@
+{
+  "title": "2 aprel: autizm haqqında 4 mif",
+  "brand": "brands/my-brand.json",
+  "theme": "minimal",
+  "tone": "awareness",
+  "palette": { "bg": "#F3F6FB", "surface": "#FFFFFF", "text": "#1B2340", "muted": "#57607A", "accent": "#7A4FD1" },
+  "slides": [
+    { "type": "cover", "motif": "sonsuzluq", "kicker": "2 aprel", "title": "Autizm: 4 yayğın **mif**", "subtitle": "Valideynlərin ən çox eşitdiyi fikirlər və reallıq." },
+    { "type": "compare", "title": "Səbəb tərbiyədirmi?", "left": { "label": "Mif", "items": ["Autizm pis tərbiyədən yaranır"] }, "right": { "label": "Reallıq", "items": ["Autizm neyro-inkişaf fərqidir. Valideyn tərbiyəsi onu yaratmır."] } },
+    { "type": "compare", "title": "Peyvənd və autizm", "left": { "label": "Mif", "items": ["Peyvəndlər autizmə səbəb olur"] }, "right": { "label": "Reallıq", "items": ["Geniş araşdırmalar peyvəndlə autizm arasında əlaqə tapmayıb."] } },
+    { "type": "compare", "title": "Hisslər", "left": { "label": "Mif", "items": ["Autist uşaq hiss etmir, sevmir"] }, "right": { "label": "Reallıq", "items": ["Hiss edir. Sadəcə fərqli ifadə edə bilər."] } },
+    { "type": "compare", "title": "Hamısı eynidir?", "left": { "label": "Mif", "items": ["Bütün autist uşaqlar eyni cürdür"] }, "right": { "label": "Reallıq", "items": ["Autizm spektrdir: hər uşağın gücü və ehtiyacı fərqlidir."] } },
+    { "type": "recap", "kicker": "Yadda qalsın", "title": "Qəbul etmək nə deməkdir?", "items": ["Uşağı \"düzəltməyə\" yox, anlamağa çalışmaq", "Sensor həssaslığa yer vermək", "Ünsiyyətin fərqli yollarını qəbul etmək"] },
+    { "type": "cta", "title": "Bir valideynə göndər.", "body": "Mənbə: ÜST, autizm haqqında məlumat vərəqi.", "action": "Paylaş", "icon": "share" }
+  ]
+}

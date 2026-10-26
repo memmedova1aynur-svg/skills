@@ -67,9 +67,26 @@ Write `carousel.json`. Each slide is one of nine types:
 | `image` | a photo or screenshot | `src`, `title`?, `caption`?, `alt`? |
 | `recap` | the screenshot slide | `title`, `items`, `kicker`? |
 | `cta` | the one ask | `title`, `body`?, `action`?, `icon`? (save, share, comment, follow, link) |
+| `greeting` | occasion card, single post | `title`, `message`?, `motif`/`image`?, `kicker`?, `signature`? |
+| `poster` | ad, announcement, event | `title`, `details`? (`{label,value}`), `badge`?, `action`?, `contact`?, `motif`/`image`? |
+| `meme` | humour, familiar situation | `caption`, `image`/`motif`?, `bottom`?, `credit`? |
+| `comic` | dialogue, mini story | `panels` (2-4 × `{text, image/motif}`), `title`? |
+| `quiz` / `answer` | scenario test, choice | `question`, `options` (2-4); answer adds `correct` (A-D), `explanation` |
+| `table` | cheat sheet, comparison grid | `rows`, `columns`?, `title`?, `note`? |
+| `annotated` | worksheet or screenshot explained in place | `image`, `notes` (1-5 × `{x, y, text}`, % of the image) |
 
 `**word**` highlights in the accent colour. `"accent": true` flips any slide to the accent
 background for a mid-carousel beat.
+
+Spec-level switches: `"format": "post"` for a single-image post (no counter, swipe or
+carousel checks); `"tone"` (`celebration`, `awareness`, `religious`, `remembrance`) where
+remembrance swaps in a sober dark palette and the QA blocks posters, memes, quizzes, stats,
+confetti and save/follow/link asks; `"palette"` to override brand colours for one post;
+`"ornament": "<motif>"` to scatter a motif faintly. `"motif"` places an illustration from the
+built-in library (`assets/motifs/`: səməni, tonqal, şam, qərənfil, şarlar, yolka, qar,
+sonsuzluq, ürək, kitab, ulduz, bayraq, nar, şəkərbura, lalə, kublar, günəş, konfetti, hilal).
+Which type and format a topic needs is decided first in `carousel-strategy`; day-specific
+posts come from `occasion-posts`.
 
 The finishing that makes it read as designed is built in, not per-post work: an author badge
 and page counter on every slide, a line that runs continuously across slide edges (the
@@ -138,7 +155,9 @@ Then hand off:
 
 ## Related skills
 
+- `carousel-strategy` — goal, content type and visual format before any copy.
 - `carousel-writer`, `hook-writer` — the copy and the cover hook.
+- `occasion-posts` — holidays, awareness and remembrance days.
 - `design-and-templates`, `brand-profile` — the wider visual system and identity.
 - `canva` — template route for teams already in Canva.
 - `infographic-and-data-viz`, `quote-cards-and-text-graphics` — single-image siblings.

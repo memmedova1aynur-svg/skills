@@ -105,6 +105,9 @@ node scripts/build-carousel.cjs --themes         list themes
 | **no-cover** / **short-carousel** / **long-carousel** | warn | structure | revisit with `carousel-writer` |
 | **no-cta** | info | last slide is not a CTA | usually add one |
 | **font-fetch** | warn | Google Fonts unreachable for a family | add `fonts.files` or go online |
+| **tone-type** / **tone-motif** / **tone-cta** | error | a slide type, motif or ask that breaks the day's tone | remove it; remembrance days take no selling, jokes or confetti |
+| **tone-accent** | warn | accent slide on a remembrance or religious day | drop `"accent"` |
+| **long-table** | warn | more than 7 table rows | split the table |
 
 Then open `contact-sheet.png`. Ask: does the cover read at that size? Does the eye know where
 to go on every slide? Is there one highlight per slide, not five?

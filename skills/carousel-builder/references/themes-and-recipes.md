@@ -65,6 +65,17 @@ line) → cta (comment a keyword; DM flow via the DM skills)
 **Personal story**, theme `editorial` or `tweet`
 cover → text × 4-6 (one beat each) → quote (the lesson) → cta (follow)
 
+## Formats beyond the teaching carousel
+
+**Single post** (`"format": "post"`): one `greeting`, `poster`, `quote`, `stat` or `meme` slide.
+**Ad poster**: `poster` with `badge` (e.g. "-20%"), `details` (date, time, place, price),
+`action` and `contact`; the photo or motif fills the top. One offer per poster.
+**Humour**: `meme` for a single familiar situation, `comic` for a two-to-four beat story. Keep
+humour about situations, never about clients, children or conditions.
+**Scenario test**: `quiz` slide(s), then an `answer` slide with the explanation.
+**Cheat sheet**: `table` (age → milestone, problem → fix); label general guidance as such.
+**Annotated example**: `annotated` over a real worksheet or screenshot, 3-5 numbered notes.
+
 ## Working fast across clients
 
 ```

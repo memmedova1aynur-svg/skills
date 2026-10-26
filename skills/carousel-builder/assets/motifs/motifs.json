@@ -1,0 +1,158 @@
+{
+  "semeni": {
+    "uses": [
+      "novruz",
+      "spring"
+    ],
+    "tone": "celebration"
+  },
+  "tonqal": {
+    "uses": [
+      "novruz",
+      "od-cersenbe",
+      "winter"
+    ],
+    "tone": "celebration"
+  },
+  "sam": {
+    "uses": [
+      "remembrance",
+      "mourning"
+    ],
+    "tone": "remembrance"
+  },
+  "qerenfil": {
+    "uses": [
+      "remembrance",
+      "mourning",
+      "8-mart",
+      "national"
+    ],
+    "tone": "remembrance"
+  },
+  "sarlar": {
+    "uses": [
+      "1-iyun",
+      "birthday",
+      "children",
+      "celebration"
+    ],
+    "tone": "celebration"
+  },
+  "yolka": {
+    "uses": [
+      "yeni-il",
+      "winter"
+    ],
+    "tone": "celebration"
+  },
+  "qar": {
+    "uses": [
+      "yeni-il",
+      "winter"
+    ],
+    "tone": "celebration"
+  },
+  "sonsuzluq": {
+    "uses": [
+      "autizm",
+      "neurodiversity",
+      "inclusion"
+    ],
+    "tone": "awareness"
+  },
+  "urek": {
+    "uses": [
+      "14-fevral",
+      "ana-gunu",
+      "family",
+      "kindness"
+    ],
+    "tone": "celebration"
+  },
+  "kitab": {
+    "uses": [
+      "bilik-gunu",
+      "kitab-gunu",
+      "muellim",
+      "education"
+    ],
+    "tone": "celebration"
+  },
+  "ulduz": {
+    "uses": [
+      "national",
+      "novruz",
+      "celebration"
+    ],
+    "tone": "celebration"
+  },
+  "bayraq": {
+    "uses": [
+      "national",
+      "zefer-gunu",
+      "musteqillik",
+      "bayraq-gunu"
+    ],
+    "tone": "celebration"
+  },
+  "nar": {
+    "uses": [
+      "national",
+      "novruz",
+      "autumn",
+      "culture"
+    ],
+    "tone": "celebration"
+  },
+  "sekerbura": {
+    "uses": [
+      "novruz",
+      "food"
+    ],
+    "tone": "celebration"
+  },
+  "lale": {
+    "uses": [
+      "8-mart",
+      "ana-gunu",
+      "spring"
+    ],
+    "tone": "celebration"
+  },
+  "kublar": {
+    "uses": [
+      "1-iyun",
+      "children",
+      "inkisaf",
+      "education"
+    ],
+    "tone": "celebration"
+  },
+  "gunes": {
+    "uses": [
+      "1-iyun",
+      "summer",
+      "children",
+      "celebration"
+    ],
+    "tone": "celebration"
+  },
+  "konfetti": {
+    "uses": [
+      "celebration",
+      "birthday",
+      "yeni-il",
+      "launch"
+    ],
+    "tone": "celebration"
+  },
+  "hilal": {
+    "uses": [
+      "ramazan",
+      "qurban",
+      "religious"
+    ],
+    "tone": "religious"
+  }
+}
