@@ -1,70 +1,70 @@
 ---
 name: remotion-video-edit
-description: Remotion ile Instagram Reels / TikTok / Shorts kalitesinde dikey tanıtım videosu üretir. Kinetik tipografi, spring animasyonlar, kamera hissi veren zoom/pan, katmanlı geçişler (çapraz wipe, buz çatlağı + shard açılış, daire açılış) ve vurgu anına senkron ses efektleri kullanır. Konuşmalı kayıtlarda boşlukları ve tekrar eden / hatalı cümleleri, ücretsiz yerel AI (faster-whisper) ile yazıya döküp keser. Önce sahne sahne storyboard çıkarır, onay alır, Remotion Studio'da önizleme açar ve son onaydan sonra render alır. Kullanıcı tanıtım videosu, reel, motion graphics, kinetik tipografi, "video yap / video editle", "boşlukları kes", "tekrar eden / hatalı cümleleri kes" ya da Remotion ile video istediğinde kullan.
+description: Remotion ilə Instagram Reels / TikTok / Shorts keyfiyyətində şaquli tanıtım videosu hazırlayır. Kinetik tipoqrafiya, spring animasiyalar, kamera hissi verən zoom/pan, təbəqəli keçidlər (çapraz wipe, buz çatlağı + shard açılış, dairəvi açılış) və vurğu anına sinxron səs effektləri istifadə edir. Danışıq yazılarında boşluqları və təkrar / səhv cümlələri pulsuz yerli AI (faster-whisper) ilə mətnə çevirib kəsir. Əvvəlcə səhnə-səhnə storyboard hazırlayır, təsdiq alır, Remotion Studio-da önizləmə açır və son təsdiqdən sonra render alır. İstifadəçi tanıtım videosu, reel, motion graphics, kinetik tipoqrafiya, "video hazırla / video montaj et", "boşluqları kəs", "təkrar / səhv cümlələri kəs" deyəndə və ya Remotion ilə video istəyəndə istifadə et.
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 license: MIT
 ---
 
-# Remotion ile video edit
+# Remotion ilə video montajı
 
-Bu skill, Apple ürün tanıtımı temposunda (hızlı, modern, premium) 1080×1920 dikey videolar üretmek içindir. Kalıplar, 15 saniyelik bir "Claude ile video edit" tanıtım reel'inde denendi ve beğenildi. Aşağıdaki stil, geçiş, ses ve kod kalıplarını temel al; kullanıcının konusuna, markasına ve kaynaklarına uyarla.
+Bu skill Apple məhsul təqdimatı temposunda (sürətli, müasir, premium) 1080×1920 dikey videolar hazırlamaq üçündür. Bu üslub və şablonlar 15 saniyəlik "Claude ilə video edit" tanıtım reel-ində sınaqdan keçirilib və bəyənilib. Aşağıdakı üslub, keçid, səs və kod şablonlarını əsas götür; istifadəçinin mövzusuna, markasına və materiallarına uyğunlaşdır.
 
-## 1. Başlamadan önce kullanıcıya sor
+## 1. Başlamazdan əvvəl istifadəçidən soruş
 
-Kod yazmadan önce aşağıdakileri **tek mesajda** sor. Kullanıcı bir kısmını zaten verdiyse onları tekrar sorma.
+Kod yazmazdan əvvəl aşağıdakıları **bir mesajda** soruş. İstifadəçi bir hissəsini artıq veribsə, onları yenidən soruşma.
 
-1. **Konu ve akış:** video ne anlatıyor? Önerilen akış: hook → problem → 3 özellik → kapanış. Süre ne olsun (varsayılan 15 sn)? Ekrandaki metinler hangi dilde olsun? Bir marka rengi ya da logo var mı?
-2. **Ses efektleri kaynağı:** öneri [Pixabay Sound Effects](https://pixabay.com/sound-effects/). Ücretsizdir, telif bildirimi gerektirmez; kullanmadan önce [Pixabay İçerik Lisansı](https://pixabay.com/service/license-summary/)'nı kontrol et. Kullanıcıya şunu sor: "Pixabay uygun mu, yoksa kullandığın başka bir site, alternatif bir önerin ya da elinde hazır efektler var mı?"
-3. **Animasyon referansları:** öneri [21st.dev](https://21st.dev). Bu stil şu üç bileşenden türetildi:
-   - [Shader Animation](https://21st.dev/@designali-in/components/shader-animation): RGB'ye ayrışan eş merkezli halkalar.
-   - [Horizon Hero Section](https://21st.dev/@lovesickfromthe6ix/components/horizon-hero-section): uzay gradyanı, dağ silüeti, ışık huzmesi, dev wordmark.
-   - [Scroll Morph Hero](https://21st.dev/@prashantsom75/components/scroll-morph-hero): kartların dağınık → çember → yay morph'u.
+1. **Mövzu və axın:** video nəyi danışır? Tövsiyə olunan axın: hook → problem → 3 xüsusiyyət → bağlanış. Müddət nə qədər olsun (standart 15 saniyə)? Ekrandakı mətnlər hansı dildə olsun? Marka rəngi və ya loqo varmı?
+2. **Səs effektlərinin mənbəyi:** tövsiyə [Pixabay Sound Effects](https://pixabay.com/sound-effects/). Pulsuzdur, müəllif hüququ bildirişi tələb etmir; istifadə etməzdən əvvəl [Pixabay məzmun lisenziyası](https://pixabay.com/service/license-summary/)nı yoxla. İstifadəçiyə belə soruş: "Pixabay uyğundurmu, yoxsa istifadə etdiyin başqa sayt, alternativ təklifin və ya əlində hazır effektlər varmı?"
+3. **Animasiya referansları:** tövsiyə [21st.dev](https://21st.dev). Bu üslub üç komponentdən alınıb:
+   - [Shader Animation](https://21st.dev/@designali-in/components/shader-animation): RGB-yə ayrılan konsentrik halqalar.
+   - [Horizon Hero Section](https://21st.dev/@lovesickfromthe6ix/components/horizon-hero-section): kosmik qradiyent, dağ silueti, işıq şüası, nəhəng wordmark.
+   - [Scroll Morph Hero](https://21st.dev/@prashantsom75/components/scroll-morph-hero): kartların dağınıq vəziyyətdən çevrəyə, sonra qövsə morfu.
 
-   Kullanıcıya şunu sor: "Bu site ve bileşenler uygun mu, yoksa başka bir site, referans video ya da alternatif önerin var mı?"
-4. **Dosya yolları:** herkesin klasör yapısı farklıdır, varsayım yapma. Şunları sor:
-   - Ses efektleri hangi klasörde?
-   - Logo, görsel, ekran kaydı, video ya da font gibi diğer asset'ler hangi klasörde?
-   - Remotion projesi nereye kurulsun?
-   - Arka plan müziği var mı, varsa yolu ne?
-5. **Konuşmalı kayıt:** kesilecek bir konuşmalı kayıt var mı? Varsa şunları sor:
-   - boşluklar mı, tekrar eden / hatalı cümleler mi, ikisi birden mi kesilsin?
-   - konuşma hangi dilde?
-   - transkript için yerel AI kurulumuna izin veriyor mu?
-   - modeli nereye indireyim, ya da zaten indirilmiş bir modeli var mı? (bkz. bölüm 5)
+   İstifadəçiyə belə soruş: "Bu sayt və komponentlər uyğundurmu, yoxsa başqa sayt, referans video və ya alternativ təklifin varmı?"
+4. **Fayl yolları:** hər kəsin qovluq quruluşu fərqlidir, təxmin etmə. Bunları soruş:
+   - Səs effektləri hansı qovluqdadır?
+   - Loqo, şəkil, ekran qeydi, video və ya font kimi digər asset-lər hansı qovluqdadır?
+   - Remotion layihəsi harada qurulsun?
+   - Arxa plan musiqisi varmı, varsa yolu hansıdır?
+5. **Danışıq yazısı:** kəsiləcək danışıq yazısı varmı? Varsa bunları soruş:
+   - boşluqlar, təkrar və ya səhv cümlələr, yoxsa hər ikisi kəsilsin?
+   - danışıq hansı dildədir?
+   - mətn çevrilməsi üçün yerli AI quraşdırmasına icazə verirmi?
+   - modeli hara yükləyim, ya da artıq yüklənmiş modeli varmı? (bax bölmə 5)
 
-Kullanıcı ses efekti indirmeni isterse, indirmeden önce hangi dosyaları hangi siteden indireceğini söyleyip onay al. Pixabay'den indirme çoğu zaman giriş gerektirir; bu durumda dosyaları kullanıcı kendisi indirip verdiği klasöre koyar.
+İstifadəçi səs effektlərini yükləməmi istəsə, yükləməzdən əvvəl hansı faylları hansı saytdan yükləyəcəyini deyib təsdiq al. Pixabay-dən yükləmə adətən giriş tələb edir; bu halda faylları istifadəçi özü yükləyib verdiyi qovluğa qoyur.
 
-## 2. Kaynakları incele
+## 2. Mənbələri yoxla
 
-- **Ses efektleri:** klasördeki her dosyanın süresini, sessizliklerini ve **vurgu anını** (sesin en yüksek olduğu an) ölç. Efektleri bu ana göre yerleştireceksin.
+- **Səs effektləri:** qovluqdakı hər faylın müddətini, sakit hissələrini və **vurğu anını** (səsin ən yüksək olduğu an) ölç. Effektləri bu ana görə yerləşdirəcəksən.
   ```bash
   ffprobe -v error -show_entries format=duration -of csv=p=0 "ses.mp3"
   ffmpeg -i "ses.mp3" -af "silencedetect=n=-40dB:d=0.05" -f null - 2>&1 | grep silence_
   ffmpeg -i "ses.mp3" -af "asetnsamples=2205,astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.Peak_level" -f null - 2>&1 \
     | awk '/pts_time/{split($0,a,"pts_time:");t=a[2]} /Peak_level/{split($0,b,"=");if(b[2]>m||m==""){m=b[2];mt=t}} END{print mt}'
   ```
-- **Arka plan müziği:** varsa BPM'ini ve beat zamanlarını çıkar, kesimleri beat'e oturt. Yoksa kesimleri 120 BPM grid'ine (0,5 sn = 30 fps'de 15 kare) oturt; sonradan müzik eklenirse beat'e denk gelir.
-- **Referans siteler:** sayfaları tarayıcıda açıp ekran görüntüsü al. Renk, tipografi ve hareket dilini not et. Bileşen kaynak kodu genelde giriş ya da API anahtarı ister; kodu kopyalamaya çalışma, görsel dili Remotion'a uyarla.
+- **Arxa plan musiqisi:** varsa BPM-ni və beat zamanlarını çıxar, kəsimləri beat-ə oturt. Yoxdursa, kəsimləri 120 BPM grid-inə (0,5 saniyə = 30 fps-də 15 kadr) oturt; sonradan musiqi əlavə olunsa beat-ə düşəcək.
+- **Referans saytlar:** səhifələri brauzerdə açıb ekran görüntüsü al. Rəng, tipoqrafiya və hərəkət dilini qeyd et. Komponentin mənbə kodu adətən giriş və ya API açarı tələb edir; kodu köçürməyə çalışma, vizual dili Remotion-a uyğunlaşdır.
 
-## 3. Storyboard çıkar ve onay al
+## 3. Storyboard hazırla və təsdiq al
 
-Henüz kod yazma ve render alma. Sahne sahne bir storyboard yaz. Her sahne için:
-- süre (başlangıç–bitiş, saniye)
-- ekranda ne olduğu
-- hangi animasyon ve kamera hareketi
-- hangi ses efekti, hangi anda
+Hələ kod yazma və render alma. Səhnə-səhnə storyboard yaz. Hər səhnə üçün:
+- müddət (başlanğıc–bitiş, saniyə ilə)
+- ekranda nə olduğu
+- hansı animasiya və kamera hərəkəti
+- hansı səs effekti, hansı anda
 
-Kurallar:
-- Her sahne en fazla 2–3 sn sürsün; ekranda hiçbir an statik kalmasın.
-- Yazılar büyük ve okunaklı olsun, güvenli alanın dışına taşmasın (bkz. Tipografi).
-- Sahnenin vurgu kelimesi bir renk ya da gradyanla öne çıksın.
+Qaydalar:
+- Hər səhnə ən çox 2–3 saniyə çəkməlidir; ekranda heç bir an statik qalmamalıdır.
+- Yazılar böyük və oxunaqlı olsun, təhlükəsiz sahədən çıxmasın (bax Tipoqrafiya).
+- Səhnənin vurğu sözü rəng və ya qradiyentlə seçilsin.
 
-Kullanıcı onaylayınca ya da revize verince koda geç.
+İstifadəçi təsdiq edəndə və ya düzəliş verəndə koda keç.
 
-## 4. Projeyi kur
+## 4. Layihəni qur
 
-Projeyi kullanıcının verdiği klasöre kur:
+Layihəni istifadəçinin verdiyi qovluqda qur:
 
 ```bash
 npm init -y
@@ -72,54 +72,54 @@ npm i remotion @remotion/cli @remotion/google-fonts react react-dom
 npm i -D typescript @types/react
 ```
 
-- Ses efektlerini `public/sfx/` altına **boşluksuz adlarla** kopyala (`whoosh 1.mp3` → `whoosh-1.mp3`); `staticFile()` boşluklu adlarda sorun çıkarabilir.
-- Dosya yapısı:
-  - `src/index.ts`: `registerRoot` çağrısı.
+- Səs effektlərini `public/sfx/` altına **boşluqsuz adlarla** köçür (`whoosh 1.mp3` → `whoosh-1.mp3`); `staticFile()` boşluqlu adlarda problem yarada bilər.
+- Fayl strukturu:
+  - `src/index.ts`: `registerRoot` çağırışı.
   - `src/Root.tsx`: `<Composition width={1080} height={1920} fps={30} />`.
-  - `src/theme.ts`: renkler, fontlar, kesim kareleri.
-  - `src/components/kit.tsx`: ortak yardımcılar.
-  - `src/scenes/*.tsx`: sahneler.
-  - `src/Reel.tsx`: sahne sıralaması ve ses tasarımı.
+  - `src/theme.ts`: rənglər, fontlar, kəsim kadrları.
+  - `src/components/kit.tsx`: ümumi köməkçilər.
+  - `src/scenes/*.tsx`: səhnələr.
+  - `src/Reel.tsx`: səhnələrin sıralanması və səs dizaynı.
 - `remotion.config.ts`:
   ```ts
   import {Config} from '@remotion/cli/config';
   Config.setVideoImageFormat('jpeg');
   Config.setJpegQuality(95);
-  Config.setChromiumOpenGlRenderer('angle'); // shader (WebGL) için şart
+  Config.setChromiumOpenGlRenderer('angle'); // shader (WebGL) üçün vacibdir
   Config.setCodec('h264');
   Config.setCrf(16);
   ```
-- Test edilen sürüm Remotion 4.0.539 (2026-10). `Audio` bileşeninde `trimBefore` kullanılır (eski adı `startFrom`). Daha yeni bir sürümde API'yi [Remotion dokümantasyonundan](https://www.remotion.dev/docs) kontrol et.
+- Sınaqdan keçirilən versiya Remotion 4.0.539-dur (2026-10). `Audio` komponentində `trimBefore` istifadə olunur (köhnə adı `startFrom`). Daha yeni versiyada API-ni [Remotion sənədlərindən](https://www.remotion.dev/docs) yoxla.
 
-## 5. Konuşmalı videoda boşluk ve hatalı cümle kesimi
+## 5. Danışıq videosunda boşluq və təkrar cümlə kəsimi
 
-Kullanıcı konuşmalı bir kayıt (anlatım, vlog, ekran kaydı) verip boşlukların ya da tekrar eden / hatalı cümlelerin kesilmesini isterse, kesimi grafiklerden önce yap. Kesim listesi Remotion'da `Series` ile uygulanır; ayrı bir editör gerekmez.
+İstifadəçi danışıq yazısı (izahat, vlog, ekran qeydi) verib boşluqların və ya təkrar və səhv cümlələrin kəsilməsini istəsə, kəsimi qrafiklərdən əvvəl et. Kəsim siyahısı Remotion-da `Series` ilə tətbiq olunur; ayrıca redaktor lazım deyil.
 
-### Yerel ve ücretsiz AI kurulumu
+### Yerli və pulsuz AI quraşdırması
 
-Konuşmayı yazıya dökmek için ücretsiz, internete veri göndermeyen ve bilgisayarda çalışan [faster-whisper](https://github.com/SYSTRAN/faster-whisper) kullan. Model: `large-v3-turbo` (CPU, int8; Türkçe dahil çok dilli). Daha hızlı ama daha az isabetli bir yedek olarak `small` kullanılabilir.
+Danışığı mətnə çevirmək üçün pulsuz, internetə məlumat göndərməyən və kompüterdə işləyən [faster-whisper](https://github.com/SYSTRAN/faster-whisper) istifadə et. Model: `large-v3-turbo` (CPU, int8; Azərbaycan və türk dilləri daxil olmaqla çoxdilli). Daha sürətli, lakin daha az dəqiq ehtiyat variant kimi `small` istifadə oluna bilər.
 
-**Kurmadan önce kullanıcıya sor:**
-- Python sanal ortamı nereye kurulsun?
-- Model nereye indirilsin? `large-v3-turbo` yaklaşık 1,6 GB, `small` yaklaşık 0,5 GB.
-- Elinde zaten indirilmiş bir faster-whisper modeli var mı? Varsa yolunu sor ve onu kullan; aynı modeli ikinci kez indirme.
+**Quraşdırmadan əvvəl istifadəçidən soruş:**
+- Python virtual mühiti haraya qurulsun?
+- Model haraya yüklənsin? `large-v3-turbo` təxminən 1,6 GB, `small` təxminən 0,5 GB-dır.
+- Əlində artıq yüklənmiş faster-whisper modeli varmı? Varsa yolunu soruş və onu istifadə et; eyni modeli ikinci dəfə yükləmə.
 
-Onay gelince kur:
+Təsdiq gələndə qur:
 
 ```bash
 python3 -m venv <venv-yolu>
 <venv-yolu>/bin/pip install faster-whisper
 ```
 
-**Modeli indirme:**
-- Kullanıcının istediği klasöre `huggingface-cli download Systran/faster-whisper-large-v3-turbo --local-dir <model-klasörü>` ile indir; Hugging Face'e erişim yoksa kullanıcıdan indirmesini iste.
-- Ya da `WhisperModel("large-v3-turbo")` ile ilk çalıştırmada indirilmesine izin ver; bu durumda model Hugging Face önbelleğine (`~/.cache/huggingface`) iner.
+**Modeli yükləmək:**
+- İstifadəçinin seçdiyi qovluğa `huggingface-cli download Systran/faster-whisper-large-v3-turbo --local-dir <model-qovluğu>` ilə yüklə; Hugging Face-ə giriş yoxdursa, istifadəçidən özünün yükləməsini xahiş et.
+- Ya da `WhisperModel("large-v3-turbo")` ilə ilk işə salınmada yüklənməsinə icazə ver; bu halda model Hugging Face keşinə (`~/.cache/huggingface`) düşəcək.
 
-Yöntem ne olursa olsun, `download_root` değerini mevcut bir model klasörüne verme. Faster-whisper oraya aynı modelin ikinci bir kopyasını indirir.
+Metod hansı olursa olsun, `download_root` dəyərini mövcud model qovluğuna vermə. Faster-whisper oraya eyni modelin ikinci nüsxəsini yükləyər.
 
 ### Transkript (`transcribe.py`)
 
-Önce sesi mono 16 kHz WAV olarak çıkar:
+Əvvəlcə səsi mono 16 kHz WAV kimi çıxar:
 
 ```bash
 ffmpeg -i video.mp4 -vn -ac 1 -ar 16000 ses.wav
@@ -128,14 +128,14 @@ ffmpeg -i video.mp4 -vn -ac 1 -ar 16000 ses.wav
 Sonra transkripti al:
 
 ```bash
-<venv-yolu>/bin/python -I transcribe.py ses.wav words.json tr <model-klasörü-ya-da-adı>
+<venv-yolu>/bin/python -I transcribe.py ses.wav words.json az <model-qovluğu-və-ya-adı>
 ```
 
-Dil kodunu kullanıcının konuştuğu dile sabitle (Türkçe için `tr`); otomatik algılamaya güvenme.
+Dil kodunu istifadəçinin danışdığı dilə sabitlə (Azərbaycan dili üçün `az`, türk dili üçün `tr`); avtomatik aşkarlamaya güvənmə.
 
 ```python
-# Kelime zamanlı transkript: python transcribe.py ses.wav words.json <dil> <model>
-# Ses, sessizliklerden parçalara bölünüp her parça ayrı çözülür; Whisper uzun seste tekrar eden denemeleri yutar.
+# Söz zamanlı transkript: python transcribe.py ses.wav words.json <dil> <model>
+# Səs sakitliklərə görə parçalara bölünür və hər parça ayrıca həll olunur; uzun səsdə Whisper təkrar edən cəhdləri udur.
 import json, sys, wave
 import numpy as np
 from faster_whisper import WhisperModel
@@ -143,10 +143,10 @@ from faster_whisper import WhisperModel
 audio_path, out, lang, model_ref = sys.argv[1:5]
 w = wave.open(audio_path)
 assert w.getframerate() == 16000 and w.getnchannels() == 1, "mono 16 kHz WAV ver"
-# Sesi doğrudan diziye oku: faster-whisper'ın PyAV çözücüsü bazı sürümlerde hata veriyor.
+# Səsi birbaşa massivə oxu: faster-whisper-in PyAV dekoderi bəzi versiyalarda xəta verir.
 audio = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
 
-# 10 ms enerji; gürültü tabanının 12 dB üstü konuşma sayılır, 0,35 sn'den uzun sessizlikte bölünür
+# 10 ms enerji; səs-küy əsasından 12 dB yuxarısı danışıq sayılır, 0,35 saniyədən uzun sakitlikdə bölünür
 hop = 160
 frames = audio[: len(audio) // hop * hop].reshape(-1, hop)
 db = 20 * np.log10(np.sqrt((frames ** 2).mean(axis=1)) + 1e-9)
@@ -166,62 +166,62 @@ if start is not None:
 model = WhisperModel(model_ref, device="cpu", compute_type="int8")
 words = []
 for a, b in chunks:
-    a0, b0 = max(0, a - 20), min(len(db), b + 20)  # 0,2 sn pay
+    a0, b0 = max(0, a - 20), min(len(db), b + 20)  # 0,2 san pay
     segments, _ = model.transcribe(audio[a0 * hop : b0 * hop], language=lang, word_timestamps=True, condition_on_previous_text=False)
     off = a0 * hop / 16000
     words += [{"w": x.word.strip(), "s": round(x.start + off, 2), "e": round(x.end + off, 2)} for s in segments for x in s.words]
 json.dump(words, open(out, "w"), ensure_ascii=False, indent=0)
-print(len(chunks), "parça,", len(words), "kelime")
+print(len(chunks), "parça,", len(words), "söz")
 ```
 
-Hız: Apple Silicon CPU'da `large-v3-turbo` ile parça parça çözüm, 1 dakikalık konuşmada yaklaşık 1 dakika sürer. Uzun kayıtta işi arka planda çalıştır. Transkripti kaynak dosya, model ve dile göre önbelleğe al; kaynak değişmediyse yeniden çözme.
+Sürət: Apple Silicon CPU-da `large-v3-turbo` ilə parça-parça həll, 1 dəqiqəlik danışıqda təxminən 1 dəqiqə çəkir. Uzun yazıda işi fonda işlət. Transkripti mənbə fayla, modelə və dilə görə keşlə; mənbə dəyişməyibsə yenidən həll etmə.
 
-### Hangi sözler çıkarılacak (`remove.json`)
+### Hansı sözlər çıxarılacaq (`remove.json`)
 
-`words.json` dosyasını oku ve çıkarılacak aralıkları kaynak saniyesiyle `remove.json` dosyasına yaz:
+`words.json` faylını oxu və çıxarılacaq aralıqları mənbə saniyəsi ilə `remove.json` faylına yaz:
 
 ```json
-[[11.10, 19.45, "tekrar: 'Örneğin Google Meet, Zoom veya' ilk iki deneme"],
- [56.40, 57.30, "kenar söz: 'Tamam.'"]]
+[[11.10, 19.45, "təkrar: 'Məsələn Google Meet, Zoom və ya' ilk iki cəhd"],
+ [56.40, 57.30, "kənar söz: 'Tamam.'"]]
 ```
 
-Çıkarılacaklar:
-- **Tekrar eden cümle ya da başlangıç:** **son, eksiksiz ve temiz** deneme kalır, öncekiler çıkar. Önceki deneme açıkça daha iyiyse onu tut ve bunu kullanıcıya söyle.
-- **Yarım bırakılan cümle, yanlış başlangıç ve yalnızca dolgudan oluşan parça** ("ıı", "şey", "dur ya").
-- **Kayıtta kendine düşülen notlar** ("şuraya blur atmak lazım"): kesilir, ama kullanıcıya yapılacak iş olarak listelenir.
+Çıxarılacaqlar:
+- **Təkrar olunan cümlə və ya başlanğıc:** **son, tam və təmiz** cəhd qalır, əvvəlkilər çıxır. Əvvəlki cəhd açıq-aydın daha yaxşıdırsa onu saxla və bunu istifadəçiyə de.
+- **Yarımçıq qalmış cümlə, səhv başlanğıc və yalnız doldurucu sözlərdən ibarət parça** ("eee", "hə-hə", "yəni" kimi).
+- **Yazıda özünə qeyd kimi deyilmiş sözlər** ("burada blur əlavə etmək lazımdır"): kəsilir, amma istifadəçiyə görüləcək iş kimi siyahıya salınır.
 
-Dikkat edilecekler:
-- Cümlelerin sırasını değiştirme, anlamı bozma; yalnızca bir kez söylenmiş içeriği çıkarma.
-- Ürün adlarını transkriptte düzelt (ör. ASR'nin "Cloud"u → "Claude"); sözleri değiştirme.
+Diqqət ediləcəklər:
+- Cümlələrin ardıcıllığını dəyişmə, mənanı pozma; yalnız bir dəfə deyilmiş məzmunu çıxar.
+- Məhsul adlarını transkriptdə düzəlt (məsələn, ASR-nin "Cloud" yazdığını → "Claude"); sözlərin özünü dəyişmə.
 
-### Kesim listesi (`cuts.py`)
+### Kəsim siyahısı (`cuts.py`)
 
-Kesim sınırlarını ses enerjisi, neyin çıkacağını transkript belirler. Whisper'ın kelime zamanları sessizliklere taşar; sınır için tek başına yeterince hassas değildir.
+Kəsim sərhədlərini səs enerjisi, nəyin çıxarılacağını isə transkript müəyyən edir. Whisper-in söz zamanları sakitliyə doğru sürüşür; sərhəd üçün tək başına kifayət qədər dəqiq deyil.
 
 ```bash
-python3 -I cuts.py ses.wav words.json remove.json cuts.json [eşik_dB]
+python3 -I cuts.py ses.wav words.json remove.json cuts.json [hədd_dB]
 ```
 
-Varsayılanlar (kullanıcı başka değer vermediyse):
+Standart dəyərlər (istifadəçi başqa dəyər vermədikdə):
 
-| Ayar | Değer |
+| Parametr | Dəyər |
 | --- | --- |
-| Kesilecek en kısa sessizlik | 0,5 sn; daha kısa duraklar doğal ritim olarak kalır |
-| Konuşmadan önce / sonra bırakılan pay | dikey video 0,10 / 0,20 sn; yatay video 0,12 / 0,15 sn |
-| Konuşma eşiği | gürültü tabanının 12 dB üstü (en az −55 dB). Gürültülü kayıtta eşiği elle ver |
-| Kelimesiz ses bloğu (nefes, tık, klavye) | konuşmadan en az 0,3 sn uzaksa atılır |
-| Sınırlar | kare ızgarasına dışa doğru yuvarlanır; kelime ya da hece kesilmez |
+| Kəsiləcək ən qısa sakitlik | 0,5 san; daha qısa fasilələr təbii ritm kimi qalır |
+| Danışıqdan əvvəl / sonra saxlanılan pay | şaquli video 0,10 / 0,20 san; üfüqi video 0,12 / 0,15 san |
+| Danışıq həddi | səs-küy əsasından 12 dB yuxarı (ən azı −55 dB). Səs-küylü yazıda həddi əl ilə ver |
+| Sözsüz səs bloku (nəfəs, tıq, klaviatura) | danışıqdan ən azı 0,3 san uzaqdadırsa atılır |
+| Sərhədlər | kadr şəbəkəsinə xaricə yuvarlanır; söz və ya heca kəsilmir |
 
 ```python
-# Boşluk + hatalı cümle kesim listesi: python cuts.py ses.wav words.json remove.json cuts.json [eşik_dB]
+# Boşluq və səhv cümlə kəsim siyahısı: python cuts.py ses.wav words.json remove.json cuts.json [hədd_dB]
 import array, json, math, sys, wave
 
 wav, words_path, remove_path, out = sys.argv[1:5]
 FPS = 30
-MERGE_GAP = 0.10        # bundan kısa boşluklar aynı ses bloğu
-MIN_SIL = 0.50          # yalnızca bundan uzun sessizlikler kesilir
-PRE, POST = 0.10, 0.20  # konuşmadan önce / sonra bırakılan pay (dikey video)
-NOISE_DIST = 0.30       # kelimesiz ses bloğu konuşmadan bu kadar uzaksa atılır
+MERGE_GAP = 0.10        # bundan qısa boşluqlar eyni səs bloku sayılır
+MIN_SIL = 0.50          # yalnız bundan uzun sakitliklər kəsilir
+PRE, POST = 0.10, 0.20  # danışıqdan əvvəl / sonra saxlanılan pay (şaquli video)
+NOISE_DIST = 0.30       # sözsüz səs bloku danışıqdan bu qədər uzaqdırsa atılır
 
 w = wave.open(wav)
 sr, n = w.getframerate(), w.getnframes()
@@ -236,7 +236,7 @@ dur = len(db) / 100
 sd = sorted(db)
 floor = sd[int(0.10 * (len(sd) - 1))]
 THR = float(sys.argv[5]) if len(sys.argv) > 5 else max(-55.0, floor + 12)
-print(f"gürültü tabanı {floor:.1f} dB, medyan {sd[len(sd) // 2]:.1f} dB, eşik {THR:.1f} dB")
+print(f"səs-küy əsası {floor:.1f} dB, median {sd[len(sd) // 2]:.1f} dB, hədd {THR:.1f} dB")
 
 blobs, s, last = [], None, None
 for i, v in enumerate(db):
@@ -260,7 +260,7 @@ for s, e in blobs:
     touching = [x for x in words if x["e"] > s - 0.05 and x["s"] < e + 0.05]
     if any(r[1] > s and r[0] < e for r in remove):
         keep_words = [x for x in touching if not inside((x["s"] + x["e"]) / 2)]
-        if keep_words:  # çıkarılacak söz, tutulacak sözle boşluksuz bağlı: kesme, raporla
+        if keep_words:  # çıxarılacaq söz, saxlanılacaq sözlə boşluqsuz bağlıdır: kəsmə, bildir
             conflicts.append([round(s, 2), round(e, 2), " ".join(x["w"] for x in touching)])
             kept.append([s, e])
         else:
@@ -296,34 +296,34 @@ for a0, b0, _ in segs:
 
 total = sum(b - a for a, b in cuts)
 json.dump({"fps": FPS, "cuts": cuts, "conflicts": conflicts}, open(out, "w"), ensure_ascii=False, indent=1)
-print(f"{len(cuts)} parça, {dur:.1f} sn → {total / FPS:.1f} sn")
+print(f"{len(cuts)} parça, {dur:.1f} san → {total / FPS:.1f} san")
 for c in conflicts:
-    print("ÇAKIŞMA (kesilmedi):", c)
+    print("TOQQUŞMA (kəsilmədi):", c)
 ```
 
-"ÇAKIŞMA" satırları şu durumu gösterir: çıkarılacak söz, tutulacak sözle arada sessizlik olmadan bağlı. Bunları kelimenin ortasından kesme; kullanıcıya listele.
+"TOQQUŞMA" sətirləri bunu göstərir: çıxarılacaq söz, saxlanılacaq sözlə arada sakitlik olmadan bağlıdır. Bunları sözün ortasından kəsmə; istifadəçiyə siyahı şəklində göstər.
 
-### Kontrol
+### Yoxlama
 
-Kesilmiş sesi yeniden kur ve tekrar transkript et. Hiçbir kelime yarım kalmamalı, metin akıcı okunmalı. Bu adım bir render değildir, yalnızca sesle yapılan bir kontrol.
+Kəsilmiş səsi yenidən qur və yenidən transkript al. Heç bir söz yarımçıq qalmamalı, mətn səlis oxunmalıdır. Bu addım render deyil, yalnız səslə aparılan yoxlamadır.
 
 ```bash
 F=$(python3 -c "import json;d=json.load(open('cuts.json'));print('+'.join(f'between(t,{a/30:.4f},{b/30:.4f})' for a,b in d['cuts']))")
-ffmpeg -i ses.wav -af "aselect='$F',asetpts=N/SR/TB" kontrol.wav
-<venv-yolu>/bin/python -I transcribe.py kontrol.wav kontrol.json tr <model>
+ffmpeg -i ses.wav -af "aselect='$F',asetpts=N/SR/TB" yoxlama.wav
+<venv-yolu>/bin/python -I transcribe.py yoxlama.wav yoxlama.json az <model>
 ```
 
-Kullanıcıya şunları raporla:
-- yeni süre
-- çıkarılan her parça: zamanı, sözleri ve sebebi
-- çakışmalar
-- kendine düşülmüş notlar
+İstifadəçiyə bunları bildir:
+- yeni müddət
+- çıxarılan hər parça: zamanı, sözləri və səbəbi
+- toqquşmalar
+- yazıda özünə deyilmiş qeydlər
 
-Kullanıcının kendi sesine kesim dışında hiçbir ses işlemi (seviye, EQ, gürültü azaltma, fade) uygulama.
+İstifadəçinin öz səsinə kəsimdən başqa heç bir səs emalı (səviyyə, EQ, səs-küy azaltma, fade) tətbiq etmə.
 
-### Remotion'da uygula
+### Remotion-da tətbiq et
 
-Videoyu `public/footage/` altına koy (ya da sembolik bağlantı ver). Parçaları `Series` ile arka arkaya diz. `trimBefore` ve `trimAfter` kompozisyonun fps'i cinsinden karedir; kaynak videonun fps'i farklıysa `cuts.py` içindeki `FPS` değerini kompozisyonla aynı yap. JSON'u import edebilmek için `tsconfig.json` içinde `"resolveJsonModule": true` olmalı.
+Videonu `public/footage/` altına qoy (və ya simvolik keçid ver). Parçaları `Series` ilə ardıcıl düz. `trimBefore` və `trimAfter` kompozisiyanın fps-i ilə kadrdır; mənbə videonun fps-i fərqlidirsə `cuts.py` içindəki `FPS` dəyərini kompozisiya ilə eyni et. JSON-u import etmək üçün `tsconfig.json` içində `"resolveJsonModule": true` olmalıdır.
 
 ```tsx
 import {OffthreadVideo, Series, staticFile} from 'remotion';
@@ -342,70 +342,70 @@ export const Talk: React.FC = () => (
 );
 ```
 
-**Grafikler ve altyazı:** kinetik yazıları, kartları ve altyazıyı kesim sonrası zamana bağla. Bir kelimenin yeni zamanı şöyle hesaplanır:
+**Qrafik və altyazı:** kinetik yazıları, kartları və altyazını kəsimdən sonrakı zamana bağla. Sözün yeni zamanı belə hesablanır:
 
-`yeni kare = (kelime saniyesi × fps − parçanın a değeri) + o parçadan önceki parçaların toplam uzunluğu`
+`yeni kadr = (sözün saniyəsi × fps − parçanın a dəyəri) + həmin parçadan əvvəlki parçaların ümumi uzunluğu`
 
-## 6. Görsel dil
+## 6. Vizual dil
 
-Kullanıcı kendi marka paletini verirse onu kullan; vermezse aşağıdaki paleti kullan.
+İstifadəçi öz marka palitrasını verərsə onu istifadə et; verməzsə aşağıdakı palitranı işlət.
 
-### Palet
+### Palitra
 
-| Ad | Değer | Kullanım |
+| Ad | Dəyər | İstifadə |
 | --- | --- | --- |
-| black | `#000000` | shader / ses sahneleri |
-| ink | `#0B0B10` | açık zemin üstünde başlık, çatlak çizgisi |
-| cream | `#F5F2EE` | açık sahne zemini, koyu zeminde başlık |
-| deep → indigo | `#05040C` → `#120E2E` → `#2A1F63` → `#43307F` | uzay gradyanı (yukarıdan aşağı) |
-| violet | `#6B5BD2` | nebula, ışıma |
-| coral | `#FF5A4E` | eyebrow, vurgu kelimesi, buton |
-| peach → coral → terracotta | `#FFB199` → `#FF5A4E` → `#D97757` | vurgu gradyanı: `linear-gradient(180deg, #FFB199 0%, #FF5A4E 45%, #D97757 100%)`, kelimeye `background-clip: text` ile |
+| black | `#000000` | shader / səs səhnələri |
+| ink | `#0B0B10` | açıq fon üzərində başlıq, çatlaq xətti |
+| cream | `#F5F2EE` | açıq səhnə fonu, tünd fonda başlıq |
+| deep → indigo | `#05040C` → `#120E2E` → `#2A1F63` → `#43307F` | kosmik qradiyent (yuxarıdan aşağı) |
+| violet | `#6B5BD2` | dumanlıq, parıltı |
+| coral | `#FF5A4E` | eyebrow, vurğu sözü, düymə |
+| peach → coral → terracotta | `#FFB199` → `#FF5A4E` → `#D97757` | vurğu qradiyenti: `linear-gradient(180deg, #FFB199 0%, #FF5A4E 45%, #D97757 100%)`, sözə `background-clip: text` ilə |
 
 ### Fontlar
 
-- **Başlık:** [Inter Tight](https://fonts.google.com/specimen/Inter+Tight) 900 / 800 / 700.
-- **Metin:** [Inter](https://fonts.google.com/specimen/Inter) 400–600.
-- **Mono:** `SF Mono, Menlo, ui-monospace, monospace` (eyebrow, sayaç, dosya adları).
-- Yükleme kodu:
+- **Başlıq:** [Inter Tight](https://fonts.google.com/specimen/Inter+Tight) 900 / 800 / 700.
+- **Mətn:** [Inter](https://fonts.google.com/specimen/Inter) 400–600.
+- **Mono:** `SF Mono, Menlo, ui-monospace, monospace` (eyebrow, sayğac, fayl adları).
+- Yükləmə kodu:
   ```ts
   import {loadFont as loadTight} from '@remotion/google-fonts/InterTight';
   import {loadFont as loadInter} from '@remotion/google-fonts/Inter';
   export const display = loadTight('normal', {weights: ['700', '800', '900'], subsets: ['latin', 'latin-ext']}).fontFamily;
   export const body = loadInter('normal', {weights: ['400', '500', '600'], subsets: ['latin', 'latin-ext']}).fontFamily;
   ```
-  Türkçe ve diğer Latin dışı karakterler için `latin-ext` alt kümesini mutlaka ekle.
+  Azərbaycan və türk hərfləri (ə, ğ, ı, ş, ç, ö, ü) üçün `latin-ext` alt çoxluğunu mütləq əlavə et.
 
-### Tipografi (1080×1920)
+### Tipoqrafiya (1080×1920)
 
-- **Sahne başlığı:** 150 px, Inter Tight 900, `letterSpacing: -0.045em`, `lineHeight: 0.95`. Sola hizalı (`left: 90`), iki satır, her satır ayrı maskeyle girer.
-- **Eyebrow:** başlığın üstünde. Mono 38 px, coral, `letterSpacing: 0.2em`, biçim `01 — PROMPT`.
-- **Hook kelimeleri:** 170–190 px, ortalı.
-- **Alt satır:** Inter 600, 58 px, kelime kelime; son kelime coral.
-- **Güvenli alan** (Reels arayüzü için): yanlar 90 px, üst metin y ≥ 300, alt içerik y ≤ 1540.
+- **Səhnə başlığı:** 150 px, Inter Tight 900, `letterSpacing: -0.045em`, `lineHeight: 0.95`. Sola düzləndirilmiş (`left: 90`), iki sətir, hər sətir ayrı maskadan keçərək gəlir.
+- **Eyebrow:** başlığın üstündə. Mono 38 px, coral, `letterSpacing: 0.2em`, format `01 — PROMPT`.
+- **Hook sözləri:** 170–190 px, ortalanmış.
+- **Alt sətir:** Inter 600, 58 px, söz-söz; son söz coral.
+- **Təhlükəsiz sahə** (Reels interfeysi üçün): yanlarda 90 px, yuxarı mətn y ≥ 300, aşağı məzmun y ≤ 1540.
 
-## 7. Hareket kalıpları
+## 7. Hərəkət şablonları
 
-`src/components/kit.tsx` içine koy:
+`src/components/kit.tsx` içinə qoy:
 
 ```tsx
 import React from 'react';
 import {Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame} from 'remotion';
 
 const FPS = 30;
-// Her sahne kesimden OVER kare önce başlar; yeni sahne eskisinin üstüne katman olarak biner.
+// Hər səhnə kəsimdən OVER kadr əvvəl başlayır; yeni səhnə köhnəsinin üstünə təbəqə kimi düşür.
 export const OVER = 8;
-export const useCut = () => useCurrentFrame() - OVER; // geçiş sırasında negatif
+export const useCut = () => useCurrentFrame() - OVER; // keçid zamanı mənfi
 export const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
 export const spr = (f: number, delay = 0, config: Partial<{damping: number; stiffness: number; mass: number}> = {}) =>
   spring({frame: f - delay, fps: FPS, config: {damping: 14, stiffness: 170, mass: 0.7, ...config}});
 
-// RGB split gölgesi
+// RGB split kölgəsi
 export const chroma = (amt: number) =>
   amt < 0.3 ? 'none' : `${amt}px 0 rgba(255,50,90,0.85), ${-amt}px 0 rgba(40,200,255,0.85)`;
 
-// Sesin vurgu anı (trim'den `peak` saniye sonra) tam `at` karesine düşer.
+// Səsin vurğu anı (trim-dən `peak` saniyə sonra) dəqiq `at` kadrına düşür.
 export const Sfx: React.FC<{name: string; at: number; peak?: number; trim?: number; dur?: number; vol?: number; fadeOut?: number}> = ({
   name, at, peak = 0, trim = 0, dur = 60, vol = 1, fadeOut = 0,
 }) => {
@@ -422,7 +422,7 @@ export const Sfx: React.FC<{name: string; at: number; peak?: number; trim?: numb
   );
 };
 
-// Satır, maskenin arkasından kayarak gelir.
+// Sətir, maskanın arxasından sürüşərək gəlir.
 export const MaskUp: React.FC<{f: number; delay: number; children: React.ReactNode}> = ({f, delay, children}) => {
   const s = spr(f, delay, {damping: 16, stiffness: 150});
   return (
@@ -432,7 +432,7 @@ export const MaskUp: React.FC<{f: number; delay: number; children: React.ReactNo
   );
 };
 
-// Kelime büyükten oturur: blur + RGB split söner, 2–4. karelerde kısa glitch.
+// Söz böyükdən oturur: blur və RGB split sönür, 2–4. kadrlarda qısa glitch.
 export const Pop: React.FC<{f: number; delay: number; from?: number; children: React.ReactNode}> = ({f, delay, from = 1.5, children}) => {
   const s = spr(f, delay, {damping: 12, stiffness: 190});
   const glitch = f - delay >= 2 && f - delay <= 4 ? 10 : 0;
@@ -447,32 +447,32 @@ export const Pop: React.FC<{f: number; delay: number; from?: number; children: R
 };
 ```
 
-**Sahne sıralaması (`Reel.tsx`):** her sahneyi `<Sequence from={kesim - OVER} durationInFrames={sonrakiKesim - kesim + OVER}>` içine koy. İlk sahne için `from` negatif olabilir. Sahne içinde `const f = useCut()` kullan; `f < 0` geçiş anıdır.
+**Səhnə sıralaması (`Reel.tsx`):** hər səhnəni `<Sequence from={kəsim - OVER} durationInFrames={növbəti kəsim - kəsim + OVER}>` içinə qoy. İlk səhnə üçün `from` mənfi ola bilər. Səhnənin içində `const f = useCut()` istifadə et; `f < 0` keçid anıdır.
 
-**Kurallar:**
-- **Spring ayarları:** sert giriş için `stiffness 190–420`, yumuşak morph için `damping 20–22, stiffness 80–90`.
-- **Kamera:** her sahnede sürekli zoom olsun. İçerik `1 → 1.06–1.10`, arka plan `1.12–1.25 → 1` (ters yönde parallax).
-- **Stagger:** satırlar arasında 4–5 kare, kartlar arasında 1,2–2 kare.
+**Qaydalar:**
+- **Spring ayarları:** sərt giriş üçün `stiffness 190–420`, yumşaq morf üçün `damping 20–22, stiffness 80–90`.
+- **Kamera:** hər səhnədə davamlı zoom olsun. Məzmun `1 → 1.06–1.10`, arxa plan `1.12–1.25 → 1` (əks istiqamətdə parallax).
+- **Ardıcıl gecikmə (stagger):** sətirlər arasında 4–5 kadr, kartlar arasında 1,2–2 kadr.
 
-## 8. Geçişler
+## 8. Keçidlər
 
-Hepsi gelen sahnenin kök elemanına uygulanır. `w` ve `r`, `interpolate(f, [-OVER, 2], [0, 1], clamp)` ile 0'dan 1'e gider.
+Hamısı gələn səhnənin kök elementinə tətbiq olunur. `w` və `r`, `interpolate(f, [-OVER, 2], [0, 1], clamp)` ilə 0-dan 1-ə gedir.
 
-| Geçiş | Kod | Ses |
+| Keçid | Kod | Səs |
 | --- | --- | --- |
-| **Çapraz wipe** | `clipPath: polygon(0 ${100 - w*130}%, 100% ${130 - w*130}%, 100% 100%, 0 100%)` | büyük whoosh, vurgu kesimden 2 kare önce |
-| **Daire açılış** | `clipPath: circle(${r*130}% at 50% 62%)`, ease-in quad | orta whoosh, vurgu kesimden 2 kare önce |
-| **Alttan dönerek gelme** | `translateY((1-r)*1920px) rotate((1-r)*8deg)` + `blur((1-r)*18px)`, ease-out cubic | kısa whoosh |
-| **Yandan whip-pan** | `translateX((1-r)*1080px)` + `blur((1-r)*24px)` | kısa whoosh |
-| **Beyaz flash** | tam ekran beyaz katman, opaklık `[t-4, t, t+18] → [0, 1, 0]` | kamera flaşı; riser'ın bitişi bu kareye hizalı |
-| **Buz çatlağı → shard açılış** | aşağıda | buz kırılması + kısa whoosh |
+| **Çapraz wipe** | `clipPath: polygon(0 ${100 - w*130}%, 100% ${130 - w*130}%, 100% 100%, 0 100%)` | böyük whoosh, vurğu kəsimdən 2 kadr əvvəl |
+| **Dairəvi açılış** | `clipPath: circle(${r*130}% at 50% 62%)`, ease-in quad | orta whoosh, vurğu kəsimdən 2 kadr əvvəl |
+| **Aşağıdan dönərək gəlmə** | `translateY((1-r)*1920px) rotate((1-r)*8deg)` + `blur((1-r)*18px)`, ease-out cubic | qısa whoosh |
+| **Yandan whip-pan** | `translateX((1-r)*1080px)` + `blur((1-r)*24px)` | qısa whoosh |
+| **Ağ flaş** | tam ekran ağ təbəqə, şəffaflıq `[t-4, t, t+18] → [0, 1, 0]` | kamera flaşı; riser-in bitişi bu kadra düşür |
+| **Buz çatlağı → shard açılış** | aşağıda | buz qırılması + qısa whoosh |
 
-**Buz çatlağı (eski sahnenin son 8 karesi):** ekran merkezinden 9 kırık SVG yol çiz.
-- Her yol 6 segment × 210 px; açı jitter'ı ±0,3 rad (`random()` ile deterministik).
-- Çizim: `pathLength={1}`, `strokeDasharray={1}`, `strokeDashoffset={1 - p}`, renk `#0B0B10`, 5 px.
-- Aynı anda sahne 2 px'ten 12 px'e kadar sarsılır: `Math.sin(f * 4) * genlik`.
+**Buz çatlağı (köhnə səhnənin son 8 kadrı):** ekran mərkəzindən 9 qırıq SVG yolu çək.
+- Hər yol 6 seqment × 210 px; bucaq jitter-i ±0,3 rad (`random()` ilə deterministik).
+- Çəkilmə: `pathLength={1}`, `strokeDasharray={1}`, `strokeDashoffset={1 - p}`, rəng `#0B0B10`, 5 px.
+- Eyni anda köhnə səhnə 2 px-dən 12 px-ə qədər silkələnir: `Math.sin(f * 4) * genlik`.
 
-**Shard açılış (yeni sahne):** 18 köşeli düzensiz bir polygon, ease-out cubic ile büyür:
+**Shard açılış (yeni səhnə):** ease-out cubic ilə böyüyən, 18 küncü qeyri-bərabər çoxbucaqlı:
 
 ```ts
 const shardClip = (p: number) => `polygon(${new Array(18).fill(0).map((_, i) => {
@@ -482,10 +482,10 @@ const shardClip = (p: number) => `polygon(${new Array(18).fill(0).map((_, i) => 
 }).join(',')})`;
 ```
 
-## 9. Sahne kalıpları
+## 9. Səhnə şablonları
 
-**Shader hook:** siyah zemin, 21st.dev Shader Animation'ın WebGL karşılığı. 1–2 kelime `Pop` ile girer.
-- Canvas'a `preserveDrawingBuffer: true` ver ve her karede `useLayoutEffect` içinde çiz.
+**Shader hook:** qara fon, 21st.dev Shader Animation-un WebGL variantı. 1–2 söz `Pop` ilə girir.
+- Canvas-a `preserveDrawingBuffer: true` ver və hər kadrda `useLayoutEffect` içində çək.
 - Fragment shader:
   ```glsl
   precision highp float;
@@ -503,86 +503,86 @@ const shardClip = (p: number) => `polygon(${new Array(18).fill(0).map((_, i) => 
     gl_FragColor = vec4(ch(0.0, uv), ch(0.01, uv), ch(0.02, uv), 1.0);
   }
   ```
-- Halka yarıçapı `fract(t) × 5`'tir. Sahne boyunca `t` değerini 0,02'den 0,42'ye götür, `z = 1`, `g ≈ 1.4` kullan.
+- Halqa radiusu `fract(t) × 5`-dir. Səhnə boyunca `t` dəyərini 0,02-dən 0,42-yə apar, `z = 1`, `g ≈ 1.4` istifadə et.
 
-**Problem sahnesi ("Saatlerce timeline."):**
-- Krem zemin üzerinde 16 "timeline klibi" kartı uçuşur. Kartlar beyaz, `r18`; sol kenarda 16 px pastel şerit, üstte mono `clip_XX.mov`, altta keyframe elmasları.
-- Kartlar yukarıdan düşerek girer (stagger 1,2 kare), sonra süzülür, döner ve ±3 px titrer.
-- Yazının arkasında krem renkli radial bir perde var; okunaklılığı o sağlar.
-- Üstte coral mono sayaç (`⏱ 03:12:47`) hızla akar.
-- Ses: saat tik-takı. Sahne buz çatlağıyla biter.
+**Problem səhnəsi ("Saatlarla timeline."):**
+- Krem fonda 16 "timeline klipi" kartı uçuşur. Kartlar ağ, `r18`; sol kənarda 16 px pastel zolaq, yuxarıda mono `clip_XX.mov`, aşağıda keyframe almazları.
+- Kartlar yuxarıdan düşərək girir (gecikmə 1,2 kadr), sonra süzülür, fırlanır və ±3 px titrəyir.
+- Yazının arxasında krem rəngli radial pərdə var; oxunaqlılığı o təmin edir.
+- Yuxarıda coral mono sayğac (`⏱ 03:12:47`) sürətlə axır.
+- Səs: saat tik-taqı. Səhnə buz çatlağı ilə bitir.
 
-**Prompt sahnesi:**
-- Uzay gradyanı zemin, yıldızlar, iki katman dağ silüeti (parallax). Üstünde cam efektli bir prompt kutusu:
-  - `rgba(255,255,255,.16 → .05)` gradyan, 1,5 px beyaz %25 kenar, `backdrop-filter: blur(30px)`, `r44`.
-- Etkileşim sırası:
-  1. Kare başına bir harf daktilo efekti, coral imleç.
-  2. İmleç gönder butonuna süzülür.
-  3. Tıklamada buton `scale 1 → 0.82 → 1` yapar, kutu coral parlar.
-  4. Krem renkli bir yanıt toast'ı iner.
-- Ses: klavye → mouse click → bildirim.
+**Prompt səhnəsi:**
+- Kosmik qradiyent fon, ulduzlar, iki qat dağ silueti (parallax). Üstündə şüşə effektli prompt qutusu:
+  - `rgba(255,255,255,.16 → .05)` qradiyent, 1,5 px ağ 25% kənar, `backdrop-filter: blur(30px)`, `r44`.
+- Qarşılıqlı təsir ardıcıllığı:
+  1. Hər kadrda bir hərf yazı maşını effekti, coral kursor.
+  2. Kursor göndər düyməsinə süzülür.
+  3. Klik anında düymə `scale 1 → 0.82 → 1` edir, qutu coral parlayır.
+  4. Krem rəngli cavab toast-u enir.
+- Səs: klaviatura → mouse click → bildiriş.
 
-**Kart morph'u (Scroll Morph):**
-- Beyaz zemin, 12 kart (150×200, `r22`).
-- **Faz 1:** her kart `spr(f, 6 + 2i, {damping 16, stiffness 130})` ile rastgele konumdan çembere oturur (yarıçap 360, merkez 540, 1060). Kart açısı teğete dönük, çember yavaş döner.
-- **Faz 2:** `spr(f, 34, {damping 22, stiffness 80})` ile yarıçap 580'e, merkez y 1560'a, açı aralığı 2π'den 1,05π'ye gider ve çember gökkuşağı yayına dönüşür.
-- Ses: kartlar oturdukça 6 karede bir pop; sonunda ding.
+**Kart morfu (Scroll Morph):**
+- Ağ fon, 12 kart (150×200, `r22`).
+- **Faza 1:** hər kart `spr(f, 6 + 2i, {damping 16, stiffness 130})` ilə təsadüfi mövqedən çevrəyə oturur (radius 360, mərkəz 540, 1060). Kartın bucağı tangensə baxır, çevrə yavaş fırlanır.
+- **Faza 2:** `spr(f, 34, {damping 22, stiffness 80})` ilə radius 580-ə, mərkəz y 1560-a, bucaq aralığı 2π-dən 1,05π-yə gedir və çevrə göyqurşağı qövsünə çevrilir.
+- Səs: kartlar oturduqca hər 6 kadrdan bir pop; sonda ding.
 
-**Ritim / ses senkronu:**
-- 40 barlık bir dalga formu her beat'te pulse atar. 3 kesim işareti tepe noktalarına "snap" olur.
-- Her snap'te pop sesi, mikro sarsıntı ve RGB split olur.
+**Ritm / səs sinxronu:**
+- 40 çubuqlu dalğa forması hər beat-də pulsasiya edir. 3 kəsim işarəsi zirvə nöqtələrinə "snap" olur.
+- Hər snap-də pop səsi, mikro silkələnmə və RGB split olur.
 
-**Sayaç / render:**
-- Dev bir odometre (%000 → %100): ondalık değeri sürekli kayan rakam sütunları; baştaki sıfırlar soluk.
-- Altta gradyan progress çizgisi var. %100'de beyaz flash patlar.
+**Sayğac / render:**
+- Böyük odometr (%000 → %100): onluq dəyəri davamlı sürüşən rəqəm sütunları; baş sıfırlar solğun.
+- Aşağıda qradiyent progress xətti. %100-də ağ flaş partlayır.
 
-**Kapanış (Horizon):**
-- Uzay gradyanı, nebula, yıldızlar, dağ silüeti ve dağın tepesinden yükselen dikey bir ışık huzmesi.
-- Kamera dağdan yukarı tilt yapar. Dev wordmark harf harf aşağıdan gelir (stagger 2,5 kare), mercan gradyanlı.
-- Tagline maskeyle girer. Tagline girerken huzmenin opaklığını 0,2'ye düşür, yoksa yazının üstünden geçer.
+**Bağlanış (Horizon):**
+- Kosmik qradiyent, dumanlıq, ulduzlar, dağ silueti və dağın zirvəsindən yüksələn şaquli işıq şüası.
+- Kamera dağdan yuxarı tilt edir. Böyük wordmark hərf-hərf aşağıdan gəlir (gecikmə 2,5 kadr), coral qradiyentlə.
+- Tagline maskadan keçərək girir. Tagline girərkən şüanın şəffaflığını 0,2-yə endir, yoxsa yazının üstündən keçər.
 
-## 10. Ses tasarımı
+## 10. Səs dizaynı
 
-Efektleri dosya adına göre değil, **türüne** göre eşle ve her birinin vurgu anını ölç (bkz. bölüm 2). Pixabay'de aşağıdaki aramalar iyi sonuç verir:
+Effektləri fayl adına görə yox, **növünə** görə uyğunlaşdır və hər birinin vurğu anını ölç (bax bölmə 2). Pixabay-də aşağıdakı axtarışlar yaxşı nəticə verir:
 
-| Tür (Pixabay araması) | Kullanım | Tipik vurgu | Seviye |
+| Növ (Pixabay axtarışı) | İstifadə | Tipik vurğu | Səviyyə |
 | --- | --- | --- | --- |
-| whoosh (kısa) | slide, whip-pan | 0,1–0,2 sn | 0,45–0,7 |
-| whoosh (uzun) | büyük wipe | 0,6–0,9 sn | 0,4–0,7 |
-| pop | kelime ya da kart oturması, snap | 0,1–0,2 sn | 0,5–0,9 |
-| ding | bölümün tamamlanması | ~0,1 sn | 0,6–0,7, fade 6–8 kare |
-| notification | yanıt toast'ı, logo oturması | ~0,1 sn | 0,75 |
-| mouse click | buton tıklaması | ~0,02 sn | 0,9 |
-| keyboard typing | daktilo efekti | ilk tuşa `trim` ile atla | 0,6, fade 4 kare |
-| clock ticking | gerilim, "saatlerce" | — | 0,45, fade 6 kare |
-| ice crack / glass crack | ekranın kırılması | en sert kırılmanın kısa bir kesiti (`trim`) | 0,95, fade 8 kare |
-| riser | kapanış öncesi yükselme | bitişi flash karesine hizala | 0,8 |
-| camera flash | beyaz flash | ~0,15 sn | 0,9 |
+| whoosh (qısa) | slide, whip-pan | 0,1–0,2 san | 0,45–0,7 |
+| whoosh (uzun) | böyük wipe | 0,6–0,9 san | 0,4–0,7 |
+| pop | söz və ya kart oturması, snap | 0,1–0,2 san | 0,5–0,9 |
+| ding | bölmənin tamamlanması | ~0,1 san | 0,6–0,7, fade 6–8 kadr |
+| notification | cavab toast-u, loqo oturması | ~0,1 san | 0,75 |
+| mouse click | düymə kliki | ~0,02 san | 0,9 |
+| keyboard typing | yazı maşını effekti | ilk düyməyə `trim` ilə keç | 0,6, fade 4 kadr |
+| clock ticking | gərginlik, "saatlarla" | — | 0,45, fade 6 kadr |
+| ice crack / glass crack | ekranın qırılması | ən sərt qırılmanın qısa hissəsi (`trim`) | 0,95, fade 8 kadr |
+| riser | bağlanışdan əvvəl yüksəlmə | bitişini flaş kadrına uyğunlaşdır | 0,8 |
+| camera flash | ağ flaş | ~0,15 san | 0,9 |
 
-Kullanım örnekleri:
+İstifadə nümunələri:
 
 ```tsx
 <Sfx name="whoosh-2" at={kesim - 2} peak={0.85} vol={0.7} dur={50} />
 <Sfx name="ice-crack" at={kesim - 8} trim={5.12} peak={0.1} vol={0.95} dur={22} fadeOut={8} />
 ```
 
-- **Seviye ve fade:** efektlerin seviyesi, kırpması ve fade'i serbestçe ayarlanabilir. Kullanıcının kendi anlatım sesi varsa ona efekt, EQ ya da seviye uygulama; isterse kendisi yapar.
-- **Müzik:** kesimleri beat'e oturt, efektleri müziğin altında kalmayacak seviyede tut.
+- **Səviyyə və fade:** effektlərin səviyyəsi, kəsimi və fade-i sərbəst tənzimlənə bilər. İstifadəçinin öz danışıq səsi varsa, ona effekt, EQ və ya səviyyə tətbiq etmə; istəsə özü edər.
+- **Musiqi:** kəsimləri beat-ə oturt, effektləri musiqinin altında itməyəcək səviyyədə saxla.
 
-## 11. Önizleme ve kontrol
+## 11. Önizləmə və yoxlama
 
-1. **Studio'yu aç:** `npx remotion studio`. Desktop uygulamasında `.claude/launch.json` dosyası yaz ve `preview_start` kullan; port olarak örneğin 3123 ver ve `--no-open` ekle.
-2. **Kareleri kendin kontrol et:** kritik karelerden (her sahnenin ortası ve geçiş anları) still al, sonra hepsini yan yana birleştirip bak:
+1. **Studio-nu aç:** `npx remotion studio`. Desktop tətbiqində `.claude/launch.json` faylı yaz və `preview_start` istifadə et; port olaraq məsələn 3123 ver və `--no-open` əlavə et.
+2. **Kadrları özün yoxla:** kritik kadrlardan (hər səhnənin ortası və keçid anları) still götür, sonra hamısını yan-yana birləşdirib bax:
    ```bash
-   npx remotion still <Comp> kare.jpg --frame=N --scale=0.4 --gl=angle
+   npx remotion still <Comp> kadr.jpg --frame=N --scale=0.4 --gl=angle
    ffmpeg -i a.jpg -i b.jpg -i c.jpg -filter_complex "hstack=3" sheet.jpg
    ```
-   Şunlara bak: yazı güvenli alanda mı, okunaklı mı, Türkçe karakterler doğru mu, ilk kare siyah mı (Reels kapağı için boş kalmasın), shader görünüyor mu.
-3. **Kullanıcıya göster:** Studio adresini ver; zaman göstergesi `dakika:saniye.kare` biçimindedir (`00:01:23` = 1 sn 23 kare). Kullanıcı bu zamanlarla revize verirse kareye çevirip uygula.
+   Bunlara bax: yazı təhlükəsiz sahədədirmi, oxunaqlıdırmı, Azərbaycan hərfləri (ə, ğ, ı, ş) düzgündürmü, ilk kadr qaradırmı (Reels qapağı üçün boş qalmamalıdır), shader görünürmü.
+3. **İstifadəçiyə göstər:** Studio ünvanını ver; zaman göstəricisi `dəqiqə:saniyə.kadr` formatındadır (`00:01:23` = 1 san 23 kadr). İstifadəçi bu zamanlarla düzəliş versə, kadra çevirib tətbiq et.
 
 ## 12. Render
 
-Yalnızca kullanıcı son onayı verdikten sonra render al:
+Render yalnız istifadəçi son təsdiqini verdikdən sonra alınır:
 
 ```bash
 npx remotion render <Comp> out/video.mp4 --gl=angle
@@ -590,13 +590,13 @@ ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate,durat
 ffmpeg -i out/video.mp4 -af volumedetect -f null - 2>&1 | grep max_volume
 ```
 
-Çıktının 1080×1920, 30 fps ve doğru süre olduğunu doğrula; ses tepe seviyesi 0 dB'nin altında olmalı. Birkaç karelik contact sheet ile görüntüye son kez bak. Sesleri kulakla dinleyemediğini kullanıcıya açıkça söyle.
+Çıxışın 1080×1920, 30 fps və düzgün müddətdə olduğunu yoxla; səsin pik səviyyəsi 0 dB-dən aşağı olmalıdır. Bir neçə kadrlıq contact sheet ilə görüntüyə son dəfə bax. Səsləri qulaqla dinləyə bilmədiyini istifadəçiyə açıq de.
 
-## Tuzaklar
+## Tələlər
 
-- **Shader yalnızca gri çapraz çizgi gösteriyorsa:** halka ekran dışındadır. `t` değerini küçült (yarıçap `fract(t) × 5`).
-- **Shader çok parlaksa:** `g` değerini 5'ten 1,4'e indir.
-- **GLSL:** döngü içinde vektörü dinamik indeksleme (`c[j]`); her kanalı ayrı bir fonksiyonla hesapla.
-- **Render'da shader boş çıkıyorsa:** `--gl=angle` ekle ve canvas'a `preserveDrawingBuffer: true` ver.
-- **Rastgelelik:** `Math.random()` kullanma; render kareleri farklı çıkar. Remotion'ın `random('seed')` fonksiyonunu kullan.
-- **Gradyan yazı:** `background-clip: text` olan yazıya `text-shadow` verme; gölge yazının içinden görünür. Bu yazılarda yalnızca blur ve scale kullan.
+- **Shader yalnız boz çarpaz xətt göstərirsə:** halqa ekrandan kənardadır. `t` dəyərini kiçilt (radius `fract(t) × 5`).
+- **Shader çox parlaqdırsa:** `g` dəyərini 5-dən 1,4-ə endir.
+- **GLSL:** dövr daxilində vektoru dinamik indekslə (`c[j]`) işlətmə; hər kanalı ayrıca funksiya ilə hesabla.
+- **Render-də shader boş çıxırsa:** `--gl=angle` əlavə et və canvas-a `preserveDrawingBuffer: true` ver.
+- **Təsadüfilik:** `Math.random()` istifadə etmə; render kadrları fərqli çıxır. Remotion-un `random('seed')` funksiyasından istifadə et.
+- **Qradiyent yazı:** `background-clip: text` olan yazıya `text-shadow` vermə; kölgə yazının içindən görünür. Bu yazılarda yalnız blur və scale istifadə et.
