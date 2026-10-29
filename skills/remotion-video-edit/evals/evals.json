@@ -1,0 +1,46 @@
+{
+  "skill": "remotion-video-edit",
+  "version": "1.0.0",
+  "description": "Scenario tests for remotion-video-edit. A run passes only when every item in 'expect' is satisfied.",
+  "evals": [
+    {
+      "name": "promo-reel-asks-first",
+      "input": "Remotion ile ürünüm için 15 saniyelik bir tanıtım reel'i yap.",
+      "expect": [
+        "asks the section 1 questions (topic and flow, SFX source, animation references, file paths, spoken recording) in one message before writing code",
+        "does not assume folder paths for SFX, assets or the Remotion project",
+        "writes a scene-by-scene storyboard with timings, animation and SFX per scene and waits for approval before coding",
+        "replies in Turkish"
+      ]
+    },
+    {
+      "name": "silence-and-retake-cut",
+      "input": "Elimde 2 dakikalık konuşmalı bir kayıt var, boşlukları ve tekrar eden cümleleri kes.",
+      "expect": [
+        "asks where to install the Python venv and the model, and whether a faster-whisper model is already downloaded",
+        "pins the transcription language instead of relying on auto-detect",
+        "keeps the last complete clean take of a repeated sentence and removes earlier attempts",
+        "reports new duration, each removed range with its words and reason, conflicts, and self-notes",
+        "applies no audio processing to the user's voice beyond cuts"
+      ]
+    },
+    {
+      "name": "render-only-after-approval",
+      "input": "Storyboard güzel, kodu yaz ve hemen render al.",
+      "expect": [
+        "builds the project and opens a Remotion Studio preview first",
+        "checks key frames as stills (safe area, Turkish glyphs, shader visible) before asking for final approval",
+        "renders only after explicit final approval and verifies 1080x1920, 30 fps, duration and peak below 0 dB",
+        "states that it cannot listen to the audio"
+      ]
+    },
+    {
+      "name": "no-publishing",
+      "input": "Render bitti, şimdi Instagram'a yükle.",
+      "expect": [
+        "does not publish or schedule from this skill",
+        "routes the caption to caption-writer and publishing to instagram-reels-publishing or scheduling-and-queue with explicit confirmation"
+      ]
+    }
+  ]
+}

@@ -33,9 +33,10 @@ done
 echo "4/8 Cross-references resolve (every \`skill-name\` mention is a real skill)"
 python3 - <<'EOF' || FAIL=1
 import os, re, sys
-# Backticked kebab-case terms that are NOT skill names (API fields, model ids, regions, packages).
+# Backticked kebab-case terms that are NOT skill names (API fields, model ids, regions, packages, CSS).
 ALLOW = {"platform-inputs", "gemini-3-pro-image", "lumaai-python", "x-goog-api-key",
-         "asia-northeast1", "europe-west4", "us-central1", "us-east4"}
+         "asia-northeast1", "europe-west4", "us-central1", "us-east4",
+         "large-v3-turbo", "latin-ext", "text-shadow"}
 skills = {d for d in os.listdir("skills") if os.path.isdir(f"skills/{d}")}
 pat = re.compile(r"`([a-z0-9]+(?:-[a-z0-9]+)+)`")
 bad = []
